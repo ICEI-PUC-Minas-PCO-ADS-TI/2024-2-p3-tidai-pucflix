@@ -5,22 +5,20 @@
 
 `DISCIPLINA: Trabalho Interdisciplinar Desenvolvimento de Aplicação Interativa`
 
-`Xº semestre/ANO`
+`2º semestre/2024`
 
-Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
+Desenvolver uma aplicação web de streaming de filmes, que permita aos usuários assistir e interagir em uma ampla variedade de conteúdos, oferecendo uma experiência de alta qualidade.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Caio Ferreira Araujo
+* Itallo Otavio Resende da Silva
+* Manuela de Souza Assis
+* Pedro Henrique Ferraz Lima
 
 ## Professor
 
-* Nome completo do(a) professor(a)
+* Wagner Cipriano
 
 ## Instruções de utilização
 
