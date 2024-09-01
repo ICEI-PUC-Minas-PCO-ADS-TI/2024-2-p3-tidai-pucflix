@@ -9,13 +9,13 @@ O problema que o projeto pretende resolver é a dificuldade que muitos usuários
 
 ## Objetivos
 
-# Objetivos
+### Objetivos
 Desenvolver uma aplicação web de streaming de filmes, que permita aos usuários assistir e interagir em uma ampla variedade de conteúdos, oferecendo uma experiência de alta qualidade.
 
-# Objetivo Geral
+### Objetivo Geral
 O objetivo deste projeto é desenvolver uma aplicação web para uma plataforma de streaming de vídeo que ofereça uma experiência de consumo de conteúdo digital acessível e intuitiva. A plataforma foi projetada para permitir acesso e interação por uma biblioteca de filmes e séries, com base em uma análise das tendências de mercado e das melhores práticas. O projeto busca identificar e implementar recursos, como reprodução de vídeos e personalização de perfis, garantindo uma interface visualmente atraente e responsiva. Com isso, visa-se atender às diversas necessidades dos usuários, promovendo um acesso simples e eficaz ao conteúdo, além de garantir a satisfação dos usuários.
 
-# Objetivos Específicos
+### Objetivos Específicos
 Os objetivos específicos são:
 
 - Identificar e documentar os recursos essenciais para a aplicação, como reprodução de vídeos e recomendação de conteúdo.
