@@ -1,46 +1,34 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Nos últimos anos, o consumo de conteúdo digital tem se tornado cada vez mais predominante, principalmente com o advento de plataformas de streaming. Segundo dados da Grand View Research, o mercado global de streaming de vídeo foi avaliado em 106,83 bilhões de dólares em 2023 e tem previsão de crescimento de 21% CAGR de 2024 a 2030. Esse cenário evidencia a mudança nos hábitos de consumo de mídia, que passou de conteúdos televisivos tradicionais para um formato sob demanda, onde o usuário escolhe o que assistir, quando e onde quiser.
+Neste contexto, o desenvolvimento de uma aplicação web para uma plataforma de streaming de vídeo surge como uma resposta às necessidades do mercado atual, que busca por soluções cada vez mais acessíveis e de alta qualidade. Diante deste cenário,  este projeto visa desenvolver uma aplicação web para uma plataforma de streaming de vídeo com foco em aplicar as técnicas necessárias para criar um serviço de streaming de qualidade, utilizando tecnologias modernas e aplicando boas práticas de design e usabilidade para criar uma experiência de qualidade para o usuário.
 
 ## Problema
-Aqui, a equipe deve fornecer uma descrição detalhada do problema a ser resolvido. Não é o momento adequado para abordar questões técnicas relacionadas ao desenvolvimento da aplicação. O objetivo é compreender e comunicar de maneira precisa qual é o desafio ou necessidade que motiva a criação da aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
-
-O grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite uma visão completa do problema.
-
-> **Links úteis**:
-> - [Objetivos, problema de pesquisa e justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz certezas, suposições e dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O problema que o projeto pretende resolver é a dificuldade que muitos usuários possuem para encontrar vídeos de boa qualidade que sejam acessíveis financeiramente. Atualmente, muitas pessoas não conseguem achar vídeos relevantes que se encaixem nas suas necessidades e, ao mesmo tempo, que sejam baratos ou gratuitos. Isso acontece porque, muitas vezes, o acesso a conteúdo de qualidade é limitado por altos custos ou por falta de opções acessíveis. A motivação do projeto é criar uma plataforma de streaming que oferece uma vasta biblioteca de conteúdos de qualidade, garantindo que esses vídeos sejam facilmente encontrados e acessíveis economicamente para todos os usuários.
 
 ## Objetivos
 
-Aqui, você deve descrever os objetivos do trabalho, indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima.
+# Objetivos
+Desenvolver uma aplicação web de streaming de filmes, que permita aos usuários assistir e interagir em uma ampla variedade de conteúdos, oferecendo uma experiência de alta qualidade.
 
-Além disso, apresente alguns (pelo menos 3) objetivos específicos, dependendo de onde você pretende concentrar sua prática investigativa ou como deseja aprofundar seu trabalho.
- 
-> **Links úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+# Objetivo Geral
+O objetivo deste projeto é desenvolver uma aplicação web para uma plataforma de streaming de vídeo que ofereça uma experiência de consumo de conteúdo digital acessível e intuitiva. A plataforma foi projetada para permitir acesso e interação por uma biblioteca de filmes e séries, com base em uma análise das tendências de mercado e das melhores práticas. O projeto busca identificar e implementar recursos, como reprodução de vídeos e personalização de perfis, garantindo uma interface visualmente atraente e responsiva. Com isso, visa-se atender às diversas necessidades dos usuários, promovendo um acesso simples e eficaz ao conteúdo, além de garantir a satisfação dos usuários.
+
+# Objetivos Específicos
+Os objetivos específicos são:
+
+- Identificar e documentar os recursos essenciais para a aplicação, como reprodução de vídeos e recomendação de conteúdo.
+- Descrever como as tecnologias escolhidas trabalham juntas para oferecer uma experiência de streaming eficiente e de alta qualidade.
+- Estudar a concorrência e as tendências atuais no mercado de streaming para entender o que funciona e o que pode ser melhorado.
+- Definir quais funcionalidades são imprescindíveis e quais são desejáveis, baseando-se nas necessidades identificadas e nas melhores práticas do setor.
+
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A justificativa para o desenvolvimento desta aplicação web de streaming de vídeo é a crescente demanda no mercado por soluções de alta qualidade e acessíveis. Com a popularidade crescente das plataformas de streaming, há uma necessidade cada vez maior de inovação para atender às expectativas dos consumidores por conteúdo de fácil acesso a qualquer hora e em qualquer lugar. Este projeto busca preencher essa lacuna, oferecendo uma plataforma que não só disponibiliza uma grande biblioteca de vídeos, mas também garante uma experiência intuitiva e personalizada. Além disso, ao adicionar funcionalidades como criação de diferentes perfis e uma busca personalizada, a aplicação se destaca por atender às diversas necessidades dos usuários, contribuindo para a popularização do conteúdo digital de qualidade.
 
 ## Público-alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Composto por consumidores finais (B2C), o público do trabalho busca acessar conteúdo de lazer de alta qualidade de forma financeiramente acessível. Isso inclui homens e mulheres de diferentes idades, crianças, e famílias. O projeto visa atender a pessoas que procuram filmes, séries, e outros tipos de entretenimento para diversão e relaxamento. Além disso, a plataforma será útil para famílias que desejam fornecer opções de lazer apropriadas e seguras para seus filhos. A ideia é criar uma plataforma de streaming que oferece uma vasta biblioteca de conteúdos de lazer, garantindo que esses vídeos sejam facilmente encontrados e acessíveis economicamente para todos os usuários, independentemente da faixa etária ou localização.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público-alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
