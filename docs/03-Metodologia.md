@@ -1,8 +1,6 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="02-Especificacao.md"> Especificação do projeto</a></span>
-
 A equipe adotou uma metodologia de trabalho colaborativa, com encontros semanais no Microsoft Teams para discutir o progresso e alinhar as próximas etapas com o professor. Além dessas reuniões, o grupo também se organizou por meio de chamadas adicionais no Teams e por mensagens em grupos no WhatsApp, facilitando a comunicação e a troca de ideias entre os membros.
 
 Para o desenvolvimento do código, utilizamos o Visual Studio Code (VS Code), que nos permitiu trabalhar de forma integrada e eficiente. O controle de versão foi gerenciado através do Git, garantindo que todas as contribuições fossem organizadas e o histórico do projeto fosse preservado.
