@@ -15,33 +15,16 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 
 |EU COMO... `PERSONA`     | QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                   |
 |-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Filtrar Filmes/Séries Por          | Facilitar a Escolha De Filmes            |
-| de streaming            | Gêneros                            | Adequadas Ao Meu Gosto                   |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Adicionar Filmes Aos Meus          | Acessar Novamente Os Conteúdos Que Eu    |
-| de streaming            | Favoritos                          | Gosto Ou Me Interessaram                 |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante Que Prefere   | Ver Uma Lista Com Os Filmes Mais   | Ficar Sempre Atualizado Com As           |
-| Os Lançamentos          | Recentes                           | Últimas Novidades                        |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Navegar Por Uma Biblioteca Ampla De| Poder Descobrir Novos Conteúdos Que      |
-| de streaming            | Filmes e Séries                    | Me Interessem Facilmente                 |
-|-------------------------|------------------------------------|------------------------------------------|
-| Novo Usuário da         | Me Registrar e Fazer Login         | Acessar o Conteúdo Da Plataforma e       |
-| Plataforma              |                                    | Gerenciar Minha Conta.                   |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Criar Subperfis Para Diferentes    | Cada Um Ter Uma Experiência Personalizada|
-| de streaming            | Membros Da Minha Família           | Permitir que possam administrar contas   |
-|-------------------------|------------------------------------|------------------------------------------|
-| Pai Ou Responsável      | Poder Limitar As Opções De Filmes  | Garantir Que Eles Tenham Acesso Apenas A |
-|                         | Dos Meus Filhos                    | Conteúdos Apropriados Para a Sua Idade   |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Ter Acesso Ao Meu Histórico De     | Poder Reassistir E/Ou Me Lembrar Dos     |
-| de streaming            | Filmes Que Visitei                 | Filmes No Qual Estava Assistindo         |
-|-------------------------|------------------------------------|------------------------------------------|
-| Assinante da plataforma | Assistir Filmes De Qualidade Pela  | Poder Aproveitar Meu Lazer Assistindo    |
-| de streaming            | Internet                           | Conteudos De Qualidadde                  |
-|-------------------------|------------------------------------|------------------------------------------|
+| Assinante da plataformade streaming | Filtrar Filmes/Séries Por Gêneros | Facilitar a Escolha De Filmes Adequadas Ao Meu Gosto |
+| Assinante da plataforma de streaming | Adicionar Filmes Aos Meus Favoritos| Acessar Novamente Os Conteúdos Que Eu Gosto Ou Me Interessaram |
+| Assinante Que Prefere Os Lançamentos | Ver Uma Lista Com Os Filmes Mais Recentes | Ficar Sempre Atualizado Com As Últimas Novidades |
+| Assinante da plataforma de streaming | Navegar Por Uma Biblioteca Ampla De Filmes e Séries| Poder Descobrir Novos Conteúdos Que Me Interessem Facilmente |
+| Novo Usuário da Plataforma | Me Registrar e Fazer Login | Acessar o Conteúdo Da Plataforma e Gerenciar Minha Conta. |
+| Assinante da plataforma de streaming | Criar Subperfis Para Diferentes Membros Da Minha Família | Cada Um Ter Uma Experiência Personalizada Permitir que possam administrar contas|
+| Pai Ou Responsável | Poder Limitar As Opções De Filmes Dos Meus Filhos  | Garantir Que Eles Tenham Acesso Apenas A Conteúdos Apropriados Para a Sua Idade|
+| Assinante da plataforma de streaming | Ter Acesso Ao Meu Histórico De Filmes Que Visitei | Poder Reassistir E/Ou Me Lembrar Dos Filmes No Qual Estava Assistindo |
+| Assinante da plataforma de streaming  | Assistir Filmes De Qualidade Pela Internet | Poder Aproveitar Meu Lazer Assistindo Conteudos De Qualidadde |
+
 
 ## Requisitos
 
