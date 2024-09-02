@@ -32,20 +32,29 @@ O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, intername
 
 ## Wireframes
 
-São protótipos usados no design de interface para sugerir a estrutura de um site web e seu relacionamento entre suas páginas. Um wireframe web é uma ilustração que mostra o layout dos elementos fundamentais na interface.
+### Página Inicial
+[Template Página Inicial](images/Home%20Page.png)
 
-![Exemplo de wireframe](images/wireframe.png)
- 
-> **Links úteis**:
-> - [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135)
-> - [Protótipos vs wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+### Página de Cadastro
+[Template Página de Cadastro](images/Página%20de%20Cadastro.png)
 
+### Página de Login
+[Template Página de Login](images/Página%20de%20Login.png)
+
+### Página de Seleção de Perfil
+[Template Página de Seleção de Perfil](images/Página%20de%20Escolha%20de%20Perfil.png)
+
+### Página de Catálogo de Filmes
+[Template Página de Catálogo de Filmes](images/)
+
+### Página de Gestão de Perfis
+[Template Página de Gestão de Perfis](images/Página%20de%20Gestão%20de%20Perfis.png)
+
+### Página de Filmes Favoritos
+[Template Página de Filmes Favoritos](images/Página%20de%20Favoritos.png)
+
+### Página de Gêneros
+[Template Página de Gêneros](images/Página%20de%20Genêros.png)
 
 ## Interface do sistema
 
