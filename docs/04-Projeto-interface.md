@@ -33,28 +33,28 @@ O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, intername
 ## Wireframes
 
 ### Página Inicial
-[Template Página Inicial](images/Home%20Page.png)
+![Template Página Inicial](images/Home%20Page.png)
 
 ### Página de Cadastro
-[Template Página de Cadastro](images/Página%20de%20Cadastro.png)
+![Template Página de Cadastro](images/Página%20de%20Cadastro.png)
 
 ### Página de Login
-[Template Página de Login](images/Página%20de%20Login.png)
+![Template Página de Login](images/Página%20de%20Login.png)
 
 ### Página de Seleção de Perfil
-[Template Página de Seleção de Perfil](images/Página%20de%20Escolha%20de%20Perfil.png)
+![Template Página de Seleção de Perfil](images/Página%20de%20Escolha%20de%20Perfil.png)
 
 ### Página de Catálogo de Filmes
-[Template Página de Catálogo de Filmes](images/)
+![Template Página de Catálogo de Filmes](images/)
 
 ### Página de Gestão de Perfis
-[Template Página de Gestão de Perfis](images/Página%20de%20Gestão%20de%20Perfis.png)
+![Template Página de Gestão de Perfis](images/Página%20de%20Gestão%20de%20Perfis.png)
 
 ### Página de Filmes Favoritos
-[Template Página de Filmes Favoritos](images/Página%20de%20Favoritos.png)
+![Template Página de Filmes Favoritos](images/Página%20de%20Favoritos.png)
 
 ### Página de Gêneros
-[Template Página de Gêneros](images/Página%20de%20Genêros.png)
+![Template Página de Gêneros](images/Página%20de%20Genêros.png)
 
 ## Interface do sistema
 
