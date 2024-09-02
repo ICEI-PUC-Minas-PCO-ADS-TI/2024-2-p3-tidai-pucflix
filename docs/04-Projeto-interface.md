@@ -45,7 +45,7 @@ O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem, intername
 ![Template Página de Seleção de Perfil](images/Página%20de%20Escolha%20de%20Perfil.png)
 
 ### Página de Catálogo de Filmes
-![Template Página de Catálogo de Filmes](images/)
+![Template Página de Catálogo de Filmes](images/Página%20Principal.png)
 
 ### Página de Gestão de Perfis
 ![Template Página de Gestão de Perfis](images/Página%20de%20Gestão%20de%20Perfis.png)
