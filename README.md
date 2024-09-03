@@ -1,26 +1,24 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15688872&assignment_repo_type=AssignmentRepo)
-# Nome do projeto
+# PUCFLIX
 
 `CURSO: Análise e Desenvolvimento de Sistemas`
 
 `DISCIPLINA: Trabalho Interdisciplinar Desenvolvimento de Aplicação Interativa`
 
-`Xº semestre/ANO`
+`2º semestre/2024`
 
 Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Caio Ferreira Araujo
+* Itallo Otavio Resende da Silva
+* Manuela de Souza Assis
+* Pedro Henrique Ferraz Lima
 
 ## Professor
 
-* Nome completo do(a) professor(a)
+* Wagner Cipriano
 
 ## Instruções de utilização
 
