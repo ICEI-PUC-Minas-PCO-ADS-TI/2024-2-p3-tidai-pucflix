@@ -1,8 +1,12 @@
-import PgGenero from "./PgGenero";
+import Footer from "./Footer";
+import Header from "./Header";
+import Main from "./Main";
 function Pucflix(){
     return(
         <div>
-            <PgGenero></PgGenero>
+            <Header></Header>
+            <Main></Main>
+            <Footer></Footer>
         </div>
     )
 }
