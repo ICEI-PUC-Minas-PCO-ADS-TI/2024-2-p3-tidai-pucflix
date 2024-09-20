@@ -1,12 +1,26 @@
-import cardsPerfil from "../components/cardsPerfil";
+import Cards from "../components/Cards";
+import Header from "../components/Header";
+import styles  from "../assets/css/Pag_escolha_perfil.module.css";
 
 function Pag_escolha_perfil(){
     return(
+        
         <div>
-            <h1>Escolha o Perfil</h1>
-            <cardsPerfil nome="Manuela" 
-            foto="https://via.placeholder.com/300" />
+            <Header/>
+            < div className={styles.conteudo}>
+                
+                <h1 className={styles.titulo}>Escolha o Perfil</h1>
+                    <Cards nome="Manuela" 
+                    foto="https://via.placeholder.com/150"
+                    className={styles.elemento} />
+                    <button className={styles.botao}>Gerenciar Perfis</button>
+
+            </div>
+
+            
         </div>
+        
+        
     )
 }
 
