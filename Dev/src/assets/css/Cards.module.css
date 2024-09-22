@@ -1,0 +1,13 @@
+.imagem{
+    border-radius: 5px;
+
+}
+
+.imagem:hover{
+    border: 3px solid white;
+}
+
+.nome{
+    font-weight: 200;
+    color:  rgba(255, 255, 255, 0.568);
+}
