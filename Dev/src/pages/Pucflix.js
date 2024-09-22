@@ -1,7 +1,9 @@
+import Principal from "./pag_Principal";
+
 function Pucflix(){
     return(
-        <div>
-
+        <div className="bg-defaultBg">
+            <Principal />
         </div>
     )
 }
