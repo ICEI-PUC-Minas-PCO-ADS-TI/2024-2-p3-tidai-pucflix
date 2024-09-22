@@ -1,0 +1,58 @@
+ .BannerImg img{
+    opacity:60%;
+    height:800px;
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    z-index: 0; 
+  
+    /*transform: scale(1.1); NAO FICOU BOM*/
+  } 
+  
+  header {
+    position: relative; 
+    z-index: 10; 
+}
+
+.Card-Branco{
+    width: 52%; 
+    height: 300px; 
+    background-color: whitesmoke; 
+    position: absolute; 
+    top: 40%; 
+    left: 0%; 
+    transform: skewY(-5deg);
+} 
+
+.Card-Texto{
+  margin-left: 90px;
+  text-align: left;
+  transform: skewY(3deg);
+  width: 90%; 
+  /*transform: skewY(3deg); Validar __ */
+}
+.Card-Branco p{
+  font-size: 20px;
+  text-indent: 20px;
+}
+
+.Card-Branco h1{
+  font-size: 35px;
+  margin-top: 40px;
+}
+
+.Card-Texto button{
+  padding: 10px 70px;
+  margin-left: 60px;
+  margin-top: 10px;
+  font-size: 23px;
+  background-color: #270db6ce;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.Card-Branco button:hover {
+  background-color: #000000; 
+}
