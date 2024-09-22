@@ -12,7 +12,7 @@ function Pag_escolha_perfil(){
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
                     <Cards nome="Manuela" 
                     foto="https://via.placeholder.com/150"
-                    className={styles.elemento} />
+                     />
                     <button className={styles.botao}>Gerenciar Perfis</button>
 
             </div>

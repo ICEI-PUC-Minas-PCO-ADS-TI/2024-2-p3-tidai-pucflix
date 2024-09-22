@@ -1,9 +1,9 @@
-import styles  from "../assets/css/Header.module.css";
+import styles from "../assets/css/Header.module.css";
 
 
 function Header(){
     return(
-        <div className={styles.Header}>
+        <div className={styles.corDeFundo}>
             <h1>PUCFLIX</h1>        
         </div>
     )
