@@ -10,20 +10,28 @@
     font-size: 3em;
 
 }
-
+.perfis{
+    display: flex;
+    justify-content: center;
+}
+.perfil{
+    margin: 2px;
+}
 
 .botao{
     margin-top: 4em;
-    border: 1px solid  rgba(255, 255, 255, 0.568);
-    color:  rgba(255, 255, 255, 0.568);
-    background-color:  rgba(255, 255, 255, 0.03);
-    padding: 1em 2em 1em 2em;
+    border: 0px;
+    background-color:  rgba(255, 255, 255, 0.968);
+    padding: 0.7em 1.5em 0.7em 1.5em;
     font-size: 1em;
+    font-weight: 540;
 }
 
 .botao:hover{
-    border: 1px solid  rgba(255, 255, 255, 0.868);
-    color:  rgba(255, 255, 255, 0.868);
+    background-color: rgba(255, 0, 0, 0.767);
+    color: rgba(255, 255, 255, 0.968) ;
+    transition: 0.2s linear; 
 }
+
 
 

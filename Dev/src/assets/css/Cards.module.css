@@ -1,13 +1,23 @@
+
 .imagem{
     border-radius: 5px;
 
 }
 
 .imagem:hover{
-    border: 3px solid white;
+    border: 3px solid #ffffff;
+    transition: 0.1s ease-in-out;
 }
+
+
 
 .nome{
     font-weight: 200;
     color:  rgba(255, 255, 255, 0.568);
+}
+
+
+
+.perfil{
+    margin: 1em;
 }

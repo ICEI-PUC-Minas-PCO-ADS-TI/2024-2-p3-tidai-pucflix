@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Pucflix />
-    <Pag_gerenciamento_perfis/>
+    <Pag_gerenciamento_perfis />
   </React.StrictMode>
 );
 

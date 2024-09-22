@@ -1,22 +1,30 @@
 import Cards from "../components/Cards";
-import styles  from "../assets/css/Pag_gereciamento_perfis.module.css";
+import styles  from "../assets/css/Pag_gerenciamento_perfis.module.css";
+import iconePlus from "../assets/img/iconePlus.png";
 
 function Pag_gerenciamento_perfis(){
     return(
         
-        <div>
+        
             < div className={styles.conteudo}>
                 
-                <h1 className={styles.titulo}>Escolha o Perfil</h1>
-                    <Cards nome="Nome usuário" 
+                <h1 className={styles.titulo}>Gerenciar perfis:</h1>
+                <div className={styles.perfis}>
+                    <Cards  nome="Nome usuário" 
                     foto="https://via.placeholder.com/150"
                      />
-                    <button className={styles.botao}>Gerenciar Perfis</button>
+                     <Cards nome="Adicionar perfil" 
+                    foto={iconePlus}
+                     /> 
+                </div>
+                    
+
+                    <button className={styles.botao}>Concluído</button>
 
             </div>
 
             
-        </div>
+        
         
         
     )
