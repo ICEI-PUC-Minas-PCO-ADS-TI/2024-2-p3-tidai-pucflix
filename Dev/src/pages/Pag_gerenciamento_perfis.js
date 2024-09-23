@@ -14,7 +14,7 @@ function Pag_gerenciamento_perfis(){
                     foto="https://via.placeholder.com/150"
                      />
                      <Cards nome="Adicionar perfil" 
-                    foto={iconePlus}
+                    foto={iconePlus} 
                      /> 
                 </div>
                     

@@ -1,7 +1,7 @@
 
 .imagem{
     border-radius: 5px;
-
+    opacity: 0.5;
 }
 
 .imagem:hover{
