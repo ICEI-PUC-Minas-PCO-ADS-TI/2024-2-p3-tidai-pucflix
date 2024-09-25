@@ -5,6 +5,8 @@
 
 .imagem:hover{
     border: 3px solid white;
+    transform: scale(1.0);
+
 }
 
 .nome{
