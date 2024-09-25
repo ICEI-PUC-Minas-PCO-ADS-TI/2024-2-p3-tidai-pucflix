@@ -17,16 +17,10 @@ function Pag_gerenciamento_perfis(){
                     foto={iconePlus} 
                      /> 
                 </div>
-                    
 
                     <button className={styles.botao}>Concluído</button>
-
             </div>
 
-            
-        
-        
-        
     )
 }
 
