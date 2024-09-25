@@ -1,15 +1,34 @@
+.perfil{
+    margin: 1em;
+        position: relative;
+        display: inline-block;
+}
 
 .imagem{
+    height: 200px;
     border-radius: 5px;
-    opacity: 0.5;
+    box-sizing: border-box;
+    margin-left: 2em;
+    margin-right: 2em;
+    opacity: 0.6;
+}
+.sobreposta {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    width: 50px; 
+    height: 50px;
+    opacity: 0.8; 
 }
 
 .imagem:hover{
-    border: 3px solid #ffffff;
-    transition: 0.1s ease-in-out;
+    border: 3px solid white;
+    box-sizing: border-box;
 }
 
-
+.imagem:hover + .nome {
+    color: white;
+}
 
 .nome{
     font-weight: 200;
@@ -18,6 +37,4 @@
 
 
 
-.perfil{
-    margin: 1em;
-}
+

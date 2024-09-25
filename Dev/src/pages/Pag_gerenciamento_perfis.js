@@ -1,6 +1,6 @@
 import Cards from "../components/Cards";
 import styles  from "../assets/css/Pag_gerenciamento_perfis.module.css";
-import iconePlus from "../assets/img/iconePlus.png";
+
 
 function Pag_gerenciamento_perfis(){
     return(
@@ -8,17 +8,23 @@ function Pag_gerenciamento_perfis(){
         
             < div className={styles.conteudo}>
                 
-                <h1 className={styles.titulo}>Gerenciar perfis:</h1>
+                <h1 className={styles.titulo}>Gerenciar perfis</h1>
                 <div className={styles.perfis}>
                     <Cards  nome="Nome usuário" 
-                    foto="https://via.placeholder.com/150"
-                     />
-                     <Cards nome="Adicionar perfil" 
-                    foto={iconePlus} 
-                     /> 
+                    foto="https://via.placeholder.com/200"
+                    />
+                    <Cards  nome="Nome usuário" 
+                     foto="https://via.placeholder.com/200"
+                    />
+                    <Cards  nome="Nome usuário" 
+                    foto="https://via.placeholder.com/200"
+                    />
+                    <Cards  nome="Nome usuário" 
+                    foto="https://via.placeholder.com/200"
+                    />
+                     
                 </div>
 
-                    <button className={styles.botao}>Concluído</button>
             </div>
 
     )
