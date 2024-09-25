@@ -1,0 +1,42 @@
+.InfoSection {
+    height:1000px;
+    width: 100%;
+    margin-top: 500px; 
+    background-color: #140a4e;
+    /*: skewY(-3deg); Ficou estranho*/
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+  
+}
+
+.InfoSection h1{
+    padding-top: 130px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 50px;
+    text-align: center; 
+}
+
+.InfoSection p{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 50px;
+    text-align: left; 
+    text-indent: 50px;
+}
+
+.container {
+    display: flex; 
+    align-items: center;
+    width: 80%; 
+}
+
+
+.InfoSection img {
+    margin-left: 300px; 
+    padding: 20px;
+    width: 600px;
+    height: 600px; 
+    margin-right: 40px; 
+    border-radius: 20px 
+}
+
