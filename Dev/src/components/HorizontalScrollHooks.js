@@ -42,12 +42,12 @@ const Slider = (props) => {
     const right = [];
 
     for (let i = 0; i < itemsInRow; i++) {
-      // left
+      
       if (sliderHasMoved) {
         if (lowestVisibleIndex + i - itemsInRow < 0) {
           left.push(totalItems - itemsInRow + lowestVisibleIndex + i);
         } else {
-          left.push(i + lowestVisibleIndex - itemsInRow); // issue here
+          left.push(i + lowestVisibleIndex - itemsInRow);
         }
       }
 

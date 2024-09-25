@@ -11,7 +11,7 @@ const ScrollItem = ({ movie, width }) => {
 
     <div className="slider-item" style={{ width: `${width}%` }}>
       <img
-        className="slider-image"
+        className="slider-image rounded-lg"
         src={imgUrl}
         alt={movie}
       />

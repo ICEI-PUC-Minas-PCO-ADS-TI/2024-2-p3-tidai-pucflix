@@ -3,7 +3,7 @@ import ScrollControl from "./HorizontalScroll-Control/HorizontalScroll-Control";
 import ScrollItem from "./HorizontalScroll-Items/HorizontalScroll-Items";
 require("../assets/css/HorizontalScroll.scss")
 
-function HorizontalScroll() {
+function HorizontalScroll(props) {
 
     var movies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
@@ -193,13 +193,15 @@ function HorizontalScroll() {
     }
 
     return (
-        <div className="slider">
+        <div className="slider mt-16">
+            <h1 className="text-white text-3xl font-bold mb-3">{props.title}</h1>
             {sliderHasMoved && (
                 <ScrollControl arrowDirection={"left"} onClick={handlePrev} />
             )}
             <div className="slider-content" style={style}>
                 {renderSliderContent()}
             </div>
+            
             <ScrollControl arrowDirection={"right"} onClick={handleNext} />
         </div>
     );
