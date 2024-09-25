@@ -6,6 +6,13 @@
 
 }
 
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
 .titulo{
     margin-bottom: 1.5em;
     font-size: 3em;
@@ -15,16 +22,16 @@
 
 .botao{
     margin-top: 4em;
-    border: 1px solid  rgba(255, 255, 255, 0.568);
-    color:  rgba(255, 255, 255, 0.568);
-    background-color:  rgba(255, 255, 255, 0.03);
+    color:  rgba(255, 255, 255, 0.668);
+    background-color:  rgba(33, 0, 95, 0.7);
     padding: 1em 2em 1em 2em;
     font-size: 1em;
 }
 
 .botao:hover{
-    border: 1px solid  rgba(255, 255, 255, 0.868);
+    background-color:  rgba(33, 0, 95, 1);
     color:  rgba(255, 255, 255, 0.868);
+    transition: 0s linear;
 } 
 
 

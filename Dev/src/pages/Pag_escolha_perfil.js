@@ -10,10 +10,23 @@ function Pag_escolha_perfil(){
             < div className={styles.conteudo}>
                 
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
+
+                <div className={styles.cards}>
                     <Cards nome="Nome usuário" 
-                    foto="https://via.placeholder.com/150"
+                    foto="https://via.placeholder.com/200"
                      />
-                    <button className={styles.botao}>Gerenciar Perfis</button>
+                     <Cards nome="Nome usuário" 
+                    foto="https://via.placeholder.com/200"
+                     />
+                     <Cards nome="Nome usuário" 
+                    foto="https://via.placeholder.com/200"
+                     />
+                     <Cards nome="Nome usuário" 
+                    foto="https://via.placeholder.com/200"
+                     />
+                </div>
+                    
+                    <a href="#"><button className={styles.botao}>Gerenciar Perfis</button></a>
 
             </div>
 

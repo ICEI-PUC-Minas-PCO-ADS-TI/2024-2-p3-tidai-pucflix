@@ -1,7 +1,9 @@
 .imagem{
-    height: 150px;
+    height: 200px;
     border-radius: 5px;
     box-sizing: border-box;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 .imagem:hover{
@@ -9,7 +11,12 @@
     box-sizing: border-box;
 }
 
+.imagem:hover + .nome {
+    color: white;
+}
+
 .nome{
     font-weight: 200;
     color:  rgba(255, 255, 255, 0.568);
 }
+
