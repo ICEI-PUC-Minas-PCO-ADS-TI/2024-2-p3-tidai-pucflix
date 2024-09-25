@@ -3,6 +3,7 @@
     text-align: center;
     color: rgba(255, 255, 255, 0.968);
     background-color: #212121;
+
 }
 
 .titulo{
@@ -23,7 +24,7 @@
 
 .botao:hover{
     border: 1px solid  rgba(255, 255, 255, 0.868);
-    color:  rgba(255, 255, 255, 0.868);
+    color:  rgba(10, 4, 4, 0.868);
 }
 
 
