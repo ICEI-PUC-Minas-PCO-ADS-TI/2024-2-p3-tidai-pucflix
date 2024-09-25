@@ -1,0 +1,10 @@
+.PopularSection {
+    width: 100%;
+    margin-top: 55px;
+}
+
+.PopularSection h1{
+    font-size: 50px;
+    color: white;
+    text-align: center; 
+}
