@@ -11,7 +11,7 @@
 
 .imagem{
     position: relative;
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
     box-sizing: border-box;
     opacity: 0.7;
@@ -19,8 +19,8 @@
 }
 .sobreposta {
     position: absolute; 
-    top: 75px;
-    left: 80px;
+    top: 100px;
+    left: 105px;
     width: 50px; 
     height: 50px;
     opacity: 0.8; 
