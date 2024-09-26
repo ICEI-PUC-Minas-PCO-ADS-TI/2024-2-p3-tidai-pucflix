@@ -3,6 +3,23 @@ import Header from "../components/Header";
 import styles  from "../assets/css/Pag_escolha_perfil.module.css";
 
 function Pag_escolha_perfil(){
+    const cards = [{
+        nome:'Usuario1',
+        foto:'https://via.placeholder.com/200'
+    },
+    {
+        nome:'Usuario2',
+        foto:'https://via.placeholder.com/200'
+    },
+    {
+        nome:'Usuario3',
+        foto:'https://via.placeholder.com/200'
+    },
+    {
+        nome:'Usuario4',
+        foto:'https://via.placeholder.com/200'
+    }]
+
     return(
         
         <div>
@@ -12,20 +29,14 @@ function Pag_escolha_perfil(){
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
 
                 <div className={styles.cards}>
-                    <Cards nome="Nome usuário" 
-                    foto="https://via.placeholder.com/200"
-                     />
-                     <Cards nome="Nome usuário" 
-                    foto="https://via.placeholder.com/200"
-                     />
-                     <Cards nome="Nome usuário" 
-                    foto="https://via.placeholder.com/200"
-                     />
-                     <Cards nome="Nome usuário" 
-                    foto="https://via.placeholder.com/200"
-                     />
+                    {cards.map(card => (
+                        <Cards  
+                            nome={card.nome} 
+                            foto={card.foto}
+                        />
+                    ))}
                 </div>
-                    
+                
                     <a href="#"><button className={styles.botao}>Gerenciar Perfis</button></a>
 
             </div>
