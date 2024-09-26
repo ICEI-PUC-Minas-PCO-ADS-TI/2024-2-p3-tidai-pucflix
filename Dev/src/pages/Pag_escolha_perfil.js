@@ -5,19 +5,19 @@ import styles  from "../assets/css/Pag_escolha_perfil.module.css";
 function Pag_escolha_perfil(){
     const cards = [{
         nome:'Usuario1',
-        foto:'https://via.placeholder.com/200'
+        foto:'https://via.placeholder.com/250'
     },
     {
         nome:'Usuario2',
-        foto:'https://via.placeholder.com/200'
+        foto:'https://via.placeholder.com/250'
     },
     {
         nome:'Usuario3',
-        foto:'https://via.placeholder.com/200'
+        foto:'https://via.placeholder.com/250'
     },
     {
         nome:'Usuario4',
-        foto:'https://via.placeholder.com/200'
+        foto:'https://via.placeholder.com/250'
     }]
 
     return(

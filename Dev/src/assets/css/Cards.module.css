@@ -1,9 +1,9 @@
 .imagem{
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .imagem:hover{
