@@ -4,16 +4,6 @@ import CarouselContent from "./CarouselContent/CarouselContent";
 
 function Carousel(props) {
 
-    const generatePeerClasses = () => {
-        let peerClasses = '';
-        for (let i = 1; i <= props.slidesQty; i++) {
-            peerClasses += `
-                peer-[&_label:nth-of-type(${i})]/slider${i}:peer-checked/slider${i}:opacity-100
-                peer-[&_label:nth-of-type(${i})]/slider${i}:peer-checked/slider${i}:w-10
-            `;
-        }
-        return peerClasses;
-    };
 
     return (
         <div className="relative w-full h-[70vh] bg-slate-800 overflow-hidden">
@@ -39,17 +29,21 @@ function Carousel(props) {
             </div>
 
             <div
-                className={`absolute w-full flex justify-center gap-2 bottom-12 ${generatePeerClasses()}`}
+                className="absolute w-full flex justify-center gap-2 bottom-12 peer-[&_label:nth-of-type(1)]/slider1:peer-checked/slider1:opacity-100 peer-[&_label:nth-of-type(1)]/slider1:peer-checked/slider1:w-10 peer-[&_label:nth-of-type(2)]/slider2:peer-checked/slider2:opacity-100 peer-[&_label:nth-of-type(2)]/slider2:peer-checked/slider2:w-10 peer-[&_label:nth-of-type(3)]/slider3:peer-checked/slider3:opacity-100 peer-[&_label:nth-of-type(3)]/slider3:peer-checked/slider3:w-10"
             >
+
                 {
                     Array.from({ length: props.slidesQty }).map((_, i) => (
+
                         <label
                             className="block w-8 h-3 bg-white cursor-pointer opacity-50 z-10 transition-all duration-300 ease-in-out hover:scale-125 hover:opacity-100"
                             htmlFor={`slider${i + 1}`}
                         >
                         </label>
+
                     ))
                 }
+
             </div>
         </div>
 
