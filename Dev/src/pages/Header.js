@@ -1,6 +1,7 @@
 function Header(){
     return(
         <header>
+            <div className="logo">PUCFLIX</div>
             <nav>
                 <ul>
                     <li><a href="...">Inicio</a></li>
