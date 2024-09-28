@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -7,18 +6,20 @@ import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
+import styles from '../assets/css/PopUp.module.css';
 
 
 
 function MydModalWithGrid(props) {
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header closeButton>
+      <div className={styles.background}>
+      <Modal.Header closeButton >
         <Modal.Title id="contained-modal-title-vcenter" >
-          Gerenciar Perfis
+          Editar Perfil
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="grid-example">
+      <Modal.Body className="grid-example" >
         <Container>
           <Row>
             <Col xs={8} md={6}>
@@ -33,7 +34,7 @@ function MydModalWithGrid(props) {
           <Row>
             <Col xs={6} md={4}>
             <p>Classificação</p>
-              <Form.Select aria-label="Default select example">
+              <Form.Select >
                 <option value="1">Adulto</option>
                 <option value="2">Kids</option>
               </Form.Select>
@@ -42,28 +43,20 @@ function MydModalWithGrid(props) {
         </Container>
       </Modal.Body>
       <Modal.Footer >
-        <Button variant="success" onClick={props.onHide}>Salvar</Button>
-        <Button variant="danger" onClick={props.onHide}>Excluir perfil</Button>
-        <Button variant="danger" onClick={props.onHide}>Cancelar</Button>
+        <Button className={styles.purple} onClick={props.onHide}>Salvar</Button>
+        <Button className={styles.purple} onClick={props.onHide}>Cancelar</Button>
+        <Button className={styles.purple} onClick={props.onHide}>Excluir perfil</Button>
       </Modal.Footer>
+      </div>
     </Modal>
   );
 }
 
-function PopUp() {
-  const [modalShow, setModalShow] = useState(false);
-
+function PopUp({ show, onHide }) {
   return (
-    <>
-      <Button variant="success" onClick={() => setModalShow(true)}>
-        Abrir Modal
-      </Button>
-
-      <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
-    </>
+    <MydModalWithGrid show={show} onHide={onHide} />
   );
 }
-
 export default PopUp;
 
 

@@ -1,6 +1,5 @@
 import Cards from "../components/Cards";
 import styles  from "../assets/css/Pag_gerenciamento_perfis.module.css";
-import PopUp from "../components/PopUp";
 
 
 
@@ -30,10 +29,10 @@ function Pag_gerenciamento_perfis(){
                     {cards.map(card=>(
                         <Cards  nome={card.nome} 
                         foto={card.foto}
+
                         />
                     ))}  
                 </div>
-                <PopUp />
             </div>
 
     )

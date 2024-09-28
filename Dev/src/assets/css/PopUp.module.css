@@ -1,0 +1,14 @@
+.purple {
+    background-color: #21005F;
+    border-color: #21005F;
+}
+
+.purple:hover{
+    background-color:rgba(33, 0, 95, 0.9);
+    border-color: 1px solid white ;
+}
+
+.background{
+    background-color: #212121 ;
+    color: white;
+}
