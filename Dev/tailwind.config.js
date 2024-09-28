@@ -8,7 +8,7 @@ module.exports = {
         '200px': '200px'
       },
       colors: {
-        'deafaultPurple': '#21005f',
+        'defaultPurple': '#21005f',
         'defaultBg' : '#151515',
       },
     },

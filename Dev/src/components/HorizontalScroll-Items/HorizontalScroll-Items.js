@@ -4,7 +4,7 @@ require ("./HorizontalScroll-Items.scss")
 
 const ScrollItem = ({ movie, width }) => {
 
-  const imgUrl = "https://via.placeholder.com/250x200"
+  const imgUrl = "https://via.placeholder.com/250x250"
 
   return (
 

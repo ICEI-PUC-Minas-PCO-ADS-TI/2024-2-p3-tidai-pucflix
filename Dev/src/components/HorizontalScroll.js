@@ -5,7 +5,7 @@ require("../assets/css/HorizontalScroll.scss")
 
 function HorizontalScroll(props) {
 
-    var movies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    var movies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     const [sliderHasMoved, setSliderHasMoved] = useState(false);
     const [sliderMoveDirection, setSliderMoveDirection] = useState(null);
@@ -21,7 +21,7 @@ function HorizontalScroll(props) {
             } else if (window.innerWidth >= 1000) {
                 setItemsInRow(5);
             } else {
-                setItemsInRow(4);
+                setItemsInRow(3);
             }
         };
 
@@ -193,8 +193,8 @@ function HorizontalScroll(props) {
     }
 
     return (
-        <div className="slider mt-16">
-            <h1 className="text-white text-3xl font-bold mb-3">{props.title}</h1>
+        <div className="slider mt-10 md:mt-16">
+            <h1 className="text-white text-2xl md:text-3xl font-bold mb-3">{props.title}</h1>
             {sliderHasMoved && (
                 <ScrollControl arrowDirection={"left"} onClick={handlePrev} />
             )}

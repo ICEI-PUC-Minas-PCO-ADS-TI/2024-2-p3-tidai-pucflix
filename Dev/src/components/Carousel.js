@@ -1,5 +1,7 @@
 import "../output.css"
 import img1 from "../assets/img/moana-bg-test.png"
+import img2 from "../assets/img/tangled-bg-test.jpg"
+import img3 from "../assets/img/frozen-bg-test.jpg"
 import CarouselContent from "./CarouselContent/CarouselContent";
 
 function Carousel(props) {
@@ -24,8 +26,8 @@ function Carousel(props) {
                 className="relative w-[300vw] h-[100%] flex transition-all duration-500 ease-in-out peer-checked/slider1:-left-0 peer-checked/slider2:-left-[100vw] peer-checked/slider3:-left-[200vw]"
             >
                 <CarouselContent movieTitle="Moana" movieSubtitle="Um Mar de Aventuras" movieDescription="2016 | Diretores: John Musker, Ron Clements | 107 minutos" movieImageBg={img1} />
-                <CarouselContent movieTitle="Moana" movieSubtitle="Um Mar de Aventuras" movieDescription="2016 | Diretores: John Musker, Ron Clements | 107 minutos" movieImageBg={img1} />
-                <CarouselContent movieTitle="Moana" movieSubtitle="Um Mar de Aventuras" movieDescription="2016 | Diretores: John Musker, Ron Clements | 107 minutos" movieImageBg={img1} />
+                <CarouselContent movieTitle="Frozen 2" movieDescription="2020 | Diretores: Jennifer Lee, Chris Buck | 104 minutos" movieImageBg={img3} />
+                <CarouselContent movieTitle="Enrolados" movieDescription="2011 | Diretores: Nathan Greno, Byron Howard | 100 minutos" movieImageBg={img2} />
             </div>
 
             <div
