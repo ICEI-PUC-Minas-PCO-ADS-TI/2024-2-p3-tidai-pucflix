@@ -41,10 +41,10 @@ function MydModalWithGrid(props) {
           </Row>
         </Container>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Cancelar</Button>
-        <Button onClick={props.onHide}>Salvar</Button>
-        <Button onClick={props.onHide}>Excluir perfil</Button>
+      <Modal.Footer >
+        <Button variant="success" onClick={props.onHide}>Salvar</Button>
+        <Button variant="danger" onClick={props.onHide}>Excluir perfil</Button>
+        <Button variant="danger" onClick={props.onHide}>Cancelar</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -55,7 +55,7 @@ function PopUp() {
 
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <Button variant="success" onClick={() => setModalShow(true)}>
         Abrir Modal
       </Button>
 
