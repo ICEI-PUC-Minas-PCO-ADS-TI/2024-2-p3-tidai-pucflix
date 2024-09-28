@@ -1,13 +1,13 @@
 function PopUpF(){
-    const url = 'https://via.placeholder.com/150'
+    const url = 'https://via.placeholder.com/350'
     return(
         <div>
-            <img class="" src={url} alt="..."></img>
+            <img className="" src={url} alt="..."></img>
             <h1>Nome do Filme</h1>
             <p>Descrição..............................</p>
-            <h6>ANO | tempo</h6>
-            <button>Assistir</button>
-            <button>Adicionar aos favoritos</button>
+            <h5>ANO | tempo</h5>
+            <button className="botao">Assistir</button>
+            <button className="botao">Adicionar aos favoritos</button>
         </div>
     )
 }
