@@ -35,6 +35,5 @@
 
 ## Interface do sistema
 
-Visão geral da interação do usuário por meio das telas do sistema. 
-
-> Apresente as principais interfaces da plataforma em sua versão final.
+> [!NOTE]
+> Irá ser implementado ao final do projeto!
