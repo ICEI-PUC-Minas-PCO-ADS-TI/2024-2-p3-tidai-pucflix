@@ -27,14 +27,14 @@ function MydModalWithGrid(props) {
             
             </Col>
             <Col xs={4} md={6} >
-            <Form.Control type="text" placeholder="Nome" />
+            <Form.Control type="text" placeholder="Nome"/>
             </Col>
           </Row>
           <br/>
           <Row>
             <Col xs={6} md={4}>
             <p>Classificação</p>
-              <Form.Select >
+              <Form.Select className={styles.classificacao}>
                 <option value="1">Adulto</option>
                 <option value="2">Kids</option>
               </Form.Select>
