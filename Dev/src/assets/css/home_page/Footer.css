@@ -1,0 +1,36 @@
+/* Footer.css */
+.footer {
+    margin-top: 100px;
+    background-color: #140a4e;
+    color: white; /* Cor do texto */
+    padding: 20px; /* Padding */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-content {
+    margin-bottom: 20px; /* Espaço entre o conteúdo e a parte inferior */
+}
+
+.footer-content P{
+    justify-content: end;
+}
+
+.footer-links {
+    display: flex; /* Flexbox para links */
+    justify-content: center; /* Centraliza os links */
+    gap: 20px; /* Espaço entre os links */
+}
+
+.footer-links a {
+    color: white; 
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s; /* Transição suave para a cor */
+}
+
+.footer-links a:hover {
+    color: #007BFF; 
+}
+
+.footer-bottom {
+    font-size: 14px; 
+}

@@ -1,6 +1,7 @@
 import '../../assets/css/home_page/PopularSection.css';
 import Carrossel from './Carrossel';
 import Pergunta from './Pergunta';
+import Footer from './Footer'; 
 
 function PopularSection() {
     return (
@@ -15,6 +16,7 @@ function PopularSection() {
                 <Pergunta pergunta="?" resposta="R" />
                 <Pergunta pergunta="?" resposta="R" />
             </div>
+            <Footer />
         </div>
 
     );
