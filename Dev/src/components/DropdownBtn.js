@@ -1,5 +1,6 @@
 import "../output.css"
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function DropdownBtn(props) {
 
@@ -47,20 +48,20 @@ function DropdownBtn(props) {
                     >
                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                             <li>
-                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Trocar Usuário
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Gerenciar Perfis
-                                </a>
+                                </Link>
                             </li>
                             <hr></hr>
                             <li>
-                                <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Sair
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
