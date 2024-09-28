@@ -9,7 +9,7 @@ const filmes = importAll(require.context('../../assets/imagens/Carrossel', false
 function Carrossel() {
 
     const carrossel = useRef();
-    const [width, setWidth] = useState(0)
+    const [width,setWidth] = useState(0)
 
     useEffect(() => {
         if (carrossel.current) {
@@ -18,9 +18,9 @@ function Carrossel() {
     }, []);
     return (
 
-        <div className='conteudo-carrossel'>
+       <div className='conteudo-carrossel'>
             < motion.div ref={carrossel} className='carrossel'>
-                < motion.div className='interno' drag="x" dragConstraints={{ right: 0, left: -width }}>
+                < motion.div className='interno' drag="x" dragConstraints={{ right: 0, left: - width }}>
 
                     {filmes.map(filme => (
                         <motion.div className='item' key={filme}>

@@ -1,41 +1,88 @@
 .InfoSection {
-    height:930PX;
+    height: 93vh; 
     width: 100%;
-    margin-top: 500px; 
+    margin-top: 50vh; 
     background-color: #140a4e;
     /*: skewY(-3deg); Ficou estranho*/
     clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
-  
 }
 
-.InfoSection h1{
-    padding-top: 130px;
-    font-size: 50px;
+.InfoSection h1 {
+    padding-top: 13vh; 
+    font-size: 5vh; 
     color: white;
-    margin-bottom: 50px;
-    text-align: center; 
+    margin-bottom: 5vh; 
+    text-align: center;
 }
 
-.InfoSection p{
+.InfoSection p {
     font-size: 30px;
     color: white;
-    margin-bottom: 50px;
-    text-align: left; 
-    text-indent: 50px;
+    margin-bottom: 5vh;
+    text-align: left;
+    text-indent: 5vh; 
 }
 
 .container-info {
     display: flex; 
     align-items: center;
-    width: 80%; 
+    width: 65%;
+    margin:auto;
 }
-
 
 .InfoSection img {
-    margin-left: 300px; 
-    width: 600px;
-    height: 600px; 
-    margin-right: 40px; 
-    border-radius: 20px;
+    width: 60vh; 
+    height: 60vh;
+    margin-right: 4vh; 
+    border-radius: 2vh; 
 }
 
+
+@media (max-width: 1600px){
+    .InfoSection img {
+        width: 54vh; 
+        height: 54vh;
+    }
+    .InfoSection p {
+        font-size: 27px;
+        margin-bottom: 5vh;
+    }
+
+    .container-info {
+        width: 70%;
+    }
+}
+
+@media (max-width: 820px) {
+    .InfoSection {
+        height: 50vh; 
+        margin-top: 11vh; 
+        flex-direction: column; 
+    }
+
+    .container-info {
+        justify-content: center; 
+        width: 90%;
+        margin: auto;
+    }
+
+    .InfoSection img {
+        width: 25vh; 
+        height: 25vh;
+        margin-right: 4vh; 
+        border-radius: 2vh; 
+    }
+
+    .InfoSection h1 {
+        font-size: 3vh; 
+        padding-top: 8vh; 
+    }
+
+    .InfoSection p {
+        font-size: 1.5vh;
+        color: white;
+        margin-bottom: 3vh;
+        text-align: left;
+        text-indent: 5vh; 
+    }
+}

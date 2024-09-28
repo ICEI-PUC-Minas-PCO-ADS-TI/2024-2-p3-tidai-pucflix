@@ -1,58 +1,94 @@
- .BannerImg img{
-    opacity:60%;
-    height:800px;
-    width: 100%;
-    position: absolute; 
-    top: 0; 
-    z-index: 0; 
-  
-    /*transform: scale(1.1); NAO FICOU BOM*/
-  } 
-  
-  header {
-    position: relative; 
-    z-index: 10; 
+.BannerImg img {
+  opacity: 60%;
+  height: 80vh; 
+  width: 100%;
+  position: absolute; 
+  top: 0; 
+  z-index: 0; 
 }
 
-.Card-Branco{
-    width: 52%; 
-    height: 300px; 
-    background-color: whitesmoke; 
-    position: absolute; 
-    top: 40%; 
-    left: 0%; 
-    transform: skewY(-5deg);
+header {
+  position: relative; 
+  z-index: 10; 
+}
+
+.Card-Branco {
+  width: 52%; 
+  height: 30vh; 
+  background-color: whitesmoke; 
+  position: absolute; 
+  top: 40vh; 
+  left: 0%; 
+  transform: skewY(-5deg);
 } 
 
-.Card-Texto{
-  margin-left: 90px;
+.Card-Texto {
+  margin-left: 4vh; 
   text-align: left;
   transform: skewY(3deg);
-  width: 90%; 
-  /*transform: skewY(3deg); Validar __ */
-}
-.Card-Branco p{
-  font-size: 20px;
-  text-indent: 20px;
+  width: 85%; 
 }
 
-.Card-Branco h1{
-  font-size: 35px;
-  margin-top: 40px;
+.Card-Branco p {
+  font-size: 2vh; 
+  text-indent: 2vh; 
 }
 
-.Card-Texto button{
-  padding: 10px 70px;
-  margin-left: 60px;
-  margin-top: 10px;
-  font-size: 23px;
-  background-color: #270db6ce;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+.Card-Branco h1 {
+  font-size: 3.5vh; 
+  margin-top: 4vh; 
+}
+
+.Card-Texto button {
+  padding: 1vh 7vh; 
+  margin-left: 5%; 
+  margin-top: 1vh; 
+  font-size: 2.3vh; 
+  background-color: #270db6ce; 
+  color: white; 
+  border: none; 
+  border-radius: 2vh; 
+  cursor: pointer; 
 }
 
 .Card-Branco button:hover {
   background-color: #000000; 
+}
+
+
+
+@media (max-width: 820px){
+  .BannerImg img {
+    object-fit: cover;
+    height: 56vh; 
+  }
+
+  .Card-Branco {
+    width: 100%; 
+    height: 25vh; 
+    background-color: whitesmoke; 
+    position: relative; 
+    top: 10vh; 
+  } 
+
+  .Card-Branco h1 {
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  .Card-Branco p {
+    font-size: 1.5vh; 
+    text-indent: 1vh; 
+  }
+
+  .Card-Texto button {
+    padding: 1vh 4vh; 
+    margin-left: 10%; 
+    font-size: 2.0vh; 
+
+  }
+
+  .Card-Texto {
+    width: 90%; 
+  }
+  
 }

@@ -1,34 +1,42 @@
 @font-face {
-    font-family: 'Logo';
-    src: format('../fonte/varsity_regular.ttf');
+  font-family: 'Logo';
+  src: format('../fonte/varsity_regular.ttf');
 }
 
 .header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 3%;
-    background-color: rgba(0, 0, 0, 0); 
-    z-index: 10;
-  }
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1vh 3%; 
+  background-color: rgba(0, 0, 0, 0); 
+  z-index: 10;
+}
+
+.header h1 {
+  font-size: 7vh; 
+  font-family: 'Logo';
+  color: white;
+}
+
+.header button {
+  padding: 1vh 3vh; 
+  font-size: 2vh; 
+  background-color: #270db6ce; 
+  color: white; 
+  border: none; 
+  border-radius: 2vh; 
+  cursor: pointer; 
+}
+
+.header button:hover {
+  background-color: #000000; 
+}
+
   
-  .header h1{
-    font-size: 70px;
-    font-family: 'Logo';
-    color: white;
-  }
+
+  @media (max-width: 820px){
+    .header h1 {
+      font-size: 5vh; 
   
-  .header button{
-    padding: 10px 30px;
-    font-size: 20px;
-    background-color: #270db6ce;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    }
   }
-  
-  .header button:hover {
-    background-color: #000000; 
-  }
-  
