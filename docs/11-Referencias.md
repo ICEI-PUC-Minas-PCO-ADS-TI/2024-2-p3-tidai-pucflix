@@ -1,6 +1,6 @@
 # Referências
 
-- **Documentação oficial do React**. Disponível em: https://reactjs.org/docs/getting-started.html
+- **Documentação oficial do React**. Disponível em: https://react.dev/learn
 
 - **Documentação oficial do React Router** para roteamento dinâmico em aplicações React. Disponível em: https://reactrouter.com/
  
