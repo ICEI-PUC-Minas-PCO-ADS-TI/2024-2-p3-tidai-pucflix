@@ -1,4 +1,4 @@
-function PopUp(){
+function PopUpF(){
     const url = 'https://via.placeholder.com/150'
     return(
         <div>
@@ -11,4 +11,4 @@ function PopUp(){
         </div>
     )
 }
-export default PopUp;
+export default PopUpF;
