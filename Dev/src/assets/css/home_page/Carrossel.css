@@ -1,0 +1,34 @@
+.conteudo-carrossel{
+    width: 95%;
+    margin: 0 auto;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel{
+    cursor: grab;
+    overflow: hidden;
+}
+
+.interno{
+    display: flex;
+}
+
+.item{
+    min-width: 400px;
+    min-height: 700px;
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease; 
+}
+.item:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% */
+}
+
+.item img{
+    width: 100%;
+    height: 90%;
+    pointer-events: none;
+}
