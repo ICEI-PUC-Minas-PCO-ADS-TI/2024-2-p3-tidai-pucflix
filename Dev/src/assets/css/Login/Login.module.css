@@ -3,7 +3,7 @@
     background-color: #151515;
 }
 
-.container {
+.containerLogin {
     display: flex; 
     height: 100%;
     width: 100%;
@@ -12,7 +12,7 @@
 .imagem {
     height: 100%;
     width: 50%; 
-    background-image: url('../img/BannerImg.png');
+    background-image: url('../../img/BannerImg.png');
     background-size: cover;
     opacity: 0.8; /* Opacidade */
     z-index: 1; 
@@ -123,7 +123,7 @@ hr {
         height: auto; 
     }
 
-    .container {
+    .containerLogin {
         flex-direction: column; 
         align-items: center; 
         width: 80%; 

@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className="header">
       <img src={Logo} alt='Logo Pucflix'></img>
-      <Link to="/pucflix/login">
+      <Link to="/pucflix/cadastro">
         <button
         onClick={handleReload}
           className="hover:text-gray-500 mt-4 z-10 middle none center mr-4 rounded-lg bg-defaultPurple py-3 px-4 md:px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-deafaultPurple/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

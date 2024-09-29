@@ -10,7 +10,7 @@ function PopularSection() {
             <Carrossel />
 
             <h1>Perguntas</h1>
-            <div className='container'>
+            <div className='containerPopular'>
                 <Pergunta pergunta="O que é a PucFlix?" resposta="A PucFlix é um projeto da faculdade PUC que oferece um catálogo de filmes e séries de graça para os alunos e a comunidade acadêmica." />
                 <Pergunta pergunta="Quanto custa?" resposta="A PucFlix é totalmente gratuita." />
                 <Pergunta pergunta="O que posso assistir?" resposta="Na PucFlix, você pode assistir a uma variedade de filmes e séries de diferentes gêneros, disponíveis para a comunidade acadêmica." />

@@ -1,9 +1,7 @@
 import Cards from "../components/Cards";
-import styles  from "../assets/css/Pag_gerenciamento_perfis.module.css";
+import styles  from "../assets/css/Gerenciamento.module.css";
 
-
-
-function Pag_gerenciamento_perfis(){
+function PagGerenciamentoPerfis(){
     const cards = [{
         nome:'Usuario1',
         foto:'https://via.placeholder.com/250'
@@ -38,4 +36,4 @@ function Pag_gerenciamento_perfis(){
     )
 }
 
-export default Pag_gerenciamento_perfis;
+export default PagGerenciamentoPerfis;

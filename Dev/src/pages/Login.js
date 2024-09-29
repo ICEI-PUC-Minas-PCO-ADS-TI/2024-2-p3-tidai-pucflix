@@ -1,13 +1,13 @@
-import "../assets/css/Login.css"
+import styles from "../assets/css/Login/Login.module.css"
 import logoGoogle from '../assets/img/LogoGoogle.png';
 import logoGit from '../assets/img/LogoGit.png';
 
 function Login() {
     return (
         <div>
-            <div className='Login'>
-                <div className='container'>
-                    <div className='formulario'>
+            <div className={styles.Login}>
+                <div className={styles.containerLogin}>
+                    <div className={styles.formulario}>
                         <h1>Sign In</h1>
                         <form>
     
@@ -18,7 +18,7 @@ function Login() {
                                 <input type="password" id="senha" name="senha" placeholder="Password" required />
                             </div>
                            
-                            <div className="termos">
+                            <div className={styles.termos}>
                                 <input type="checkbox" id="termos" name="termos" required />
                                 <label htmlFor="termos">Remember me</label>
                             </div>
@@ -26,7 +26,7 @@ function Login() {
 
                             <hr></hr>
 
-                            <div className='buttonWith'>
+                            <div className={styles.buttonWith}>
                                 <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
                                     <img style={{width: '25px'}} src={logoGoogle} alt="Google" />
                                     Sign In With Google
@@ -49,7 +49,7 @@ function Login() {
 
 
                     </div>
-                    <div className='imagem'></div>
+                    <div className={styles.imagem}></div>
                 </div>
             </div>
         </div>

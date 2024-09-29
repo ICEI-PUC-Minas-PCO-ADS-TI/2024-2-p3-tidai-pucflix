@@ -1,8 +1,8 @@
 import Cards from "../components/Cards";
-import styles  from "../assets/css/Pag_escolha_perfil.module.css";
+import styles  from "../assets/css/Escolha.module.css";
 import { Link } from "react-router-dom";
 
-function Pag_escolha_perfil(){
+function PagEscolhaPerfil(){
     const cards = [{
         nome:'Usuario1',
         foto:'https://via.placeholder.com/250'
@@ -47,4 +47,4 @@ function Pag_escolha_perfil(){
     )
 }
 
-export default Pag_escolha_perfil;
+export default PagEscolhaPerfil;
