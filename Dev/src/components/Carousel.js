@@ -40,6 +40,7 @@ function Carousel(props) {
                         <label
                             className="block w-8 h-3 bg-white cursor-pointer opacity-50 z-10 transition-all duration-300 ease-in-out hover:scale-125 hover:opacity-100"
                             htmlFor={`slider${i + 1}`}
+                            key={i}
                         >
                         </label>
 

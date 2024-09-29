@@ -1,4 +1,4 @@
-import HorizontalScroll from "../components/HorizontalScroll";
+import HorizontalScroll from "../components/HorizontalScroll.js";
 import Carousel from "../components/Carousel.js";
 import "../output.css"
 
