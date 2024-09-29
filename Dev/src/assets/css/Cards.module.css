@@ -2,6 +2,12 @@
 .perfil{
     margin: 1em;
     position: relative;
+.imagem{
+    height: 250px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .imagem:hover{
@@ -37,8 +43,14 @@
     color:  rgba(255, 255, 255, 0.568);
 }
 
+}
 
+.imagem:hover + .nome {
+    color: white;
+}
 
-
-
+.nome{
+    font-weight: 200;
+    color:  rgba(255, 255, 255, 0.568);
+}
 
