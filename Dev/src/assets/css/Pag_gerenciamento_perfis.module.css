@@ -1,0 +1,22 @@
+.conteudo {
+    padding: 3em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.968);
+    background-color: #212121;
+}
+
+
+.titulo{
+    margin-bottom: 1.5em;
+    font-size: 3em;
+
+}
+.perfis{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+

@@ -1,0 +1,21 @@
+.purple {
+    background-color: rgba(33, 0, 95, 0.8);
+    border-color: #21005F;
+    cursor: pointer;
+}
+
+.purple:hover{
+    background-color:rgba(33, 0, 95, 0.9);
+    border-color: 1px solid white ;
+    cursor: pointer;
+}
+
+.classificacao{
+    border-color: white;
+}
+
+
+.background{
+    background-color: #212121 ;
+    color: white;
+}
