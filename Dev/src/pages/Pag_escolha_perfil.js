@@ -1,6 +1,6 @@
 import Cards from "../components/Cards";
-import Header from "../components/Header";
 import styles  from "../assets/css/Pag_escolha_perfil.module.css";
+import { Link } from "react-router-dom";
 
 function Pag_escolha_perfil(){
     const cards = [{
@@ -23,7 +23,6 @@ function Pag_escolha_perfil(){
     return(
         
         <div>
-            <Header/>
             < div className={styles.conteudo}>
                 
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
@@ -37,7 +36,7 @@ function Pag_escolha_perfil(){
                     ))}
                 </div>
                 
-                    <a href="#"><button className={styles.botao}>Gerenciar Perfis</button></a>
+                    <Link href="#"><button className={styles.botao}>Gerenciar Perfis</button></Link>
 
             </div>
 

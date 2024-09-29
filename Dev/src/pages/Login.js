@@ -1,14 +1,10 @@
-import Header from '../../components/Header';
-import '../../assets/css/Login.css';
-import logoGoogle from '../../assets/img/LogoGoogle.png';
-import logoGit from '../../assets/img/LogoGit.png';
-
-
+import "../assets/css/Login.css"
+import logoGoogle from '../assets/img/LogoGoogle.png';
+import logoGit from '../assets/img/LogoGit.png';
 
 function Login() {
     return (
         <div>
-            <Header />
             <div className='Login'>
                 <div className='container'>
                     <div className='formulario'>
