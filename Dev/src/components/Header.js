@@ -5,7 +5,7 @@ function Header() {
     return (
         <header >
                 <a href="#" className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
-                    <img src={Logo} alt="logo" className="h-12" />
+                    <img src={Logo} alt="logo" />
                 </a>
         </header>
     );

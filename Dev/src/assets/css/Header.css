@@ -7,10 +7,11 @@
 
 header {
     background-color: #1e0450;
-    height: 12vh;
+    height: 10vh;
     padding: 2vh;
 }
 
 header img{
-   margin: 2vh;
+   margin: 1vh;
+   height: 70%; 
 }
