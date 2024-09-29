@@ -99,5 +99,90 @@ hr {
     width: 20px; 
     height: 20px; 
     vertical-align: middle; 
+}
+
+
+@media (max-width: 1000px) {
+    .cadastro {
+        height:100vh;
+        background-color: #151515;
+    }
+
+    header {
+        background-color: transparent;   
+        position: absolute;
+        z-index: 3; 
+        width: 100%;
+        text-align: center; 
+        top: 25px;
+        padding: 0;
+    }
+
+    header img {
+        max-width: 20vh; 
+        height: auto; 
+    }
+
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+        width: 80%; 
+        margin: auto;
+        overflow: hidden; 
+        height: 95vh;
+
+    }
+
+    .imagem {
+        width: 100%; 
+        height: 100%; 
+        position: absolute; 
+        margin: 0;
+        z-index: 1; 
+    }
+
+    .formulario {
+        margin-top: 7vh;
+        width: 100%; 
+        max-width: 500px; 
+        background-color: rgba(21, 21, 21, 0.8); 
+        padding: 20px; 
+        border-radius: 10px; 
+        z-index: 2; 
+    }
+
+    .formulario p{
+
+        margin-top: 1%;
     
+}
+}
+
+
+@media (max-width: 450px) {
+    
+
+    .formulario h1 {
+        text-align: center;
+        margin: 30px;
+        font-size: 5vh;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 1.0vh;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 1.0vh;
+    }
+
+    .formulario p{
+            font-size: 1.4vh;
+            margin-top: 1%;
+        
+    }
 }
