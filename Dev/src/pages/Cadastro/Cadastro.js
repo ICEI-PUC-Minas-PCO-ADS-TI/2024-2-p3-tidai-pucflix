@@ -1,10 +1,13 @@
-import Header from '././components/Header.js';
+import Header from '../../components/Header';
+
 
 function Cadastro(){
     return(
         <div>
             <Header/>
-            <h1>teste</h1>
+            
+            <div className='container'></div>
+            
         </div>
     )
 }

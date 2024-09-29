@@ -3,3 +3,14 @@
 .fontPuc {
     font-family: "bree-serif";
 }
+
+
+header {
+    background-color: #1e0450;
+    height: 12vh;
+    padding: 2vh;
+}
+
+header img{
+   margin: 2vh;
+}
