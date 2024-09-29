@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.fontPuc {
+    font-family: "bree-serif";
+}
+
+
+header {
+    background-color: #1e0450;
+    height: 10vh;
+    padding: 2vh;
+}
+
+header img{
+   margin: 1vh;
+   height: 70%; 
+}
