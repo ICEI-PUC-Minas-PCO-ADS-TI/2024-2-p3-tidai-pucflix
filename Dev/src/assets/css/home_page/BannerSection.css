@@ -40,19 +40,8 @@ header {
 }
 
 .Card-Texto button {
-  padding: 1vh 7vh; 
   margin-left: 5%; 
   margin-top: 1vh; 
-  font-size: 2.3vh; 
-  background-color: #270db6ce; 
-  color: white; 
-  border: none; 
-  border-radius: 2vh; 
-  cursor: pointer; 
-}
-
-.Card-Branco button:hover {
-  background-color: #000000; 
 }
 
 
@@ -82,8 +71,7 @@ header {
 
   .Card-Texto button {
     padding: 1vh 4vh; 
-    margin-left: 10%; 
-    font-size: 2.0vh; 
+    margin-left: 7%; 
 
   }
 

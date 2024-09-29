@@ -1,7 +1,6 @@
 import '../../assets/css/home_page/PopularSection.css';
 import Carrossel from './Carrossel';
 import Pergunta from './Pergunta';
-import Footer from './Footer';
 
 function PopularSection() {
     return (
@@ -16,11 +15,7 @@ function PopularSection() {
                 <Pergunta pergunta="Quanto custa?" resposta="A PucFlix é totalmente gratuita." />
                 <Pergunta pergunta="O que posso assistir?" resposta="Na PucFlix, você pode assistir a uma variedade de filmes e séries de diferentes gêneros, disponíveis para a comunidade acadêmica." />
                 <Pergunta pergunta="A PucFlix é adequada para crianças?" resposta="Sim, a PucFlix oferece conteúdo variado, incluindo filmes e séries adequados para diferentes faixas etárias. No entanto, é importante verificar a classificação indicativa antes de assistir." />
-
-
-
             </div>
-            <Footer />
         </div>
 
     );
