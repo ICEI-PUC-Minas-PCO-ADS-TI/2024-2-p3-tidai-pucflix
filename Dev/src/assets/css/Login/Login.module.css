@@ -1,5 +1,5 @@
 .Login {
-    height: 86vh; 
+    height: 90vh; 
     background-color: #151515;
 }
 
@@ -65,9 +65,11 @@
 
 .formulario button{
     width: 60%;
+    display: flex;
+    justify-content: center;
     background-color: #390c8d;
     color: white;
-    padding: 1.5vh;
+    padding: 1vh;
     border-radius: 6px;
     font-size: 1.4vh;
     border: none;     

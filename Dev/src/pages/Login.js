@@ -1,11 +1,13 @@
 import styles from "../assets/css/Login/Login.module.css"
 import logoGoogle from '../assets/img/LogoGoogle.png';
 import logoGit from '../assets/img/LogoGit.png';
+import Header from '../components/Login/Header';
 import { Link } from "react-router-dom";
 
 function Login() {
     return (
         <div>
+            <Header />
             <div className={styles.Login}>
                 <div className={styles.containerLogin}>
                     <div className={styles.formulario}>
