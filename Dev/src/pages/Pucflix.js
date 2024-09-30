@@ -22,8 +22,8 @@ function Pucflix() {
                     <Route path="/" element={<AuthLayout />}>
                         <Route index element={<HomePage />} />
                     </Route>
-                    <Route path="login" element={<Login />} />
-                    <Route path="cadastro" element={<Cadastro />} />
+                    <Route path="pucflix/login" element={<Login />} />
+                    <Route path="pucflix/cadastro" element={<Cadastro />} />
                     <Route path="pucflix" element={<PainelLayout />} >
                         <Route path="principal" element={<Principal />} />
                         <Route path="favoritos" element={<Favoritos />} />

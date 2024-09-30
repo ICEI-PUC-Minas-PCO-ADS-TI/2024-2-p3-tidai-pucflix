@@ -47,9 +47,11 @@ function Login() {
 
                             <p >
                                 <strong> Ainda nao possui uma conta?</strong>
+                                <Link to="../pucflix/cadastro">
                                 <a href="#" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
                                     Cadastre aqui
                                 </a>
+                                </Link>
                             </p>
 
 
