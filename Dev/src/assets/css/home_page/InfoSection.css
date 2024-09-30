@@ -1,10 +1,10 @@
 .InfoSection {
     height: 93vh; 
     width: 100%;
-    margin-top: 55vh; 
+    margin-top: 56vh; 
     background-color: #140a4e;
     /*: skewY(-3deg); Ficou estranho*/
-    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+    clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0 100%);
 }
 
 .InfoSection h1 {

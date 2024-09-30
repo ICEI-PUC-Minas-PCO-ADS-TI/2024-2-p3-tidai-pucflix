@@ -26,22 +26,26 @@ header {
   margin-left: 4vh; 
   text-align: left;
   transform: skewY(3deg);
-  width: 85%; 
+  width: 95%; 
 }
 
 .Card-Branco p {
-  font-size: 2vh; 
+  font-size: 2.2vh; 
   text-indent: 2vh; 
+  margin: 1vh;
 }
 
 .Card-Branco h1 {
-  font-size: 3.5vh; 
-  margin-top: 4vh; 
+  font-size: 5vh; 
+  margin-top: 3vh; 
 }
 
 .Card-Texto button {
-  margin-left: 5%; 
+  margin-left: 2%; 
   margin-top: 1vh; 
+  font-size: 2.2vh; 
+  padding: 1.3vh 9vh;
+
 }
 
 
