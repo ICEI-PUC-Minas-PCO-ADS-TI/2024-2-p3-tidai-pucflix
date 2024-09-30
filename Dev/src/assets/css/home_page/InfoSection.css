@@ -105,13 +105,14 @@
 
     .InfoSection {
         height: 75vh; 
+        margin-top: 68vh;
     }
 }
 
 @media (max-width: 830px) {
     .InfoSection {
         height: 50vh; 
-        margin-top: 11vh; 
+        margin-top: 18vh; 
         flex-direction: column; 
     }
 

@@ -134,6 +134,24 @@ header {
   }
 }
 
+@media (max-width: 970px){
+  
+  .Card-Branco h1 {
+    font-size: 2.7vh;
+  }
+
+  .Card-Branco p {
+    font-size: 1.5vh; 
+    text-indent: 1vh; 
+  }
+  .Card-Texto button {
+    padding: 1vh 4vh; 
+    margin-left: 3%; 
+    font-size: 1.2vh; 
+
+  }
+}
+
 
 
 @media (max-width: 830px){
@@ -144,10 +162,10 @@ header {
 
   .Card-Branco {
     width: 100%; 
-    height: 25vh; 
+    height: 21vh; 
     background-color: whitesmoke; 
     position: relative; 
-    top: 10vh; 
+    top: 18vh; 
   } 
 
   .Card-Branco h1 {
@@ -155,51 +173,53 @@ header {
     padding-top: 30px;
   }
   .Card-Branco p {
-    font-size: 1.5vh; 
+    font-size: 1.4vh; 
     text-indent: 1vh; 
   }
 
   .Card-Texto button {
     padding: 1vh 4vh; 
-    margin-left: 2%; 
-    font-size: 2.0vh; 
-
-  }
-
-  .Card-Texto {
-    width: 90%; 
-  }
-  
-}
-
-@media (max-width: 450px) {
-
-  .Card-Branco h1 {
-    font-size: 2.7vh; 
-  }
-
-  .Card-Texto {
-    width: 90%; 
-  }
-
-  .Card-Texto button {
-    padding: 1vh 4vh; 
-    margin-left: 2%; 
+    margin-left: 1%; 
     font-size: 1.5vh; 
 
   }
 
-
+  .Card-Texto {
+    width: 95%; 
+  }
+  
 }
 
-@media (max-width: 380px) {
+@media (max-width: 690px) {
+  .Card-Texto button {
+    padding: 1vh 2vh; 
+    margin-left: 4%; 
+    font-size: 1.1vh; 
+  }
+  .Card-Branco p {
+    font-size: 1.2vh; 
+    text-indent: 1vh; 
+  }
 
   .Card-Branco h1 {
-    font-size: 2.1vh; 
+    font-size: 2.3vh; 
+    text-indent: 0.5vh; 
+  }
+
+  .Card-Texto {
+    width: 90%; 
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .Card-Branco h1 {
+    font-size: 1.4vh; 
   }
 
   .Card-Branco p {
-    font-size: 1.3vh; 
+    font-size: 1vh; 
   }
 
   .Card-Texto {
@@ -209,7 +229,7 @@ header {
   .Card-Texto button {
     padding: 1vh 1vh; 
     margin-left: 2%; 
-    font-size: 1.4vh; 
+  
 
   }
 
