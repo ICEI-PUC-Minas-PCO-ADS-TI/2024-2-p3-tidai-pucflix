@@ -1,63 +1,67 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Modal from 'react-bootstrap/Modal';
-import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
-import Image from 'react-bootstrap/Image';
-import styles from '../assets/css/PopUp.module.css';
+import "../output.css"
 
-
-
-function MydModalWithGrid(props) {
+function MyModal({ show, onHide }) {
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <div className={styles.background}>
-      <Modal.Header closeButton >
-        <Modal.Title id="contained-modal-title-vcenter" >
-          Editar Perfil
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body className="grid-example" >
-        <Container>
-          <Row>
-            <Col xs={8} md={6}>
-            <Image src="https://via.placeholder.com/200" thumbnail />
-            
-            </Col>
-            <Col xs={4} md={6} >
-            <Form.Control type="text" placeholder="Nome"/>
-            </Col>
-          </Row>
-          <br/>
-          <Row>
-            <Col xs={6} md={4}>
+    <div
+      className={`text-black ${
+        show ? 'block' : 'hidden'
+      } fixed inset-0 flex items-center justify-center z-50`}
+    >
+      <div className="bg-gray-800 bg-opacity-75 absolute inset-0" onClick={onHide}></div>
+      <div className="bg-white rounded-lg shadow-lg z-10 max-w-lg mx-auto">
+        <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+          <h2 className="text-lg font-medium">Editar Perfil</h2>
+          <button className="text-gray-500" onClick={onHide}>
+            ✕
+          </button>
+        </div>
+        <div className="p-4">
+          <div className="flex items-center mb-4">
+            <div className="w-1/2">
+              <img
+                src="https://via.placeholder.com/200"
+                alt="Profile"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="w-1/2 pl-4">
+              <input
+                type="text"
+                placeholder="Nome"
+                className="w-full p-2 border-b border-black border-t border-r border-l rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="mb-4">
             <p>Classificação</p>
-              <Form.Select className={styles.classificacao}>
-                <option value="1">Adulto</option>
-                <option value="2">Kids</option>
-              </Form.Select>
-            </Col>
-          </Row>
-        </Container>
-      </Modal.Body>
-      <Modal.Footer >
-        <Button className={styles.purple} onClick={props.onHide}>Salvar</Button>
-        <Button className={styles.purple} onClick={props.onHide}>Cancelar</Button>
-        <Button className={styles.purple} onClick={props.onHide}>Excluir perfil</Button>
-      </Modal.Footer>
+            <select className=" p-2 border border-black rounded-lg outline-black">
+              <option value="1">Adulto</option> 
+              <option value="2">Kids</option>
+            </select>
+          </div>
+        </div>
+        <div className="p-4 border-t border-gray-200 flex justify-end space-x-2 gap-2">
+          <button className="bg-defaultPurple text-white px-4 py-2 rounded-lg" onClick={onHide}>
+            Salvar
+          </button>
+          <button className="bg-defaultPurple text-white px-4 py-2 rounded-lg" onClick={onHide}>
+            Cancelar
+          </button>
+          <button className="bg-defaultPurple text-white px-4 py-2 rounded-lg" onClick={onHide}>
+            Excluir perfil
+          </button>
+        </div>
       </div>
-    </Modal>
+    </div>
   );
 }
 
 function PopUp({ show, onHide }) {
-  return (
-    <MydModalWithGrid show={show} onHide={onHide} />
-  );
+  return <MyModal show={show} onHide={onHide} />;
 }
+
 export default PopUp;
+
 
 
 

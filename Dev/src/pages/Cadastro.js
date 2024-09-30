@@ -1,6 +1,8 @@
 import styles from '../assets/css/Cadastro/Cadastro.module.css';
 import logoGoogle from '../assets/img/LogoGoogle.png';
 import logoGit from '../assets/img/LogoGit.png';
+import "../output.css"
+import { Link } from "react-router-dom";
 
 function Cadastro() {
     return (
@@ -26,26 +28,31 @@ function Cadastro() {
                             <input type="checkbox" id="termos" name="termos" required />
                             <label htmlFor="termos">I accept the terms and conditions</label>
                         </div>
-                        <button type="submit">Join Us</button>
+
+                        <button type="submit"><Link to="../pucflix/perfil">Join Us</Link></button>
 
                         <hr></hr>
 
                         <div className={styles.buttonWith}>
+                            <Link to="../pucflix/perfil">
                             <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
                                 <img style={{ width: '25px' }} src={logoGoogle} alt="Google" />
                                 Sign Up With Google
                             </button>
+                            </Link>
+                            <Link to="../pucflix/perfil">
                             <button style={{ alignItems: 'center' }} type="submit">
                                 <img src={logoGit} alt="GitHub" />
                                 Sign Up With GitHub
                             </button>
+                            </Link>
                         </div>
 
                         <p >
                             <strong> Já possui uma conta?</strong>
-                            <a href="#" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
+                            <Link to="../pucflix/login" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
                                 Entre aqui
-                            </a>
+                            </Link>
                         </p>
 
 

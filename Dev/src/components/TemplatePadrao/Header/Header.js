@@ -80,13 +80,11 @@ function Header() {
                             </svg>
                         </button>
 
-                        {/* Mobile Menu Links */}
                         <nav className="flex flex-col mt-8 space-y-4">
                             <Link to="./principal" className="font-medium hover:text-gray-500">Inicio</Link>
                             <Link to="./favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
                             <Link to="#_" className="font-medium hover:text-gray-500">Generos</Link>
 
-                            {/* Search Bar for Mobile */}
                             <div className="flex mt-4">
                                 <input
                                     type="text"
@@ -99,7 +97,6 @@ function Header() {
                                 </span>
                             </div>
 
-                            {/* User Icon for Mobile */}
                             <div className="flex items-center">
                                 <Link
                                     to="#_"

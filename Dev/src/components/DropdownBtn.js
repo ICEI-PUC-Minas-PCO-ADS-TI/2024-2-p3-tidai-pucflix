@@ -28,6 +28,11 @@ function DropdownBtn(props) {
       };
     }, []);
 
+    const handleReload = () => {
+        setTimeout(()=>{
+          window.location.reload()
+        },1000)
+      };
 
         return (
             <div className="relative inline-block text-left" ref={dropdownRef}>
@@ -48,18 +53,17 @@ function DropdownBtn(props) {
                     >
                         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                             <li>
-                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="../pucflix/perfil" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Trocar Usuário
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="../pucflix/perfil/edit" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Gerenciar Perfis
                                 </Link>
                             </li>
-                            <hr></hr>
                             <li>
-                                <Link to="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <Link to="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onClick={handleReload}>
                                     Sair
                                 </Link>
                             </li>

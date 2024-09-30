@@ -1,8 +1,11 @@
 .conteudo {
-    padding: 3em;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.968);
-    background-color: #212121;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color:  white;
+padding: 4%;
+flex: 1;
 
 }
 
