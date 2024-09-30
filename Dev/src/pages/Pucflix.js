@@ -5,6 +5,7 @@ import Favoritos from "./Favoritos.js";
 import HomePage from "./Home_page.js";
 import Login from "./Login.js";
 import Cadastro from "./Cadastro.js";
+import Generos from "./Generos.js";
 import PagEscolhaPerfil from "./Pag_escolha_perfil.js"
 import PagGerenciamentoPerfis from "./Pag_gerenciamento_perfis.js"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -44,6 +45,7 @@ function Pucflix() {
                             <Route path="/pucflix/cadastro" element={<Cadastro />} />
                             <Route path="/pucflix/perfil" element={<PagEscolhaPerfil />} />
                             <Route path="/pucflix/perfil/edit" element={<PagGerenciamentoPerfis />} />
+                            <Route path="/pucflix/generos" element={<Generos />} />
                         </Routes>
                         <Footer />
                     </>

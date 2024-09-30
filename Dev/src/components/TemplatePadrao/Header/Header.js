@@ -50,7 +50,7 @@ function Header() {
                 <nav className="hidden lg:flex lg:flex-row lg:ml-6 pl-6 text-base border-l border-gray-200 lg:mr-auto">
                     <Link to="./pucflix/principal" className="mr-5 font-medium hover:border-b">Inicio</Link>
                     <Link to="./pucflix/favoritos" className="mr-5 font-medium hover:border-b">Favoritos</Link>
-                    <Link href="#_" className="font-medium hover:border-b">Generos</Link>
+                    <Link to="./pucflix/generos" className="font-medium hover:border-b">Generos</Link>
                 </nav>
 
                 <div className="hidden lg:flex items-center h-full">
@@ -81,9 +81,9 @@ function Header() {
                         </button>
 
                         <nav className="flex flex-col mt-8 space-y-4">
-                            <Link to="./principal" className="font-medium hover:text-gray-500">Inicio</Link>
-                            <Link to="./favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
-                            <Link to="#_" className="font-medium hover:text-gray-500">Generos</Link>
+                            <Link to="./pucflix//principal" className="font-medium hover:text-gray-500">Inicio</Link>
+                            <Link to="./pucflix//favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
+                            <Link to="./pucflix/generos" className="font-medium hover:text-gray-500">Generos</Link>
 
                             <div className="flex mt-4">
                                 <input

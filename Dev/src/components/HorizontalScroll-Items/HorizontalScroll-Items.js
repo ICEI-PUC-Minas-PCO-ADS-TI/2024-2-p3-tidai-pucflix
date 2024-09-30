@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card.js";
 
 require ("./HorizontalScroll-Items.scss")
 
@@ -11,7 +12,7 @@ const ScrollItem = ({ movie, width }) => {
 
     <div className="slider-item" style={{ width: `${width}%` }}>
       <img
-        className="slider-image rounded-lg"
+        className="slider-image rounded-lg cursor-pointer"
         src={imgUrl}
         alt={movie}
       />
