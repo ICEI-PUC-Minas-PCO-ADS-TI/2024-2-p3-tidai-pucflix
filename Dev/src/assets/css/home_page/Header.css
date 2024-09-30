@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 2vh 3%; 
+  background-color: rgba(0, 0, 0, 0); 
+  z-index: 10;
+}
+  @media (max-width: 820px){
+    .header h1 {
+      font-size: 5vh; 
+  
+    }
+  }

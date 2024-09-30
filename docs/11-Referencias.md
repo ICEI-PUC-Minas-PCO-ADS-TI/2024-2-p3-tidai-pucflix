@@ -1,19 +1,13 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc.) utilizadas no desenvolvimento do trabalho.
+- **Documentação oficial do React**. Disponível em: https://react.dev/learn
 
-Exemplo:
-
-- BENYON, David. **Interação humano-computador**. 2. ed. São Paulo: Pearson Prentice Hall, 2011.
-
-- CORMEN, Thomas H et al. **Algoritmos:** teoria e prática. 4. ed. Rio de Janeiro: GEN LTC, 2024.
+- **Documentação oficial do React Router** para roteamento dinâmico em aplicações React. Disponível em: https://reactrouter.com/
  
-- ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019.
+- **Documentação oficial do Sass** para estilização com pré-processamento CSS. Disponível em: https://sass-lang.com/documentation
 
-- RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial:** uma abordagem moderna. 4. ed. Rio de Janeiro, RJ: LTC, 2022.
+- **Documentação oficial do Tailwind CSS**, framework utilitário para estilização. Disponível em: https://tailwindcss.com/docs
 
-- SUTHERLAND, Jeffrey Victor; SUTHERLAND, J. J. **Scrum:** a arte de fazer o dobro do trabalho na metade do tempo. Rio de Janeiro, RJ: Sextante, 2019. 254 p.
+- **Comunidade de desenvolvedores** utilizada para resolução de problemas e consultas durante o desenvolvimento do projeto. Disponível em: https://stackoverflow.com/
 
-> **Links úteis**:
-> - [Padrão PUC Minas de normalização ABNT](http://portal.pucminas.br/biblioteca/documentos/GUIA-COMPLETO-ABNT-Elaborar-formatar-trabalho-cientificoNOVO.pdf)
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/)
+- **Referência oficial de desenvolvimento web**, incluindo HTML, CSS e JavaScript. Disponível em: https://developer.mozilla.org/

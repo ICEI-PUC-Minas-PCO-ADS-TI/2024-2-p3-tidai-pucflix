@@ -1,0 +1,25 @@
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex:1;
+
+}
+
+
+.titulo{
+    margin-bottom: 1.5em;
+    font-size: 3em;
+
+}
+.perfis{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
