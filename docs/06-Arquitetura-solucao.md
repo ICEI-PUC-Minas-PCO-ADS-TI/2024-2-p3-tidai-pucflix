@@ -97,10 +97,14 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
-| Front-end      | HTML + CSS + JS + React |
-| Back-end       | Node.js         |
-| SGBD           | MySQL           |
-| Deploy         | Vercel          |
+| Front-end      | HTML + CSS + JS + React + Tailwind + Sass |
+| Back-end       | Node.js + Firebase |
+| APIs | TheMovieDB |
+| IDE | Visual Studio Code|
+| Prototipagem | Figma |
+| Versionamento | Git |
+| SGBD           | Firestore |
+| Deploy         | Vercel |
 
 
 ## Hospedagem
