@@ -1,4 +1,4 @@
-import styles from '../assets/css/Cadastro/Cadastro.module.css';
+import styles from '../assets/css/Login.Cadastro/Cadastro/Cadastro.module.css';
 import logoGoogle from '../assets/img/LogoGoogle.png';
 import logoGit from '../assets/img/LogoGit.png';
 import Header from '../components/Login.Cadastro/Header';

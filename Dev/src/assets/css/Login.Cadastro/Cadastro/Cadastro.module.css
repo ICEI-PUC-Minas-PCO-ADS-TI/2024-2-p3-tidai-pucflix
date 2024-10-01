@@ -12,7 +12,7 @@
 .imagem {
     height: 100%;
     width: 50%; 
-    background-image: url('../../img/BannerImg.png');
+    background-image: url('../../../img/BannerImg.png');
     background-size: cover;
     opacity: 0.8; 
     z-index: 1; 
@@ -27,7 +27,7 @@
 
 .formulario h1 {
     text-align: center;
-    margin: 2%;
+    margin: 18px;
     font-size: 7vh;
 }
 
@@ -65,12 +65,14 @@
 
 .formulario button{
     width: 60%;
+    display: flex;
+    justify-content: center;
     background-color: #390c8d;
     color: white;
-    padding: 1.5vh;
+    padding: 1vh;
     border-radius: 6px;
     font-size: 1.4vh;
-    border: none;     
+    border: none;      
 }
 
 .formulario button:hover{
