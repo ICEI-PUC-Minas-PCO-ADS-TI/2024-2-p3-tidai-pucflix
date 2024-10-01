@@ -1,5 +1,5 @@
 .cadastro {
-    height: 86vh; 
+    height: 90vh; 
     background-color: #151515;
 }
 
@@ -10,6 +10,7 @@
 }
 
 .imagem {
+    height: 100%;
     width: 50%; 
     background-image: url('../../img/BannerImg.png');
     background-size: cover;
