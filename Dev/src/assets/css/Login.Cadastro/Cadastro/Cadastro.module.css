@@ -57,6 +57,7 @@
 
 .termos{
     margin-top: 2vh;
+    width: 100%;
 }
 
 .termos input {
@@ -130,24 +131,20 @@ hr {
     }
 
     .formulario {
-        margin-top: 7vh;
+        margin-top: 5vh;
         width: 100%; 
         max-width: 500px; 
         background-color: rgba(21, 21, 21, 0.8); 
-        padding: 20px; 
         border-radius: 10px; 
         z-index: 2; 
     }
 
-    .formulario p{
-
-        margin-top: 1%;
     
-}
+   
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     
 
     .formulario h1 {
@@ -164,13 +161,16 @@ hr {
 
     .formulario .buttonWith button{
         width: 100%;
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
         font-size: 1.0vh;
     }
 
     .formulario p{
             font-size: 1.4vh;
-            margin-top: 1%;
-        
+    }
+
+    .termos{
+        font-size: 15px;
+        width: 100%;
     }
 }

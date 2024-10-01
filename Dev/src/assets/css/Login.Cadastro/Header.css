@@ -11,12 +11,8 @@ header {
     padding: 1vh;
 }
 
-header img{
-   height: 60%; 
-}
-
-
 @media (max-width: 1000px) {
+    
 header {
     display: flex;
     justify-content: center; 

@@ -106,7 +106,7 @@ hr {
 
 @media (max-width: 1000px) {
     .Login {
-        height:80vh;
+        height:100vh;
         background-color: #151515;
     }
 
@@ -129,11 +129,10 @@ hr {
     }
 
     .formulario {
-        margin-top: 4vh;
+        margin-top: 5vh;
         width: 100%; 
         max-width: 500px; 
         background-color: rgba(21, 21, 21, 0.8); 
-        padding: 20px; 
         border-radius: 10px; 
         z-index: 2; 
     }

@@ -7,7 +7,7 @@ function Header() {
         <header >
             <Link to="/">
                 <a href="#" className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
-                    <img src={Logo} alt="logo" />
+                    <img src={Logo} alt="logo" style={{width:220 }} />
                 </a>
             </Link>
         </header>
