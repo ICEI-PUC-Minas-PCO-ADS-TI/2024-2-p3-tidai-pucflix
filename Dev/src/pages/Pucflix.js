@@ -8,7 +8,6 @@ import Generos from "./Generos.js";
 import PagEscolhaPerfil from "./Pag_escolha_perfil.js"
 import PagGerenciamentoPerfis from "./Pag_gerenciamento_perfis.js"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 import "../output.css"
 import AuthLayout from "../components/layout/auth/AuthLayout.js"
 import PainelLayout from "../components/layout/painel/PainelLayout.js"
