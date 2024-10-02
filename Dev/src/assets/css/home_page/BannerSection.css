@@ -152,8 +152,6 @@ header {
   }
 }
 
-
-
 @media (max-width: 830px){
   .BannerImg img {
     object-fit: cover;

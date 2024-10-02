@@ -1,6 +1,6 @@
 import Logo from "../../assets/img/PucFlix_Logo.png";
 import { Link } from "react-router-dom";
-import '../../assets/css/Login.Cadastro/Header.css';
+import '../../assets/css/login_cadastro/Header.css';
 
 function Header() {
     return (

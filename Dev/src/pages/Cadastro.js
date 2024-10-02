@@ -1,7 +1,7 @@
-import styles from '../assets/css/Login.Cadastro/Cadastro/Cadastro.module.css';
+import styles from '../assets/css/login_cadastro/cadastro/Cadastro.module.css';
 import logoGoogle from '../assets/img/LogoGoogle.png';
 import logoGit from '../assets/img/LogoGit.png';
-import Header from '../components/Login.Cadastro/Header';
+import Header from '../components/login_cadastro/Header';
 import "../output.css"
 import { Link } from "react-router-dom";
 

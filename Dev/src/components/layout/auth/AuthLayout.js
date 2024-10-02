@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../../TemplatePadrao/Footer/Footer.js";
+import Footer from '../../template_padrao/Footer/Footer.js';
+
 
 
 

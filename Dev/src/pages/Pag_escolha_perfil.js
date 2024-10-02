@@ -18,6 +18,10 @@ function PagEscolhaPerfil() {
     {
         nome: 'Usuario4',
         foto: 'https://via.placeholder.com/250'
+    },
+    {
+        nome: 'Usuario5',
+        foto: 'https://via.placeholder.com/250'
     }]
 
     return (

@@ -32,7 +32,7 @@ function Header() {
     return (
 
         <header className="w-full text-white bg-defaultPurple shadow-sm body-font border-b">
-            <div className="container flex flex-wrap items-center justify-between pt-6 p-2 md:p-6 mx-auto">
+            <div className="container-lg flex flex-1 flex-row items-center">
 
                 <Link to="./pucflix/principal" 
                     className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
