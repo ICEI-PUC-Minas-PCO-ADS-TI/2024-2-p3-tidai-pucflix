@@ -1,7 +1,7 @@
 import "../../../output.css"
 import "../Header/Header.css"
-import ProfilePicture from "../../ProfilePicture";
-import DropdownBtn from "../../DropdownBtn";
+import ProfilePicture from "./ProfilePicture";
+import DropdownBtn from "./DropdownBtn";
 import Logo from "../../../assets/img/PucFlix_Logo.png"
 import { IoSearchSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import "../output.css"
+import "../../../output.css"
 import { FaUser } from "react-icons/fa";
 
 function ProfilePicture(props) {

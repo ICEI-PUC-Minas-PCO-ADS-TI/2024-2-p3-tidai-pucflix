@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ScrollControl from "./HorizontalScroll-Control/HorizontalScroll-Control";
 import ScrollItem from "./HorizontalScroll-Items/HorizontalScroll-Items";
-require("../assets/css/HorizontalScroll.scss")
+import "../../assets/css/pagina_principal/HorizontalScroll.scss"
 
 function HorizontalScroll(props) {
 
