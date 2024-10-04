@@ -1,8 +1,8 @@
 import Principal from "./Principal.js";
 //import Favoritos from "./Favoritos.js";
 import HomePage from "./Home_page.js";
-//import Login from "./Login.js";
-//import Cadastro from "./Cadastro.js";
+import Login from "./Login.js";
+import Cadastro from "./Cadastro.js";
 //import Generos from "./Generos.js";
 //import PagEscolhaPerfil from "./Pag_escolha_perfil.js"
 //import PagGerenciamentoPerfis from "./Pag_gerenciamento_perfis.js"
@@ -17,15 +17,17 @@ function Pucflix() {
         <div className="min-h-screen flex flex-col">
             <BrowserRouter basename="/">
                 <Routes>
-                <Route path="/" element={<AuthLayout />}>
+                    <Route path="/" element={<AuthLayout />}>
                         <Route index element={<HomePage />} />
                     </Route>
+                    <Route path="pucflix/login" element={<Login />} />
+                    <Route path="pucflix/cadastro" element={<Cadastro />} />
 
-                <Route path="pucflix/" element={<PainelLayout />} >
-                    <Route path="principal" element={<Principal />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+                    <Route path="pucflix/" element={<PainelLayout />} >
+                        <Route path="principal" element={<Principal />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </div >
     )
 }
