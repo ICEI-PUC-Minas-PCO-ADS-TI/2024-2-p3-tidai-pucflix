@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.fontPuc {
+    font-family: "bree-serif";
+}
+
+
+header {
+    background-color: #1e0450;
+    height: 10vh;
+    padding: 1vh;
+}
+
+@media (max-width: 1000px) {
+    
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;   
+    position: absolute;
+    z-index: 3; 
+    width: 100%;
+    top: 6px;
+    padding: 0;
+}
+
+header img {
+    max-width: 20vh; 
+    height: auto; 
+}
+}
