@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 
 //Realiza a importaçao de todas imagens que estiverem na pasta de imagens do carrossel
 const importAll = r => r.keys().map(r);
-const filmes = importAll(require.context('../../assets/imagens/Carrossel', false, /\.(png|jpe?g|svg)$/));
+const filmes = importAll(require.context('../../assets/img/home_page/Carrossel', false, /\.(png|jpe?g|svg)$/));
 
 function Carrossel() {
 

@@ -1,5 +1,5 @@
 import '../../assets/css/home_page/InfoSection.css';
-import Imagem from '../../assets/imagens/InfoSection.png';
+import Imagem from '../../assets/img/home_page/InfoSection.png';
 
 function InfoSection() {
     return (

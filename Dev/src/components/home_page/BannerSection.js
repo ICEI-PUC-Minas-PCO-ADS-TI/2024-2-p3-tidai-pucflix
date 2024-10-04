@@ -1,6 +1,6 @@
 import '../../assets/css/home_page/BannerSection.css';
 import Header from '../../components/home_page/Header';
-import Imagem from '../../assets/imagens/BannerImg.png';
+import Imagem from '../../assets/img/home_page/BannerImg.png';
 import { Link } from "react-router-dom";
 
 function BannerSection() {
