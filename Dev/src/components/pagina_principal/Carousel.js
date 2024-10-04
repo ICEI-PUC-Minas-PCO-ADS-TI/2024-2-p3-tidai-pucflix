@@ -1,7 +1,7 @@
 import "../../output.css"
-import img1 from "../../assets/img/moana-bg-test.png"
-import img2 from "../../assets/img/tangled-bg-test.jpg"
-import img3 from "../../assets/img/frozen-bg-test.jpg"
+import img1 from "../../assets/img/pagina_principal/moana-bg-test.png"
+import img2 from "../../assets/img/pagina_principal/tangled-bg-test.jpg"
+import img3 from "../../assets/img/pagina_principal/frozen-bg-test.jpg"
 import CarouselContent from "./CarouselContent/CarouselContent";
 
 function Carousel(props) {

@@ -1,19 +1,32 @@
-import Principal from "./pag_Principal";
-import Header from "../components/template_padrao/Header/Header.js"
-import Footer from "../components/template_padrao/Footer/Footer.js";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Principal from "./Principal.js";
+//import Favoritos from "./Favoritos.js";
+import HomePage from "./Home_page.js";
+//import Login from "./Login.js";
+//import Cadastro from "./Cadastro.js";
+//import Generos from "./Generos.js";
+//import PagEscolhaPerfil from "./Pag_escolha_perfil.js"
+//import PagGerenciamentoPerfis from "./Pag_gerenciamento_perfis.js"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../output.css"
+import AuthLayout from "../components/layout/auth/AuthLayout.js"
+import PainelLayout from "../components/layout/painel/PainelLayout.js"
 
 function Pucflix() {
-    return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/principal" element={<Principal />} />
-            </Routes>
-            <Footer />
-        </Router>
 
+    return (
+        <div className="min-h-screen flex flex-col">
+            <BrowserRouter basename="/">
+                <Routes>
+                <Route path="/" element={<AuthLayout />}>
+                        <Route index element={<HomePage />} />
+                    </Route>
+
+                <Route path="pucflix/" element={<PainelLayout />} >
+                    <Route path="principal" element={<Principal />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+        </div >
     )
 }
 

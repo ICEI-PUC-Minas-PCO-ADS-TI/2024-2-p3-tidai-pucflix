@@ -1,0 +1,59 @@
+.PopularSection {
+    width: 100%;
+    margin-top: 55px;
+    color: white;
+}
+
+.PopularSection h1 {
+    margin-top: 0px;
+    font-size: 50px;
+    text-align: center; 
+    margin-bottom: 5%;
+}
+
+.containerPopular {
+    display: block;
+    min-width: 280px;
+    margin: 0 auto; 
+    width: 50%;    
+}
+
+.pergunta {
+    margin: 20px;  
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    text-align: left;
+}
+
+.pergunta h3 {
+    margin: 0;
+}
+
+.pergunta span {
+    font-size: 20px;
+}
+
+.resposta {
+    padding: 20px;
+    text-align: left;
+    color: #ffffff;
+    text-indent: 20px;
+    
+}
+
+.resposta p {
+   margin: 0 auto; 
+}
+
+@media (max-width: 820px) {
+    .PopularSection h1 {
+        font-size: 3vh; 
+    }
+}
+
+

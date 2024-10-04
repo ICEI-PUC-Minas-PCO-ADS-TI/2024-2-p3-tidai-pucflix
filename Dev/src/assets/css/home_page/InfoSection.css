@@ -1,0 +1,223 @@
+.InfoSection {
+    height: 93vh; 
+    width: 100%;
+    margin-top: 55vh; 
+    background-color: #140a4e;
+    /*: skewY(-3deg); Ficou estranho*/
+    clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.InfoSection h1 {
+    padding-top: 13vh; 
+    font-size: 5vh; 
+    color: white;
+    margin-bottom: 5vh; 
+    text-align: center;
+}
+
+.InfoSection p {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5vh;
+    text-align: left;
+    text-indent: 5vh; 
+}
+
+.container-info {
+    display: flex; 
+    align-items: center;
+    width: 65%;
+    margin:auto;
+}
+
+.InfoSection img {
+    width: 60vh; 
+    height: 60vh;
+    margin-right: 4vh; 
+    border-radius: 2vh; 
+}
+
+
+@media (max-width: 1600px){
+    .InfoSection img {
+        width: 54vh; 
+        height: 54vh;
+    }
+    .InfoSection p {
+        font-size: 27px;
+        margin-bottom: 5vh;
+    }
+
+    .container-info {
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 1700px) {
+
+    .InfoSection {
+        height: 98vh; 
+    }
+    .container-info {
+        width: 70%;
+    }
+    .InfoSection p {
+        margin-bottom: 6vh;
+    }
+}
+
+@media (max-width: 1420px) {
+
+    .container-info {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 1320px) {
+
+    .container-info {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .InfoSection h1 {
+        font-size: 4.1vh; 
+       
+    }
+    .container-info {
+        width: 90%;
+    }
+
+    .InfoSection img {
+        width: 38vh; 
+        height: 38vh;
+    }
+
+    .InfoSection p {
+        font-size: 2.2vh;
+    }
+
+    .InfoSection {
+        height: 75vh; 
+    }
+}
+
+@media (max-width: 830px) {
+    .InfoSection {
+        height: 50vh; 
+        margin-top: 11vh; 
+        flex-direction: column; 
+    }
+
+    .container-info {
+        justify-content: center; 
+        width: 90%;
+        margin: auto;
+    }
+
+    .InfoSection img {
+        width: 25vh; 
+        height: 25vh;
+        margin-right: 4vh; 
+        border-radius: 2vh; 
+    }
+
+    .InfoSection h1 {
+        font-size: 3vh; 
+        padding-top: 8vh; 
+    }
+
+    .InfoSection p {
+        font-size: 1.5vh;
+        margin-bottom: 3vh;
+        text-align: left;
+        text-indent: 5vh; 
+    }
+}
+
+@media (max-width: 600px) {
+
+        
+    .InfoSection h1 {
+        font-size: 2.5vh; 
+        padding-top: 6vh; 
+        margin-bottom: 1vh; 
+        
+    }
+
+    .InfoSection {
+        clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0 100%);
+        height: 45vh; 
+
+        
+    }
+
+
+    .InfoSection img {
+        width: 20vh; 
+        height: 26vh;
+        margin-right: 1.8vh; 
+    }
+
+    .InfoSection p {
+        font-size: 1.2vh;
+        margin-bottom: 0vh;
+        text-align: left;
+        text-indent: 1vh; 
+    }
+}
+
+
+@media (max-width: 430px) {
+
+    .InfoSection {
+        height: 40vh; 
+    }    
+    .InfoSection h1 {
+        font-size: 1.9vh;         
+    }
+
+    .InfoSection img {
+        width: 17vh; 
+        height: 23vh;
+        margin-right: 1.8vh; 
+        margin-top: 20px;
+    }
+
+    .InfoSection p {
+        font-size: 1.1vh;
+        margin-bottom: 0vh;
+        text-align: left;
+        text-indent: 1vh; 
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .InfoSection {
+        height: 33vh; 
+    }    
+
+    .InfoSection h1 {
+        font-size: 1.3vh;         
+    }
+
+    .InfoSection img {
+        width: 12vh; 
+        height: 17vh;
+    }
+
+    .InfoSection p {
+        font-size: 1vh;
+        margin-bottom: 0vh;
+        text-align: left;
+        text-indent: 1vh; 
+    }
+}
