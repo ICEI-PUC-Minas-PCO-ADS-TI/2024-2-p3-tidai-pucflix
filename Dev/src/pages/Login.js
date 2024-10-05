@@ -11,48 +11,47 @@ function Login() {
             <div className={styles.Login}>
                 <div className={styles.containerLogin}>
                     <div className={styles.formulario}>
-                        <h1>Sign In</h1>
+                        <h1>Entrar</h1>
                         <form>
 
                             <div>
-                                <input type="email" id="email" name="email" placeholder="E-mail Address" required />
+                                <input type="email" id="email" name="email" placeholder="Endereço de Email" required />
                             </div>
                             <div>
-                                <input type="password" id="senha" name="senha" placeholder="Password" required />
+                                <input type="password" id="senha" name="senha" placeholder="Senha" required />
                             </div>
 
                             <div className={styles.termos}>
                                 <input type="checkbox" id="termos" name="termos" required />
-                                <label htmlFor="termos">Remember me</label>
+                                <label htmlFor="termos">Lembrar de mim</label>
                             </div>
 
-                            <button type="submit"><Link to="../pucflix/perfil">Sign In</Link></button>
+                            <button type="submit"><Link to="../pucflix/perfil">Entrar</Link></button>
 
                             <hr></hr>
 
                             <div className={styles.buttonWith}>
                                 <Link to="../pucflix/perfil">
                                     <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
-                                        <img style={{ width: '25px' }} src={logoGoogle} alt="Google" />
-                                        Sign In With Google
+                                        <img className='w-100' src={logoGoogle} alt="Google" />
+                                        Logar com Google
                                     </button>
                                 </Link>
                                 <Link to="../pucflix/perfil">
                                     <button style={{ alignItems: 'center' }} type="submit">
-                                        <img src={logoGit} alt="GitHub" />
-                                        Sign In With GitHub
+                                        <img className='w-100' src={logoGit} alt="GitHub" />
+                                        Logar com GitHub
                                     </button>
                                 </Link>
                             </div>
-
+                            <div>
                             <p >
                                 <strong> Ainda nao possui uma conta?</strong>
-                                <Link to="../pucflix/cadastro">
-                                <a href="#" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
+                                <Link to="../pucflix/cadastro" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
                                     Cadastre aqui
-                                </a>
                                 </Link>
                             </p>
+                            </div>
 
 
                         </form>

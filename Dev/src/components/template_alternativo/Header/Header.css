@@ -5,6 +5,14 @@
     background-color: #1e0450;
     height: 10vh;
     padding: 1vh;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+}
+
+.Header_login_cadastro img {
+    max-width: 230px;
+    height: auto; 
 }
 
 @media (max-width: 1000px) {
@@ -17,12 +25,12 @@
     position: absolute;
     z-index: 3; 
     width: 100%;
-    top: 6px;
-    padding: 0;
+
 }
 
 .Header_login_cadastro img {
     max-width: 20vh; 
+    width: 100%;
     height: auto; 
 }
 }

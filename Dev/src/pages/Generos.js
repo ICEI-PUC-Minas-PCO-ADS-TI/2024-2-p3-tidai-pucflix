@@ -1,10 +1,10 @@
-import Card from "../components/favoritos_generos/Card";
+import CardGeneros from "../components/favoritos_generos/CardGeneros";
 
 function Generos() {
 
     const imgUrl = "https://via.placeholder.com/300x300"; {/* API de imagens temporaria ate a implmentação das API de filmes */ }
 
-    var Generos = [1,2,3,4,5,6,7,8,9,10];
+    var Generos = ["Terror","Ação","Romance","Suspense","Aventura","Anime","Comédia","Documentario"];
 
     return (
         <div className="h-full w-full flex-1">
@@ -16,8 +16,10 @@ function Generos() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-items-center">
 
                         {
-                            Generos.map(() => (
-                                <Card img={imgUrl} />
+                            Generos.map( i => (
+                                <CardGeneros 
+                                genero={i}
+                                img={imgUrl} />
                             ))
 
                         }

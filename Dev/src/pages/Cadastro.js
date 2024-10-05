@@ -13,40 +13,40 @@ function Cadastro() {
                 <div className={styles.containerCadastro}>
                     <div className={styles.imagem}></div>
                     <div className={styles.formulario}>
-                        <h1>Sign Up</h1>
+                        <h1>Junte-se a nós</h1>
                         <form>
                             <div>
-                                <input type="text" id="firstName" name="firstName" placeholder="Name" required />
+                                <input type="text" id="firstName" name="Primeiro Nome" placeholder="Name" required />
                             </div>
                             <div>
-                                <input type="email" id="email" name="email" placeholder="E-mail Address" required />
+                                <input type="email" id="email" name="email" placeholder="Endereço de Email" required />
                             </div>
                             <div>
-                                <input type="password" id="senha" name="senha" placeholder="Password" required />
+                                <input type="password" id="senha" name="senha" placeholder="Senha" required />
                             </div>
                             <div>
-                                <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirm Password" required />
+                                <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar Senha" required />
                             </div>
                             <div className={styles.termos}>
                                 <input type="checkbox" id="termos" name="termos" required />
-                                <label htmlFor="termos">I accept the terms and conditions</label>
+                                <label htmlFor="termos">Eu aceito os termos e condições</label>
                             </div>
 
-                            <button type="submit"><Link to="../pucflix/perfil">Join Us</Link></button>
+                            <button type="submit"><Link to="../pucflix/perfil">Junte-se</Link></button>
 
                             <hr></hr>
 
                             <div className={styles.buttonWith}>
                                 <Link to="../pucflix/perfil">
                                     <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
-                                        <img style={{ width: '25px' }} src={logoGoogle} alt="Google" />
-                                        Sign Up With Google
+                                        <img className='w-100' src={logoGoogle} alt="Google" />
+                                        Cadastrar com Google
                                     </button>
                                 </Link>
                                 <Link to="../pucflix/perfil">
                                     <button style={{ alignItems: 'center' }} type="submit">
-                                        <img src={logoGit} alt="GitHub" />
-                                        Sign Up With GitHub
+                                        <img className='w-100' src={logoGit} alt="GitHub" />
+                                        Cadastrar com GitHub
                                     </button>
                                 </Link>
                             </div>

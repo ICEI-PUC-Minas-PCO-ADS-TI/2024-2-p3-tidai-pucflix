@@ -24,23 +24,22 @@ function Pag_escolha_perfil() {
 
     return (
 
-        <div>
+        <div className="flex flex-col h-dvh">
             <Header />
             < div className={styles.conteudo}>
 
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
-                <Link to="/pucflix/principal">
-                    <div className={styles.cards}>
-                        {cards.map(card => (
+
+                <div className={styles.cards}>
+                    {cards.map(card => (
+                        <Link to="/pucflix/principal">
                             <Cards
                                 nome={card.nome}
                                 foto={card.foto}
                             />
-                        ))}
-                    </div>
-                </Link>
-
-
+                        </Link>
+                    ))}
+                </div>
 
                 <Link to="/pucflix/perfil/edit">
                     <button className={styles.botao}>Gerenciar Perfis</button>
@@ -48,8 +47,6 @@ function Pag_escolha_perfil() {
 
             </div>
             <Footer />
-
-
 
         </div>
 
