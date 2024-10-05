@@ -3,7 +3,7 @@ import Favoritos from "./Favoritos.js";
 import HomePage from "./Home_page.js";
 import Login from "./Login.js";
 import Cadastro from "./Cadastro.js";
-//import Generos from "./Generos.js";
+import Generos from "./Generos.js";
 import PagEscolhaPerfil from "./Escolha_perfil.js"
 import PagGerenciamentoPerfis from "./Gerenciamento_perfis.js"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -28,6 +28,7 @@ function Pucflix() {
                     <Route path="pucflix/" element={<PainelLayout />} >
                         <Route path="principal" element={<Principal />} />
                         <Route path="favoritos" element={<Favoritos />} />
+                        <Route path="generos" element={<Generos />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

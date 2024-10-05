@@ -51,7 +51,7 @@ function Header() {
                 <nav className="hidden lg:flex lg:flex-row lg:ml-6 pl-6 text-base border-l border-gray-200 lg:mr-auto">
                     <Link to="./principal" className="mr-5 font-medium hover:border-b">Inicio</Link>
                     <Link to="./favoritos" className="mr-5 font-medium hover:border-b">Favoritos</Link>
-                    <Link href="#_" className="font-medium hover:border-b">Generos</Link>
+                    <Link to="./generos" className="font-medium hover:border-b">Generos</Link>
                 </nav>
 
                 <div className="hidden lg:flex items-center h-full">
