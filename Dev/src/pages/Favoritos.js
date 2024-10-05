@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import Card from "../components/favoritos/Card";
 
 function Favoritos() {
 

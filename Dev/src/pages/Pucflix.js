@@ -1,5 +1,5 @@
 import Principal from "./Principal.js";
-//import Favoritos from "./Favoritos.js";
+import Favoritos from "./Favoritos.js";
 import HomePage from "./Home_page.js";
 import Login from "./Login.js";
 import Cadastro from "./Cadastro.js";
@@ -27,6 +27,7 @@ function Pucflix() {
 
                     <Route path="pucflix/" element={<PainelLayout />} >
                         <Route path="principal" element={<Principal />} />
+                        <Route path="favoritos" element={<Favoritos />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
