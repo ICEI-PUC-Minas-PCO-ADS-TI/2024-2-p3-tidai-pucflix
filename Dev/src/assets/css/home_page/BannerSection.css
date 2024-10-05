@@ -213,16 +213,25 @@
   
   @media (max-width: 450px) {
   
+    .Card-Branco {
+      transform: skewY(0deg);
+      height: 100%; 
+      display: flex;
+      justify-content: center;
+    }
     .Card-Branco h1 {
-      font-size: 1.4vh; 
+      font-size: 1rem;
+      font-weight: 500; 
     }
   
     .Card-Branco p {
-      font-size: 1vh; 
+      font-size: 0.8rem; 
     }
   
     .Card-Texto {
-      width: 85%; 
+      width: 90%; 
+      transform: skewY(0deg);
+      margin: 0;
     }
   
     .Card-Texto button {

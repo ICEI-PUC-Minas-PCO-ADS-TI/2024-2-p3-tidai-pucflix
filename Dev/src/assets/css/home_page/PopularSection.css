@@ -56,3 +56,14 @@
     }
 }
 
+@media (max-width: 450px) {
+    .PopularSection h1 {
+        font-size: 1.9vh; 
+        font-weight: 500;
+    }
+
+    .container {
+        width: 90%;    
+    }
+}
+

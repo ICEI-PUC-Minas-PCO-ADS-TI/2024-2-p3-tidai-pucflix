@@ -3,7 +3,6 @@
     width: 100%;
     margin-top: 56vh; 
     background-color: #140a4e;
-    /*: skewY(-3deg); Ficou estranho*/
     clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0 100%);
 }
 
@@ -194,49 +193,56 @@
 @media (max-width: 450px) {
 
     .InfoSection {
-        height: 40vh; 
+    background-color: #140a4e;
+    clip-path: unset;
+    box-sizing: border-box;
+}
+
+    .InfoSection {
+        padding-top: 20px;
+        height: 100%;
+        padding-bottom: 20px;
     }    
     .InfoSection h1 {
         font-size: 1.9vh;
+        font-weight: 500;
         margin-bottom: 2vh;       
-        padding-top: 6vh;   
+        padding-top: 30px;   
     }
 
     .InfoSection img {
-        width: 17vh; 
-        height: 23vh;
-        margin-right: 1.8vh; 
-        margin-top: 20px;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
     }
 
     .InfoSection p {
-        font-size: 1.1vh;
+        margin: 20px 0px;
+        font-size: 1rem;
+        padding: 0px 10px;
         margin-bottom: 0vh;
-        text-align: left;
-        text-indent: 1vh; 
+        text-align: center;
+        text-align: justify; 
+    }
+    .container-info {
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin:auto;
     }
 }
 
 
 @media (max-width: 390px) {
 
-    .InfoSection {
-        height: 33vh; 
-    }    
-
-    .InfoSection h1 {
-        font-size: 1.3vh;         
-    }
-
-    .InfoSection img {
-        width: 12vh; 
-        height: 17vh;
-    }
-
     .InfoSection p {
-        font-size: 1vh;
+        margin: 20px 0px;
+        font-size: 0.8rem;
+        padding: 0px 10px;
         margin-bottom: 0vh;
-        text-align: left;
-        text-indent: 1vh; 
+        text-align: center;
+        text-align: justify; 
     }
 }

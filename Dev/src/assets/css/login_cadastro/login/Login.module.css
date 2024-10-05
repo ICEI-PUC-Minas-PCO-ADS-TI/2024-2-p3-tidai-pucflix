@@ -1,4 +1,5 @@
 .Login {
+    min-width: 250px;
     height: 90vh; 
     background-color: #151515;
 }
@@ -105,6 +106,13 @@ hr {
 
 
 @media (max-width: 1000px) {
+
+    .formulario h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 5vh;
+    }
+
     .Login {
         height:100vh;
         background-color: #151515;
@@ -113,10 +121,10 @@ hr {
     .containerLogin {
         flex-direction: column; 
         align-items: center; 
-        width: 80%; 
         margin: auto;
         overflow: hidden; 
         height: 95vh;
+        padding: 0px 10px;
 
     }
 
@@ -129,7 +137,7 @@ hr {
     }
 
     .formulario {
-        margin-top: 5vh;
+        margin-top: 7vh;
         width: 100%; 
         max-width: 500px; 
         background-color: rgba(21, 21, 21, 0.8); 
@@ -145,22 +153,24 @@ hr {
 }
 
 
-@media (max-width: 470px) {
+@media (max-width: 550px) {
     
     .formulario h1 {
+        text-align: center;
+        margin: 30px;
         font-size: 5vh;
     }
 
     .formulario .buttonWith button{
         width: 100%;
         margin-bottom: 2vh;
-        font-size: 1.0vh;
+        font-size: 0.8rem;
     }
 
     .formulario .buttonWith button{
         width: 100%;
         margin-bottom: 2vh;
-        font-size: 1.0vh;
+        font-size: 0.8rem;
     }
 
     .formulario p{
@@ -169,4 +179,38 @@ hr {
         
     }
 
+}
+
+@media (max-width: 400px) {
+    
+    .formulario div {
+        width: 80%;
+    }
+
+    .formulario h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 2rem;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 1vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario p{
+            font-size: 1.4vh;
+    }
+
+    .termos{
+        font-size: 15px;
+        width: 100%;
+    }
 }

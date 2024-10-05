@@ -1,17 +1,21 @@
 body{
     background-color: #212121;
+    min-width: 250px;
 }
 
 .conteudo {
-    padding: 7.8em;
+    margin-top: 80px;
     text-align: center;
     color: rgba(255, 255, 255, 0.968);
+    flex: 1;
+    padding: 0px 20px;
 }
 
 .cards{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 

@@ -1,22 +1,9 @@
-.imagem{
-    height: 250px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.imagem:hover{
-    border: 3px solid white;
-    box-sizing: border-box;
-}
-
-.imagem:hover + .nome {
-    color: white;
-}
-
 .nome{
-    font-weight: 200;
+    font-weight: 400;
+    font-size: 1.2rem;
     color:  rgba(255, 255, 255, 0.568);
 }
 
+.imagem {
+    border-radius: 10px;
+}
