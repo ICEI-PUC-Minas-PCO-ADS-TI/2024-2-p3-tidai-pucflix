@@ -1,4 +1,4 @@
-import styles  from "../assets/css/Cards.module.css";
+import styles  from "../../assets/css/pagina_escolha_perfil/Cards.module.css"
 
 function Cards({nome,foto}){
     return(

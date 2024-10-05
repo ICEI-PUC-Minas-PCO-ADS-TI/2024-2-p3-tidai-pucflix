@@ -1,9 +1,12 @@
+body{
+    background-color: #212121;
+}
+
 .conteudo {
-    padding: 3em;
+    padding: 6.7em;
     text-align: center;
     color: rgba(255, 255, 255, 0.968);
-    background-color: #212121;
-
+    margin-bottom: 0;
 }
 
 .cards{

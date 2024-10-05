@@ -1,6 +1,7 @@
 import Cards from "../components/pagina_escolha_perfil/Cards";
-import Header from "../components/Header";
-import styles  from "../assets/css/Pag_escolha_perfil.module.css";
+import Header from '../components/template_alternativo/Header/Header.js';
+import Footer from '../components/template_padrao/Footer/Footer.js';
+import styles  from "../assets/css/pagina_escolha_perfil/Pag_escolha_perfil.module.css";
 
 function Pag_escolha_perfil(){
     const cards = [{
@@ -38,8 +39,10 @@ function Pag_escolha_perfil(){
                 </div>
                 
                     <a href="#"><button className={styles.botao}>Gerenciar Perfis</button></a>
-
+                  
             </div>
+            <Footer />
+
 
             
         </div>
