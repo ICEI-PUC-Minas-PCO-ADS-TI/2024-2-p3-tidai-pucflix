@@ -6,6 +6,7 @@ import Logo from "../../../assets/img/PucFlix_Logo.png"
 import { IoSearchSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function Header() {
 
@@ -33,9 +34,11 @@ function Header() {
 
         <header className="w-full text-white bg-defaultPurple shadow-sm body-font border-b">
             <div className="container flex flex-wrap items-center justify-between pt-6 p-2 md:p-6 mx-auto">
-                <a href="#" className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
-                    <img src={Logo} alt="logo" className="h-12" />
-                </a>
+
+                <Link to="/pucflix" 
+                    className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
+                        <img src={Logo} alt="logo" className="h-12" />
+                </Link>
 
                 <div className="lg:hidden">
                     <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -46,9 +49,9 @@ function Header() {
                 </div>
 
                 <nav className="hidden lg:flex lg:flex-row lg:ml-6 pl-6 text-base border-l border-gray-200 lg:mr-auto">
-                    <a href="./principal" className="mr-5 font-medium hover:border-b">Inicio</a>
-                    <a href="#_" className="mr-5 font-medium hover:border-b">Favoritos</a>
-                    <a href="#_" className="font-medium hover:border-b">Generos</a>
+                    <Link to="./principal" className="mr-5 font-medium hover:border-b">Inicio</Link>
+                    <Link to="./favoritos" className="mr-5 font-medium hover:border-b">Favoritos</Link>
+                    <Link href="#_" className="font-medium hover:border-b">Generos</Link>
                 </nav>
 
                 <div className="hidden lg:flex items-center h-full">
@@ -80,9 +83,9 @@ function Header() {
 
                         {/* Mobile Menu Links */}
                         <nav className="flex flex-col mt-8 space-y-4">
-                            <a href="./principal" className="font-medium hover:text-gray-500">Inicio</a>
-                            <a href="#_" className="font-medium hover:text-gray-500">Favoritos</a>
-                            <a href="#_" className="font-medium hover:text-gray-500">Generos</a>
+                            <Link to="./principal" className="font-medium hover:text-gray-500">Inicio</Link>
+                            <Link to="./favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
+                            <Link to="#_" className="font-medium hover:text-gray-500">Generos</Link>
 
                             {/* Search Bar for Mobile */}
                             <div className="flex mt-4">
@@ -99,12 +102,12 @@ function Header() {
 
                             {/* User Icon for Mobile */}
                             <div className="flex items-center">
-                                <a
-                                    href="#_"
+                                <Link
+                                    to="#_"
                                     className="rounded-full px-3 py-3 text-lg font-bold text-black transition-all duration-150 bg-white hover:text-gray-500 mt-4"
                                 >
                                     <FaUser />
-                                </a>
+                                </Link>
                             </div>
                         </nav>
                     </div>
