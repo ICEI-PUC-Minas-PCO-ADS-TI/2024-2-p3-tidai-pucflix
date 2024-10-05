@@ -1,4 +1,4 @@
-import Cards from "../components/Cards";
+import Cards from "../components/pagina_escolha_perfil/Cards";
 import Header from "../components/Header";
 import styles  from "../assets/css/Pag_escolha_perfil.module.css";
 
