@@ -5,7 +5,7 @@ import Login from "./Login.js";
 import Cadastro from "./Cadastro.js";
 //import Generos from "./Generos.js";
 import PagEscolhaPerfil from "./Escolha_perfil.js"
-//import PagGerenciamentoPerfis from "./Pag_gerenciamento_perfis.js"
+import PagGerenciamentoPerfis from "./Gerenciamento_perfis.js"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../output.css"
 import AuthLayout from "../components/layout/auth/AuthLayout.js"
@@ -23,6 +23,7 @@ function Pucflix() {
                     <Route path="pucflix/login" element={<Login />} />
                     <Route path="pucflix/cadastro" element={<Cadastro />} />
                     <Route path="pucflix/perfil" element={<PagEscolhaPerfil />} />
+                    <Route path="pucflix/perfil/edit" element={<PagGerenciamentoPerfis />} /> 
 
                     <Route path="pucflix/" element={<PainelLayout />} >
                         <Route path="principal" element={<Principal />} />
