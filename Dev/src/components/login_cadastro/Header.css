@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
-.fontPuc {
-    font-family: "bree-serif";
-}
 
-
-header {
+.Header_login_cadastro {
     background-color: #1e0450;
     height: 10vh;
     padding: 1vh;
@@ -13,7 +9,7 @@ header {
 
 @media (max-width: 1000px) {
     
-header {
+.Header_login_cadastro {
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -25,7 +21,7 @@ header {
     padding: 0;
 }
 
-header img {
+.Header_login_cadastro img {
     max-width: 20vh; 
     height: auto; 
 }

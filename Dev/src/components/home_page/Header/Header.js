@@ -1,6 +1,6 @@
-import '../../assets/css/home_page/Header.css';
-import Logo from "../../assets/img/PucFlix_Logo.png"
-import "../../output.css"
+import '../Header/Header.css';
+import Logo from "../../../assets/img/PucFlix_Logo.png"
+import "../../../../src/output.css"
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -12,7 +12,7 @@ function Header() {
   };
 
   return (
-    <header className="header">
+    <header className="Header_home">
       <img src={Logo} alt='Logo Pucflix'></img>
       <Link to="/pucflix/cadastro">
         <button
