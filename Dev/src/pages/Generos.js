@@ -11,7 +11,7 @@ function Generos() {
             <div className="container flex flex-wrap justify-between pt-6 p-2 md:p-6 mx-auto h-full flex-col">
                 <h1
                     className="text-white text-2xl sm:text-4xl font-semibold my-6"
-                >Terror</h1>
+                >Escolha um genero</h1>
                 <div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-items-center">
 
