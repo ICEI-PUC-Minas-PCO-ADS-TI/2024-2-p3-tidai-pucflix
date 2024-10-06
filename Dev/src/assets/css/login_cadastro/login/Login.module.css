@@ -45,6 +45,14 @@
     align-items: center;    
 }
 
+.errorMessage {
+    margin-bottom: 0px !important;
+    text-align: center;
+    color: red;
+    margin-top: 4px;
+    display: none;
+}
+
 .formulario input {
     border-radius: 6px;
     width: 100%; 
