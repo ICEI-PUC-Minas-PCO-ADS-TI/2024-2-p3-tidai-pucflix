@@ -1,0 +1,248 @@
+.InfoSection {
+    height: 93vh; 
+    width: 100%;
+    margin-top: 56vh; 
+    background-color: #140a4e;
+    clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.InfoSection h1 {
+    padding-top: 13vh; 
+    font-size: 5vh; 
+    color: white;
+    margin-bottom: 5vh; 
+    text-align: center;
+}
+
+.InfoSection p {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5vh;
+    text-align: left;
+    text-indent: 5vh; 
+}
+
+.container-info {
+    display: flex; 
+    align-items: center;
+    width: 65%;
+    margin:auto;
+}
+
+.InfoSection img {
+    width: 60vh; 
+    height: 60vh;
+    margin-right: 4vh; 
+    border-radius: 2vh; 
+}
+
+
+
+
+
+@media (max-width: 1700px) {
+
+    .InfoSection {
+        height: 92vh; 
+    }
+    .container-info {
+        width: 70%;
+    }
+    
+    .InfoSection img {
+        width: 54vh; 
+        height: 54vh;
+    }
+    .InfoSection p {
+        font-size: 27px;
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-width: 1480px) {
+
+    .container-info {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 1320px) {
+
+    .container-info {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .InfoSection h1 {
+        font-size: 4.1vh; 
+       
+    }
+    .container-info {
+        width: 90%;
+    }
+
+    .InfoSection img {
+        width: 38vh; 
+        height: 38vh;
+    }
+
+    .InfoSection p {
+        font-size: 2.2vh;
+    }
+
+    .InfoSection {
+        height: 75vh; 
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .InfoSection h1 {
+        font-size: 3.4vh; 
+       
+    }
+ 
+
+    .InfoSection img {
+        width: 33vh; 
+        height: 33vh;
+    }
+
+    .InfoSection p {
+        font-size: 1.9vh;
+    }
+
+    .InfoSection {
+        height: 64vh; 
+        margin-top: 60vh;
+    }
+}
+
+@media (max-width: 830px) {
+    .InfoSection {
+        height: 50vh; 
+        margin-top: 18vh; 
+        flex-direction: column; 
+    }
+
+    .container-info {
+        justify-content: center; 
+        width: 90%;
+        margin: auto;
+    }
+
+    .InfoSection img {
+        width: 25vh; 
+        height: 25vh;
+        margin-right: 4vh; 
+        border-radius: 2vh; 
+    }
+
+    .InfoSection h1 {
+        font-size: 3vh; 
+        padding-top: 8vh; 
+    }
+
+    .InfoSection p {
+        font-size: 1.5vh;
+        margin-bottom: 3vh;
+        text-align: left;
+        text-indent: 5vh; 
+    }
+}
+
+@media (max-width: 620px) {
+
+        
+    .InfoSection h1 {
+        font-size: 2.2vh; 
+        padding-top: 8vh; 
+        margin-bottom: 4vh; 
+        
+    }
+
+    .InfoSection {
+        
+        height: 45vh; 
+
+        
+    }
+
+
+    .InfoSection img {
+        width: 20vh; 
+        height: 22vh;
+        margin-right: 1.8vh; 
+    }
+
+    .InfoSection p {
+        font-size: 1.2vh;
+        margin-bottom: 0vh;
+        text-align: left;
+        text-indent: 1vh; 
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .InfoSection {
+    background-color: #140a4e;
+    clip-path: unset;
+    box-sizing: border-box;
+}
+
+    .InfoSection {
+        padding-top: 20px;
+        height: 100%;
+        padding-bottom: 20px;
+    }    
+    .InfoSection h1 {
+        font-size: 1.9vh;
+        font-weight: 500;
+        margin-bottom: 2vh;       
+        padding-top: 30px;   
+    }
+
+    .InfoSection img {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+
+    .InfoSection p {
+        margin: 20px 0px;
+        font-size: 1rem;
+        padding: 0px 10px;
+        margin-bottom: 0vh;
+        text-align: center;
+        text-align: justify; 
+    }
+    .container-info {
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin:auto;
+    }
+}
+
+
+@media (max-width: 390px) {
+
+    .InfoSection p {
+        margin: 20px 0px;
+        font-size: 0.8rem;
+        padding: 0px 10px;
+        margin-bottom: 0vh;
+        text-align: center;
+        text-align: justify; 
+    }
+}

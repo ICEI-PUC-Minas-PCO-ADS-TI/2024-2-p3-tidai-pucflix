@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+
+.Header_login_cadastro {
+    background-color: #1e0450;
+    height: 10dvh;
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+}
+
+.Header_login_cadastro img {
+    max-width: 230px;
+    height: auto; 
+}
+
+@media (max-width: 1000px) {
+    
+.Header_login_cadastro {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;   
+    position: absolute;
+    z-index: 3; 
+    width: 100%;
+
+}
+
+.Header_login_cadastro img {
+    max-width: 20vh; 
+    width: 100%;
+    height: auto; 
+}
+}
