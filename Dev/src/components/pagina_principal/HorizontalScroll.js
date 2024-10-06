@@ -270,7 +270,7 @@ function HorizontalScroll(props) {
                                             type="button"
                                             onClick={() => setShowModal(false)}
                                         >
-                                            Adicioanr aos favoritos
+                                            Adicionar aos favoritos
                                         </button>
                                 </div>
                             </div>

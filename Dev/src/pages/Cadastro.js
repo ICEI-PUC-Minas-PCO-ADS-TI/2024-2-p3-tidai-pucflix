@@ -16,7 +16,7 @@ function Cadastro() {
                         <h1>Junte-se a nós</h1>
                         <form>
                             <div>
-                                <input type="text" id="firstName" name="Primeiro Nome" placeholder="Name" required />
+                                <input type="text" id="firstName" name="Primeiro Nome" placeholder="Nome" required />
                             </div>
                             <div>
                                 <input type="email" id="email" name="email" placeholder="Endereço de Email" required />
