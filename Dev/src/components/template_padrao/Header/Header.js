@@ -74,7 +74,7 @@ function Header() {
 
             {menuOpen && (
                 <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-75">
-                    <div className="relative w-72 h-full bg-defaultPurple p-4">
+                    <div className="z-50 relative w-72 h-full bg-defaultPurple p-4">
                         <button onClick={toggleMenu} className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 focus:outline-none">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>

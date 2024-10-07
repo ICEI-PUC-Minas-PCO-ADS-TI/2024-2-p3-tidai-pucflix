@@ -6,7 +6,7 @@ function CarouselContent(props) {
 
                     <div className="absolute inset-0 bg-gray-950 opacity-55"></div>
 
-                    <div className="ml-[10%] relative z-10 p-6 md:p-0">
+                    <div className="ml-[10%] relative p-6 md:p-0">
                         <h1 className="text-white text-6xl font-bold">{props.movieTitle}</h1>
                         <h3 className="text-white text-5xl font-normal">{props.movieSubtitle}</h3>
                         <p className="text-white text-1xl font-semibold mt-4">{props.movieDescription}</p>
