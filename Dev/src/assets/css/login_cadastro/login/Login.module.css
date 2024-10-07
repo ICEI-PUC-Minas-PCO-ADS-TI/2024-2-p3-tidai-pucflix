@@ -1,0 +1,224 @@
+.Login {
+    min-width: 250px;
+    height: 90vh; 
+    background-color: #151515;
+}
+
+.containerLogin {
+    display: flex; 
+    height: 100%;
+    width: 100%;
+}
+
+.imagem {
+    height: 100%;
+    width: 50%; 
+    background-image: url('../../../img/home_page/BannerImg.png');
+    background-size: cover;
+    opacity: 0.8; 
+    z-index: 1; 
+}
+
+.formulario {
+    height: 100%;
+    width: 50%; 
+    z-index: 2; 
+    color: whitesmoke;
+}
+
+.formulario h1 {
+    text-align: center;
+    margin: 65px;
+    font-size: 7vh;
+}
+
+.formulario form {
+    display: flex;            
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;  
+}
+
+.formulario div {
+    margin-bottom: 20px;
+    width: 60%;
+    align-items: center;    
+}
+
+.errorMessage {
+    margin-bottom: 0px !important;
+    text-align: center;
+    color: red;
+    margin-top: 4px;
+    display: none;
+}
+
+.formulario input {
+    border-radius: 6px;
+    width: 100%; 
+    padding: 1vh;
+}
+
+.formulario input::placeholder {
+    color: #b0b0b0; 
+    opacity: 1; 
+}
+
+.termos{
+    margin-top: 2vh;
+}
+
+.termos input {
+    width: 6%;
+}
+
+.formulario button{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    background-color: #390c8d;
+    color: white;
+    padding: 1vh;
+    border-radius: 6px;
+    font-size: 1.4vh;
+    border: none;     
+}
+
+.formulario button:hover{
+    cursor: pointer;
+}
+
+hr {
+    width: 60%;               
+    height: 2px;             
+    background-color: #390c8d; 
+    border: none;            
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+
+.formulario .buttonWith button{
+    width: 100%;
+    margin-bottom: 2vh;
+    font-size: 1.5vh;
+}
+
+
+.formulario .buttonWith img {
+    margin-right: 20px; 
+    width: 20px; 
+    height: 20px; 
+    vertical-align: middle; 
+}
+
+
+@media (max-width: 1000px) {
+
+    .formulario h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 5vh;
+    }
+
+    .Login {
+        height:100vh;
+        background-color: #151515;
+    }
+
+    .containerLogin {
+        flex-direction: column; 
+        align-items: center; 
+        margin: auto;
+        overflow: hidden; 
+        height: 95vh;
+        padding: 0px 10px;
+
+    }
+
+    .imagem {
+        width: 100%; 
+        height: 100%; 
+        position: absolute; 
+        margin: 0;
+        z-index: 1; 
+    }
+
+    .formulario {
+        margin-top: 7vh;
+        width: 100%; 
+        max-width: 500px; 
+        background-color: rgba(21, 21, 21, 0.8); 
+        border-radius: 10px; 
+        z-index: 2; 
+    }
+
+    .formulario p{
+
+        margin-top: 1%;
+    
+}
+}
+
+
+@media (max-width: 550px) {
+    
+    .formulario h1 {
+        text-align: center;
+        margin: 30px;
+        font-size: 5vh;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario p{
+            font-size: 1.2vh;
+            margin-top: 1%;
+        
+    }
+
+}
+
+@media (max-width: 400px) {
+    
+    .formulario div {
+        width: 80%;
+    }
+
+    .formulario h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 2rem;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 2vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario .buttonWith button{
+        width: 100%;
+        margin-bottom: 1vh;
+        font-size: 0.8rem;
+    }
+
+    .formulario p{
+            font-size: 1.4vh;
+    }
+
+    .termos{
+        font-size: 15px;
+        width: 100%;
+    }
+}

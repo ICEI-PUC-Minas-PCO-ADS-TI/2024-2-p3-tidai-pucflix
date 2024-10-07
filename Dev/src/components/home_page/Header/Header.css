@@ -1,0 +1,15 @@
+.Header_home {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 2vh 3%; 
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0); 
+    z-index: 10;
+  }
+    @media (max-width: 441px){
+      .Header_home {
+        justify-content: center;
+    
+      }
+    }

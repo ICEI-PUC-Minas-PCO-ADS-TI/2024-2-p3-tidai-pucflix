@@ -1,0 +1,35 @@
+.perfil{
+    margin: 1em;
+    position: relative;
+}
+
+
+.imagem{
+    position: relative;
+    border-radius: 10px;
+    box-sizing: border-box;
+    opacity: 0.7;
+    z-index: 1;
+}
+.sobreposta {
+    position: absolute; 
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* É pra centralizar a imagem!!!!*/
+    height: 50px;
+    opacity: 0.8; 
+    z-index: 2;
+}
+
+
+.nome{
+    font-weight: 400;
+    font-size: 1.2rem;
+    color:  rgba(255, 255, 255, 0.568);
+}
+
+
+
+
+
+

@@ -1,5 +1,5 @@
-import HorizontalScroll from "../components/HorizontalScroll.js";
-import Carousel from "../components/Carousel.js";
+import HorizontalScroll from "../components/pagina_principal/HorizontalScroll.js";
+import Carousel from "../components/pagina_principal/Carousel.js";
 import "../output.css"
 
 function Principal() {

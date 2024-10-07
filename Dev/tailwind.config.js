@@ -11,6 +11,9 @@ module.exports = {
         'defaultPurple': '#21005f',
         'defaultBg' : '#151515',
       },
+      width: {
+        "5px": "5px"
+      }
     },
   },
   plugins: [],

@@ -1,64 +1,150 @@
-import styles from '../assets/css/Cadastro/Cadastro.module.css';
-import logoGoogle from '../assets/img/LogoGoogle.png';
-import logoGit from '../assets/img/LogoGit.png';
+import styles from '../assets/css/login_cadastro/cadastro/Cadastro.module.css';
+import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
+import logoGit from '../assets/img/login_cadastro/LogoGit.png';
+import Header from '../components/template_alternativo/Header/Header.js';
 import "../output.css"
 import { Link } from "react-router-dom";
+import { Field, Form, Formik, ErrorMessage } from "formik"
+import * as Yup from "yup"
+import { FaCheck } from "react-icons/fa6";
+import YupPassword from 'yup-password';
+YupPassword(Yup);
+
+var isPasswordStrong = [false, false, false, false]
+
+const validationSchema = Yup.object().shape({ //Schema de validação
+    name: Yup.string()
+        .required("Campo Obrigatório")
+        .test("letter", "Insira um nome válido", (value) => {
+            const isValid = /[a-z]/.test(value);
+            return isValid;
+        }),
+
+    email: Yup.string()
+        .email("Digíte um email valido")
+        .required("Campo Obrigatório"),
+
+    password: Yup.string()
+        .required("")
+        .test("min-length", (value) => {
+            const isValid = value && value.length >= 8;
+            isPasswordStrong[0] = isValid;
+            return isValid;
+        })
+        .test("uppercase", (value) => {
+            const isValid = /[A-Z]/.test(value);
+            isPasswordStrong[1] = isValid;
+            return isValid;
+        })
+        .test("number", (value) => {
+            const isValid = /[0-9]/.test(value);
+            isPasswordStrong[3] = isValid;
+            return isValid;
+        })
+        .test("symbol", (value) => {
+            const isValid = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+            isPasswordStrong[2] = isValid;
+            return isValid;
+        }),
+
+    confirmPassword: Yup.string()
+        .oneOf([Yup.ref("password"), null], "A senhas não coincidem")
+})
+
 
 function Cadastro() {
+
     return (
-        <div className={styles.cadastro}>
-            <div className={styles.containerCadastro}>
-                <div className={styles.imagem}></div>
-                <div className={styles.formulario}>
-                    <h1>Sign Up</h1>
-                    <form>
-                        <div>
-                            <input type="text" id="firstName" name="firstName" placeholder="Name" required />
-                        </div>
-                        <div>
-                            <input type="email" id="email" name="email" placeholder="E-mail Address" required />
-                        </div>
-                        <div>
-                            <input type="password" id="senha" name="senha" placeholder="Password" required />
-                        </div>
-                        <div>
-                            <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirm Password" required />
-                        </div>
-                        <div className={styles.termos}>
-                            <input type="checkbox" id="termos" name="termos" required />
-                            <label htmlFor="termos">I accept the terms and conditions</label>
-                        </div>
+        <div>
+            <Header />
+            <div className={styles.cadastro}>
+                <div className={styles.containerCadastro}>
+                    <div className={styles.imagem}></div>
+                    <div className={styles.formulario}>
+                        <h1>Junte-se a nós</h1>
 
-                        <button type="submit"><Link to="../pucflix/perfil">Join Us</Link></button>
+                        <Formik
+                            initialValues={{ name: "", email: "", password: "", confirmPassword: "" }}
+                            onSubmit={async values => {
+                                await console.log(values)
+                            }}
+                            validationSchema={validationSchema} //Schema de validação do Yup
+                        >
+                            {({ handleSubmit, errors, touched }) => (
+                                <Form onSubmit={handleSubmit} className='text-black'>
+                                    <div>
+                                        <Field type="text" name="name" placeholder="Nome" className={`${touched.name && errors.name ? 'border border-red-500' : ''}`} />
+                                        <ErrorMessage name='name' component="div" className={styles.ErrorMessage} />
+                                    </div>
+                                    <div>
+                                        <Field type="email" name="email" placeholder="Endereço de Email" className={`${touched.email && errors.email ? 'border border-red-500' : ''}`} />
+                                        <ErrorMessage name='email' component="div" className={styles.ErrorMessage} />
+                                    </div>
+                                    <div>
+                                        <Field type="password" name="password" placeholder="Senha" className={`${touched.password && errors.password ? 'border border-red-500' : ''}`} />
+                                    </div>
+                                    <div>
+                                        <Field type="password" name="confirmPassword" placeholder="Confirmar Senha" className={`${touched.confirmPassword && errors.confirmPassword ? 'border border-red-500' : ''}`} />
+                                        <ErrorMessage name='confirmPassword' component="div" className={styles.ErrorMessage} />
+                                    </div>
+                                    <div className='text-white flex flex-col items-start'>
 
-                        <hr></hr>
+                                        <p className='flex justify-center items-center gap-2 text-xs sm:text-sm xl:text-base mb-1'>
+                                            <span className='shrink-0 text-xs flex justify-center items-center border border-white border-solid w-4 h-4 rounded-full inline-block grow'>
+                                                {isPasswordStrong[0] ? (<FaCheck />) : (<span></span>)}
+                                            </span>
+                                                Precisa conter no mínimo 8 caracteres
+                                        </p>
+                                        <p className='flex justify-center items-center gap-2 text-xs sm:text-sm xl:text-base mb-1'>
+                                            <span className='shrink-0 text-xs flex justify-center items-center border border-white border-solid w-4 h-4 rounded-full inline-block grow'>
+                                                {isPasswordStrong[1] ? (<FaCheck />) : (<span></span>)}
+                                            </span>
+                                            Precisa conter no mínimo 1 letra maiúscula
+                                        </p>
+                                        <p className='flex justify-center items-center gap-2 text-xs sm:text-sm xl:text-base mb-1'>
+                                            <span className='shrink-0 text-xs flex justify-center items-center border border-white border-solid w-4 h-4 rounded-full inline-block grow'>
+                                                {isPasswordStrong[2] ? (<FaCheck />) : (<span></span>)}
+                                            </span>
+                                            Precisa conter no mínimo 1 caracter especial
+                                        </p>
+                                        <p className='flex justify-center items-center gap-2 text-xs sm:text-sm xl:text-base mb-1'>
+                                            <span className='shrink-0 text-xs flex justify-center items-center border border-white border-solid w-4 h-4 rounded-full inline-block grow'>
+                                                {isPasswordStrong[3] ? (<FaCheck />) : (<span></span>)}
+                                            </span>
+                                            Precisa conter no mínimo 1 número
+                                        </p>
+                                    </div>
 
-                        <div className={styles.buttonWith}>
-                            <Link to="../pucflix/perfil">
-                            <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
-                                <img style={{ width: '25px' }} src={logoGoogle} alt="Google" />
-                                Sign Up With Google
-                            </button>
-                            </Link>
-                            <Link to="../pucflix/perfil">
-                            <button style={{ alignItems: 'center' }} type="submit">
-                                <img src={logoGit} alt="GitHub" />
-                                Sign Up With GitHub
-                            </button>
-                            </Link>
-                        </div>
+                                    <button type='submit'><Link to="../pucflix/perfil">Junte-se</Link></button>
 
-                        <p >
-                            <strong> Já possui uma conta?</strong>
-                            <Link to="../pucflix/login" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
-                                Entre aqui
-                            </Link>
-                        </p>
+                                    <hr></hr>
 
+                                    <div className={styles.buttonWith}>
+                                        <Link to="../pucflix/perfil">
+                                            <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
+                                                <img className='w-100' src={logoGoogle} alt="Google" />
+                                                Cadastrar com Google
+                                            </button>
+                                        </Link>
+                                        <Link to="../pucflix/perfil">
+                                            <button style={{ alignItems: 'center' }} type="submit">
+                                                <img className='w-100' src={logoGit} alt="GitHub" />
+                                                Cadastrar com GitHub
+                                            </button>
+                                        </Link>
+                                    </div>
 
-                    </form>
+                                    <p>
+                                        <strong className='text-white text-sm sm:text-base xl:text-base'> Já possui uma conta?</strong>
+                                        <Link to="../pucflix/login" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
+                                            Entre aqui
+                                        </Link>
+                                    </p>
+                                </Form>
+                            )}
 
-
+                        </Formik>
+                    </div>
                 </div>
             </div>
         </div>
