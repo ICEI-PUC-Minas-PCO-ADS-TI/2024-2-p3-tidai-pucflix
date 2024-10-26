@@ -51,7 +51,7 @@ Explique como a hospedagem e o lançamento da plataforma foram realizados.
 
 ## Qualidade de software
 
-Ao selecionar as características e subcaracterísticas adequadas, a PucFlix focar os esforços em um produto que atenda às necessidades dos usuários. Essas subcaracterísticas estão destacadas na tabela abaixo: 
+Ao selecionar as características e subcaracterísticas adequadas, a PucFlix visa focar os esforços em um produto que atenda às necessidades dos usuários. Essas subcaracterísticas estão destacadas na tabela abaixo: 
 
 | **Característica**   | **Subcaracterística**  | **Justificativa**  |  
 | ---            | ---             |  ---             |
@@ -64,7 +64,3 @@ Ao selecionar as características e subcaracterísticas adequadas, a PucFlix foc
 | Segurança| Integridade |Os dados do usuário devem permanecer intactos e não sofrer alterações não autorizadas, o que é crucial para a confiança na plataforma.|
 | Portabilidade| Adaptabilidade |A plataforma deve funcionar bem em diferentes dispositivos (computadores, tablets e smartphones), garantindo uma experiência de uso flexível.|
 
-> **Links úteis**:
-> - [ISO/IEC 25010:2011 - Systems and Software Engineering — Systems and Software Quality Requirements and Evaluation (SQuaRE) — System and Software Quality Models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de software - Engenharia de Software](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209)
