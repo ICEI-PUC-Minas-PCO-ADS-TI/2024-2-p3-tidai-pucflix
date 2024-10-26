@@ -51,6 +51,8 @@ Explique como a hospedagem e o lançamento da plataforma foram realizados.
 
 ## Qualidade de software
 
+Ao selecionar as características e subcaracterísticas adequadas, a PucFlix focar os esforços em um produto que atenda às necessidades dos usuários. Essas subcaracterísticas estão destacadas na tabela abaixo: 
+
 | **Característica**   | **Subcaracterística**  | **Justificativa**  |  
 | ---            | ---             |  ---             |
 | Funcionalidade | Adequação |Assegura que todas as funcionalidades — como a filtragem de gêneros e a adição a favoritos — sejam implementadas para atender às necessidades reais dos usuários.  |
