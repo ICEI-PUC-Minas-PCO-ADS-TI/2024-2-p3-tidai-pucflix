@@ -1,10 +1,6 @@
 # Arquitetura da solução
 
-<span style="color:red">Pré-requisitos: <a href="04-Projeto-interface.md"> Projeto de interface</a></span>
-
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](images/arquitetura.png)
+![Arquitetura da Solução](images/ArquiteturaSolucaoPucflix.png)
 
 ## Diagrama de classes
 
