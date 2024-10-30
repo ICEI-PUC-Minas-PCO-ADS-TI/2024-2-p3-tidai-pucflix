@@ -40,7 +40,6 @@
 A hospedagem e o lançamento da plataforma foram realizados por meio do Vercel, escolhida pela fácil integração.
 
 > **Links**:
-
 > - [Vercel – Site oficial](https://vercel.com/)
 > - [Link da aplicaçao ](https://2024-2-p3-tidai-pucflix.vercel.app/)
 
