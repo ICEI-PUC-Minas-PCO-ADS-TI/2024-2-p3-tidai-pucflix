@@ -22,10 +22,6 @@
 
 ## Tecnologias
 
-Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
-
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
@@ -41,13 +37,12 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foram realizados.
+A hospedagem e o lançamento da plataforma foram realizados por meio do Vercel, escolhida pela fácil integração.
 
-> **Links úteis**:
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando seu site no Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+> **Links**:
+
+> - [Vercel – Site oficial](https://vercel.com/)
+> - [Link da aplicaçao ](https://2024-2-p3-tidai-pucflix.vercel.app/)
 
 ## Qualidade de software
 
