@@ -59,9 +59,13 @@ Quanto à gerência de issues, o projeto adota a seguinte convenção para etiqu
 
 #### Sprint 2
 
-Atualizado em: 28/04/2024
+Atualizado em: 29/10/2024
 
 ![Kanban](./images/Kanban%20Atual.png)
+
+#### Sprint 3
+
+![Kanban](./images/Sprint%203.png)
 
 ### Processo
 

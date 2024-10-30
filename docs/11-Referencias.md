@@ -11,3 +11,7 @@
 - **Comunidade de desenvolvedores** utilizada para resolução de problemas e consultas durante o desenvolvimento do projeto. Disponível em: https://stackoverflow.com/
 
 - **Referência oficial de desenvolvimento web**, incluindo HTML, CSS e JavaScript. Disponível em: https://developer.mozilla.org/
+
+- **TMDB API Documentation**, utilizada para auxilio na implementação das requisições de filmes: https://developer.themoviedb.org/docs/getting-started
+
+- **Firebase API Documentation**, utilizada para auxilio da implementação do BD e Authentication: https://firebase.google.com/docs/reference
