@@ -5,6 +5,7 @@ import Footer from '../components/template_padrao/Footer/Footer.js';
 import { Link } from "react-router-dom";
 
 
+
 function Pag_gerenciamento_perfis() {
     const cards = [{
         nome: 'Usuario1',

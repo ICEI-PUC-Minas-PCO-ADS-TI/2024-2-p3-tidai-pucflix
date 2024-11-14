@@ -1,10 +1,28 @@
 import styles from '../../assets/css/pagina_gerenciamento_perfil/Cards.module.css'
 import iconeEditar from '../../assets/img/pagina_gerenciamento_perfil/iconeEditar.png'
 import { useState } from 'react';
+import { database } from '../../services/firebase.ts';
 
 function Cards(props) {
 
+    const[nome, setNome] = useState('')
+    const[classificacao, setClassificacao] = useState('')
+
+    
+    
+    
     const [showModal, setShowModal] = useState(false)
+
+    function gravar(event){
+        event.preventDefault()
+        const ref = database.ref('perfis')
+        const dados = {
+            nome,
+            classificacao
+        }
+        ref.push(dados)
+    }
+    
 
     return (
         <div>
@@ -39,18 +57,18 @@ function Cards(props) {
                                     </button>
                                 </div>
                                 {/*Body*/}
-                                <div className="relative p-6 flex-auto">
+                                <div className="relative p-6 flex-auto" >
                                     <p className="my-4 text-black text-lg leading-relaxed">
                                         <div className='flex justify-center md:items-start gap-4 flex-wrap'>
                                             <img className={styles.imagem} src={props.foto} alt={props.nome} />
                                             <div className='flex flex-col gap-5 items-center sm:items-start'>
                                                 <div className='flex flex-col items-start'>
                                                     <label className='text-white'>Nome</label>
-                                                    <input className='rounded-md py-1 px-2' placeholder='Nome' value={props.nome}></input>
+                                                    <input className='rounded-md py-1 px-2' placeholder='Nome' value={nome} onChange={event => setNome(event.target.value)}></input>
                                                 </div>
                                                 <div className='flex flex-col items-start'>
                                                     <label for="classificacao" className='text-white'>Classificação</label>
-                                                    <select id='classificacao' className='rounded-md py-1 px-2 font-sans'>
+                                                    <select id='classificacao' className='rounded-md py-1 px-2 font-sans' onChange={event => setClassificacao(event.target.value)}>
                                                         <option value="kids">KIDS</option>
                                                         <option value="standard">Padrão</option>
                                                     </select>
@@ -81,7 +99,8 @@ function Cards(props) {
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowModal(false)}
+                                            
+                                            onClick={gravar}
                                         >
                                             Salvar
                                         </button>
