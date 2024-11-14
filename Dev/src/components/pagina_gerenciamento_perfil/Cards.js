@@ -1,27 +1,48 @@
 import styles from '../../assets/css/pagina_gerenciamento_perfil/Cards.module.css'
 import iconeEditar from '../../assets/img/pagina_gerenciamento_perfil/iconeEditar.png'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { database } from '../../services/firebase.ts';
+import { ref, push } from 'firebase/database';
 
 function Cards(props) {
 
     const[nome, setNome] = useState('')
     const[classificacao, setClassificacao] = useState('')
-
-    
-    
-    
     const [showModal, setShowModal] = useState(false)
+
+    const[perfis, setPerfis] = useState()
+
+    useEffect(() => {
+        const refPerfis = database.ref('perfis')
+        refPerfis.on('value', resultado =>{
+            const resultadoPerfis = Object.entries(resultado.val() ?? {}).map(([chave,valor])=>{
+                return {
+                    'chave': chave,
+                    'nome': valor.nome,
+                    'classificacao': valor.classificacao
+                }
+            })
+            setPerfis(resultadoPerfis)
+        })
+    }, [])
 
     function gravar(event){
         event.preventDefault()
-        const ref = database.ref('perfis')
         const dados = {
             nome,
             classificacao
-        }
-        ref.push(dados)
-    }
+        };
+        const perfilRef = ref(database, 'perfis'); 
+        push(perfilRef, dados)
+            .then(() => {
+                console.log('Salvo com sucesso!');
+                setShowModal(false);
+            })
+            .catch((error) => {
+                console.error('Erro: ', error);
+            });
+    };
+
     
 
     return (
