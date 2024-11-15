@@ -1,13 +1,33 @@
 import styles from "../assets/css/login_cadastro/login/Login.module.css"
 import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
-import logoGit from '../assets/img/login_cadastro/LogoGit.png';
 import Header from '../components/template_alternativo/Header/Header.js';
-import { Link } from "react-router-dom";
-import { Field, Form, Formik, ErrorMessage } from "formik"
-import * as Yup from "yup"
+import { Link, useNavigate } from "react-router-dom";
+import { Field, Form, Formik } from "formik"
+import { loginUser, loginWithGoogle } from "../services/authFunctions.js";
+import { useState } from "react";
 
 function Login() {
+
+    const [error, setError] = useState(false)
+
+    const navigate = useNavigate();
+
+    const handleGoogleLogin = async () => {
+        try {
+          await loginWithGoogle(); 
+          navigate("../pucflix/perfil");
+        } catch (error) {
+          console.error("Erro durante o login com Google:", error);
+
+        }
+      };
+
+    const handleError = () =>{
+        setError(true);
+    }
+
     return (
+
         <div>
             <Header />
 
@@ -17,9 +37,28 @@ function Login() {
                         <h1>Entrar</h1>
                         <Formik
                             initialValues={{ email: "", password: "", termos: false }}
-                            onSubmit={async values => {
-                                await console.log(values) // Aqui a gente faz a validação com o back, para saber se existe o usuario ou o login esta correto
-                            }}>
+                            onSubmit={async (values, {setSubmitting, resetForm}) => {
+
+                                try{
+                                    const user = await loginUser(values.email, values.password)
+                                    console.log("Usuario Logado: ", user) //Apagar os Log dps que terminar
+                                    //esse user que é o cara que temos que colocar no sessioNStorage para buscar os dados no bd
+    
+                                    resetForm();
+    
+                                    navigate("../pucflix/perfil")
+    
+                                }catch(err){
+                                    console.error(err.ErrorMessage)
+                                    handleError()
+
+                                }finally{
+                                    setSubmitting(false)
+                                }
+    
+    
+                                }}
+                                >
 
                             {({ handleSubmit }) => (
                                 <Form onSubmit={handleSubmit}>
@@ -35,26 +74,21 @@ function Login() {
                                         <label htmlFor="termos">Lembrar de mim</label>
                                     </div>
 
-                                    <button type="submit"><Link to="../pucflix/perfil">Entrar</Link></button>
-                                    <div className={styles.errorMessage}>
-                                        <p>Login e/ou Senha Incorreta</p> {/* Quando implantar o back passar o display dessa div para flex, se o login der erro, caso não, é so redirecionar o usuário  */}
+                                    <button type="submit">Entrar</button>
+                                    <div className={styles.errorMessage} style={{display: error ? "flex" : "none"}}>
+                                        <p>Login e/ou Senha Incorreta</p>
                                     </div>
 
                                     <hr></hr>
 
                                     <div className={styles.buttonWith}>
-                                        <Link to="../pucflix/perfil">
-                                            <button style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
+
+                                            <button onClick={handleGoogleLogin} style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
                                                 <img className='w-100' src={logoGoogle} alt="Google" />
                                                 Logar com Google
                                             </button>
-                                        </Link>
-                                        <Link to="../pucflix/perfil">
-                                            <button style={{ alignItems: 'center' }} type="submit">
-                                                <img className='w-100' src={logoGit} alt="GitHub" />
-                                                Logar com GitHub
-                                            </button>
-                                        </Link>
+
+
                                     </div>
                                     <div>
                                         <p >

@@ -82,7 +82,7 @@ function Cadastro() {
 
                             try{
                                 const user = await registerUser(values.email, values.password, values.name)
-                                console.log("Usuario Cadastrado: ", user) //Apagar os Log dps que termianr
+                                console.log("Usuario Cadastrado: ", user) //Apagar os Log dps que terminar
 
                                 resetForm();
 
