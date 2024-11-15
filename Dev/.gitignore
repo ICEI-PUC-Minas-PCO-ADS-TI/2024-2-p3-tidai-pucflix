@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #firebase_credentials
-firebase.js
+firebaseConfig.js
