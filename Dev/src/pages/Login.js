@@ -1,12 +1,41 @@
+import React from 'react';
 import styles from "../assets/css/login_cadastro/login/Login.module.css"
 import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
 import logoGit from '../assets/img/login_cadastro/LogoGit.png';
 import Header from '../components/template_alternativo/Header/Header.js';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Field, Form, Formik, ErrorMessage } from "formik"
+import { get, ref, child } from 'firebase/database';
+import { database } from "../services/firebase.ts";
 import * as Yup from "yup"
 
 function Login() {
+    const navigate = useNavigate();
+    const [loginError, setLoginError] = React.useState("");
+    const handleLogin = async (values) => {
+        
+        try {
+            const userRef = ref(database, 'users');
+            const snapshot = await get(child(userRef, values.email.replace('.', '_'))); 
+            if (snapshot.exists()) {
+                const userData = snapshot.val();
+                if (userData.password === values.password) {
+                    console.log('Login bem-sucedido:', userData);
+                    setLoginError(""); 
+                    navigate('/pucflix/perfil'); 
+                } else {
+                    setLoginError("Senha incorreta."); 
+                }
+            } else {
+                setLoginError("Usuário não encontrado."); 
+            }
+        } catch (error) {
+            setLoginError("Erro ao realizar login. Tente novamente."); 
+            console.error('Erro ao realizar login:', error);
+        }
+    };
+
+    
     return (
         <div>
             <Header />
@@ -18,7 +47,7 @@ function Login() {
                         <Formik
                             initialValues={{ email: "", password: "", termos: false }}
                             onSubmit={async values => {
-                                await console.log(values) // Aqui a gente faz a validação com o back, para saber se existe o usuario ou o login esta correto
+                                await handleLogin(values) 
                             }}>
 
                             {({ handleSubmit }) => (
@@ -35,10 +64,15 @@ function Login() {
                                         <label htmlFor="termos">Lembrar de mim</label>
                                     </div>
 
-                                    <button type="submit"><Link to="../pucflix/perfil">Entrar</Link></button>
-                                    <div className={styles.errorMessage}>
-                                        <p>Login e/ou Senha Incorreta</p> {/* Quando implantar o back passar o display dessa div para flex, se o login der erro, caso não, é so redirecionar o usuário  */}
-                                    </div>
+                                    <button type="submit">Entrar</button>
+                                    {loginError && (
+                                        <div 
+                                            className={styles.errorMessage} 
+                                            style={{ display: loginError ? 'block' : 'none' }}>
+                                            <p>{loginError}</p>
+                                        </div>
+                                    )}
+
 
                                     <hr></hr>
 
