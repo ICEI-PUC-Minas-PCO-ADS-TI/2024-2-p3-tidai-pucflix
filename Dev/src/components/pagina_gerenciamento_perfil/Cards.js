@@ -2,11 +2,11 @@ import styles from '../../assets/css/pagina_gerenciamento_perfil/Cards.module.cs
 import iconeEditar from '../../assets/img/pagina_gerenciamento_perfil/iconeEditar.png'
 import { useState, useEffect } from 'react';
 import { database } from '../../services/firebase.ts';
-import { ref, push } from 'firebase/database';
+import { ref, update } from 'firebase/database';
 
 function Cards(props) {
 
-    const[nome, setNome] = useState('')
+    const[nome, setNome] = useState(props.nome || '')
     const[classificacao, setClassificacao] = useState('')
     const [showModal, setShowModal] = useState(false)
 
@@ -16,23 +16,34 @@ function Cards(props) {
             nome,
             classificacao
         };
-        const perfilRef = ref(database, 'perfis'); 
-        push(perfilRef, dados)
+        const perfilRef = ref(database, `perfis/${props.id}`); 
+
+        update(perfilRef, dados)
             .then(() => {
                 console.log('Salvo com sucesso!');
-                setShowModal(false);
+                setShowModal(false); 
+                props.atualizarPerfil(props.id, nome); 
             })
             .catch((error) => {
                 console.error('Erro: ', error);
             });
+    }
+
+    const excluirPerfil = () => {
+        if (window.confirm("Tem certeza que deseja excluir este perfil?")) {
+            props.deletarPerfil(props.id);  
+            setShowModal(false); 
+        }
     };
+
+    
 
     return (
         <div>
             <div className="box-border cursor-pointer transform rounded-md shadow-xl transition duration-300 hover:scale-105"
                 onClick={() => setShowModal(true)}
             >
-                <img className={styles.imagem} src={props.foto} alt={props.nome} />
+                <img className={styles.imagem} src={props.foto || 'https://via.placeholder.com/250'} alt={props.nome} />
                 <img className={styles.sobreposta} src={iconeEditar} alt={props.nome} />
                 <h3 className={styles.nome}>{props.nome}</h3>
             </div>
@@ -86,7 +97,7 @@ function Cards(props) {
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowModal(false)}
+                                            onClick={excluirPerfil}
                                         >
                                             Excluir Perfil
                                         </button>
