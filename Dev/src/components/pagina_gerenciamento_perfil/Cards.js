@@ -10,22 +10,6 @@ function Cards(props) {
     const[classificacao, setClassificacao] = useState('')
     const [showModal, setShowModal] = useState(false)
 
-    const[perfis, setPerfis] = useState()
-
-    useEffect(() => {
-        const refPerfis = database.ref('perfis')
-        refPerfis.on('value', resultado =>{
-            const resultadoPerfis = Object.entries(resultado.val() ?? {}).map(([chave,valor])=>{
-                return {
-                    'chave': chave,
-                    'nome': valor.nome,
-                    'classificacao': valor.classificacao
-                }
-            })
-            setPerfis(resultadoPerfis)
-        })
-    }, [])
-
     function gravar(event){
         event.preventDefault()
         const dados = {
@@ -42,8 +26,6 @@ function Cards(props) {
                 console.error('Erro: ', error);
             });
     };
-
-    
 
     return (
         <div>

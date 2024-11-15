@@ -1,13 +1,16 @@
+import React from 'react';
 import styles from '../assets/css/login_cadastro/cadastro/Cadastro.module.css';
 import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
 import logoGit from '../assets/img/login_cadastro/LogoGit.png';
 import Header from '../components/template_alternativo/Header/Header.js';
 import "../output.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Field, Form, Formik, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import { FaCheck } from "react-icons/fa6";
 import YupPassword from 'yup-password';
+import { database } from '../services/firebase.ts';
+import { ref, set } from 'firebase/database';
 YupPassword(Yup);
 
 var isPasswordStrong = [false, false, false, false]
@@ -53,6 +56,9 @@ const validationSchema = Yup.object().shape({ //Schema de validação
 
 
 function Cadastro() {
+    const navigate = useNavigate();
+    const [successMessage, setSuccessMessage] = React.useState('');
+    const [errorMessage, setErrorMessage] = React.useState('');
 
     return (
         <div>
@@ -65,9 +71,24 @@ function Cadastro() {
 
                         <Formik
                             initialValues={{ name: "", email: "", password: "", confirmPassword: "" }}
-                            onSubmit={async values => {
-                                await console.log(values)
+                            onSubmit={async (values) => {
+                                try {
+                                    const userRef = ref(database, `users/${values.email.replace('.', '_')}`); 
+                                    await set(userRef, {
+                                        name: values.name,
+                                        email: values.email,
+                                        password: values.password
+                                    });
+                                    setSuccessMessage('Usuário registrado com sucesso!');
+                                    setErrorMessage('');
+                                    navigate('/pucflix/login');
+                                } catch (error) {
+                                    console.error('Erro de registro:', error);
+                                    setErrorMessage('Erro ao registrar usuário. Tente novamente.');
+                                    setSuccessMessage('');
+                                }
                             }}
+                            
                             validationSchema={validationSchema} //Schema de validação do Yup
                         >
                             {({ handleSubmit, errors, touched }) => (
@@ -115,7 +136,7 @@ function Cadastro() {
                                         </p>
                                     </div>
 
-                                    <button type='submit'><Link to="../pucflix/perfil">Junte-se</Link></button>
+                                    <button type='submit'>Junte-se</button>
 
                                     <hr></hr>
 
