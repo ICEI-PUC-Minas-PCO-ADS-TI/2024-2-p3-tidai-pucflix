@@ -88,7 +88,7 @@ function Cadastro() {
                             onSubmit={async (values, {setSubmitting, resetForm}) => {
 
                             try{
-                                const user = await registerUser(values.email, values.password, values.name)
+                                await registerUser(values.email, values.password, values.name)
 
                                 resetForm();
 

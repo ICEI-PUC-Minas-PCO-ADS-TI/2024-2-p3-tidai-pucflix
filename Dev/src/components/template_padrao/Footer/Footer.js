@@ -1,5 +1,4 @@
 import "../../../output.css"
-import { Link } from "react-router-dom";
 
 function Footer() {
 
@@ -10,13 +9,7 @@ function Footer() {
                 </span>
                 <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-white sm:mt-0">
                     <li>
-                        <Link to="#" className="hover:border-b me-4 md:me-6">Sobre</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className="hover:border-b me-4 md:me-6">Politicas de Privacidade</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className="hover:border-b">Contato</Link>
+                        <a href="mailto:pedro@phflima.com">Contato</a>
                     </li>
                 </ul>
             </div>

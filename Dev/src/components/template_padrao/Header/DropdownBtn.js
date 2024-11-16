@@ -1,8 +1,18 @@
 import "../../../output.css"
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { logoutUser } from "../../../services/authFunctions";
+
 
 function DropdownBtn(props) {
+
+    const navigate = useNavigate();
+    
+    const logout = () =>{
+        logoutUser()
+        navigate("/")
+    }
+    
 
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null); // Referência para o dropdown
@@ -52,15 +62,22 @@ function DropdownBtn(props) {
                                     Trocar Usuário
                                 </Link>
                             </li>
-                            <li className="border-b ">
+                            <li>
                                 <Link to="./perfil/edit" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Gerenciar Perfis
                                 </Link>
                             </li>
+                            <li className="border-b ">
+                                <a href="mailto:pedro@phflima.com" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                    Suporte
+                                </a>
+                            </li>
                             <li>
-                                <Link to="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                <div
+                                    onClick={logout}
+                                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Sair
-                                </Link>
+                                </div>
                             </li>
                         </ul>
                     </div>
