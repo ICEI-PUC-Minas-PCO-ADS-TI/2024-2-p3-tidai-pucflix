@@ -28,11 +28,11 @@ export function getProfilesByUser(callback) {
 
     const unsubscribe = onSnapshot(userDoc, (doc) => {
       if (doc.exists()) {
-        console.log("Dados do usuário:", doc.data());
-        callback(doc.data()); 
+        //console.log("Dados do usuário:", doc.data()); <-- Mostra os dados do usuario que foi carregado no console
+        callback(doc.data());
       } else {
         console.log("Nenhum documento encontrado!");
-        callback(null); 
+        callback(null);
       }
     });
 
@@ -80,6 +80,67 @@ export async function addProfile(userName, classificacao) {
     }
   } catch (error) {
     console.error("Erro ao adicionar perfil:", error);
+    throw error;
+  }
+}
+
+export async function updateProfile(profileKey, userName, classificacao) {
+  try {
+    const userUID = localStorage.getItem("UID");
+    const userDocRef = doc(db, "Usuarios", userUID);
+    const userDoc = await getDoc(userDocRef);
+    var auxClass = classificacao === "kids"
+
+    if (userDoc.exists()) {
+      const profiles = userDoc.data().Perfil || {};
+
+      const updatedProfile = {
+        Kids: auxClass,
+        Nome: userName,
+        Session: {
+          Assistidos: [],
+          Favoritos: [],
+          SessionID: ""
+        }
+      };
+
+      if (profiles[profileKey]) {
+        profiles[profileKey] = {...profiles[profileKey], ...updatedProfile};
+        await updateDoc(userDocRef, { Perfil: profiles });
+        console.log(`Perfil ${profileKey} atualizado com sucesso!`);
+      } else {
+        console.log(`Perfil ${profileKey} não encontrado!`);
+      }
+    } else {
+      console.log("Usuário não encontrado!");
+    }
+  } catch (error) {
+    console.error("Erro ao atualizar perfil:", error);
+    throw error;
+  }
+}
+
+export async function deleteProfile(profileKey) {
+  try {
+    const userUID = localStorage.getItem("UID");
+    const userDocRef = doc(db, "Usuarios", userUID);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      const profiles = userDoc.data().Perfil || {};
+
+      if (profiles[profileKey]) {
+        delete profiles[profileKey]; // Remove o perfil do objeto
+        await updateDoc(userDocRef, { Perfil: profiles }); // Atualiza no Firestore
+        console.log(`Perfil ${profileKey} excluído com sucesso!`);
+      } else {
+        console.log(`Perfil ${profileKey} não encontrado!`);
+      }
+    } else {
+      console.log("Usuário não encontrado!");
+    }
+  } catch (error) {
+    console.error("Erro ao excluir perfil:", error);
     throw error;
   }
 }

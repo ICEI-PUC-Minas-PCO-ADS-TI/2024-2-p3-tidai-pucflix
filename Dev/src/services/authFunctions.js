@@ -64,15 +64,47 @@ export async function registerUser(email, password, name) {
     }
   }
 
-  export async function loginWithGoogle(onSuccess) {
+  export async function registerWithGoogle() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
+
+      const userDoc = {
+        Email: result.user.email,
+        Nome: result.user.displayName,
+        Perfil: {
+          1: {
+            Kids: false,
+            Nome: result.user.displayName,
+                Session: {
+                    Assistidos: [],
+                    Favoritos: [],
+                    SessionID : ""
+                }
+          }, //aqui, caso eu colocar 2 : {...} adicioanaria outro perfil
+        }
+      };
+
+      const userRef = doc(db, "Usuarios", result.user.uid)
+      setDoc(userRef, userDoc);
+
       console.log("Usuário logado com Google:", result.user);
       localStorage.setItem("UID",result.user.uid)
-      if (onSuccess) {
-        onSuccess();
-      }
+
+    } catch (error) {
+      console.error("Erro ao autenticar com Google:", error.message);
+      throw error;
+    }
+  }
+
+  export async function loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+
+      console.log("Usuário logado com Google:", result.user);
+      localStorage.setItem("UID",result.user.uid)
+
     } catch (error) {
       console.error("Erro ao autenticar com Google:", error.message);
       throw error;

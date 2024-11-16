@@ -2,7 +2,7 @@ import styles from '../assets/css/login_cadastro/cadastro/Cadastro.module.css';
 import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
 import Header from '../components/template_alternativo/Header/Header.js';
 import "../output.css"
-import { registerUser, loginWithGoogle } from "../services/authFunctions.js";
+import { registerUser, registerWithGoogle } from "../services/authFunctions.js";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik, ErrorMessage } from "formik"
@@ -59,7 +59,7 @@ function Cadastro() {
 
     const handleGoogleLogin = async () => {
         try {
-          await loginWithGoogle(); 
+          await registerWithGoogle(); 
           navigate("../pucflix/perfil");
         } catch (error) {
           console.error("Erro durante o login com Google:", error);

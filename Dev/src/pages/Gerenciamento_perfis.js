@@ -40,7 +40,8 @@ function Pag_gerenciamento_perfis() {
                     {profiles.map((profiles, index) => (
                         <Cards nome={profiles.Nome}
                             foto={profilePic}
-                            ID={index}
+                            ID={index + 1}
+                            key={index}
                         />
                     ))}
                 </div>

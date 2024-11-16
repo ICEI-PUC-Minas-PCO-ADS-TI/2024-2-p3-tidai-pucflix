@@ -1,15 +1,26 @@
 import styles from '../../assets/css/pagina_gerenciamento_perfil/Cards.module.css'
 import iconeEditar from '../../assets/img/pagina_gerenciamento_perfil/iconeEditar.png'
 import { useState } from 'react';
+import { updateProfile, deleteProfile } from "../../services/databaseFunctions"
 
 function Cards(props) {
 
     const [showModal, setShowModal] = useState(false)
+    const [userEditID, setUserEditID] = useState()
+    const [classificacao, setClassificacao] = useState('standard');
+    const [userName, setUserName] = useState('');
+
+    const handleID = () => {
+        setUserEditID(props.ID)
+    }
 
     return (
         <div>
             <div className="box-border cursor-pointer transform rounded-md shadow-xl transition duration-300 hover:scale-105"
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                    setShowModal(true)
+                    handleID()
+                }}
             >
                 <img className={styles.imagem} src={props.foto} alt={props.nome} />
                 <img className={styles.sobreposta} src={iconeEditar} alt={props.nome} />
@@ -46,11 +57,17 @@ function Cards(props) {
                                             <div className='flex flex-col gap-5 items-center sm:items-start'>
                                                 <div className='flex flex-col items-start'>
                                                     <label className='text-white'>Nome</label>
-                                                    <input className='rounded-md py-1 px-2' placeholder='Nome' value={props.nome}></input>
+                                                    <input className='rounded-md py-1 px-2' placeholder='Nome'
+                                                        onChange={(e) => setUserName(e.target.value)}></input>
                                                 </div>
                                                 <div className='flex flex-col items-start'>
                                                     <label for="classificacao" className='text-white'>Classificação</label>
-                                                    <select id='classificacao' className='rounded-md py-1 px-2 font-sans'>
+                                                    <select id='classificacao' className='rounded-md py-1 px-2 font-sans'
+                                                        value={classificacao}
+                                                        onChange={(e) => {
+                                                            setClassificacao(e.target.value)
+                                                        }}
+                                                    >
                                                         <option value="kids">KIDS</option>
                                                         <option value="standard">Padrão</option>
                                                     </select>
@@ -65,7 +82,11 @@ function Cards(props) {
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowModal(false)}
+                                            onClick={() => {
+                                                deleteProfile(userEditID)
+                                                setShowModal(false)
+                                            }
+                                            }
                                         >
                                             Excluir Perfil
                                         </button>
@@ -81,7 +102,10 @@ function Cards(props) {
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowModal(false)}
+                                            onClick={() => {
+                                                updateProfile(userEditID, userName, classificacao)
+                                                setShowModal(false)
+                                            }}
                                         >
                                             Salvar
                                         </button>
