@@ -9,6 +9,7 @@ import { Field, Form, Formik, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import { FaCheck } from "react-icons/fa6";
 import YupPassword from 'yup-password';
+import { useState } from 'react';
 YupPassword(Yup);
 
 var isPasswordStrong = [false, false, false, false]
@@ -55,6 +56,7 @@ const validationSchema = Yup.object().shape({ //Schema de validação
 
 function Cadastro() {
 
+    const [error, setError] = useState(false)
     const navigate = useNavigate();
 
     const handleGoogleLogin = async () => {
@@ -66,6 +68,11 @@ function Cadastro() {
 
         }
       };
+
+      const handleError = () =>{
+        setError(true);
+    }
+
     
     return (
         <div>
@@ -82,14 +89,14 @@ function Cadastro() {
 
                             try{
                                 const user = await registerUser(values.email, values.password, values.name)
-                                console.log("Usuario Cadastrado: ", user) //Apagar os Log dps que terminar
 
                                 resetForm();
 
                                 navigate("../pucflix/perfil")
 
                             }catch(err){
-                                console.error(err.ErrorMessage)
+                                console.log(err)
+                                handleError()
                             }finally{
                                 setSubmitting(false)
                             }
@@ -144,6 +151,10 @@ function Cadastro() {
                                     </div>
 
                                     <button type='submit'>Junte-se</button>
+
+                                    <div className={styles.errorMessage} style={{display: error ? "flex" : "none"}}>
+                                        <p>Email Informado já está em uso</p>
+                                    </div>
 
                                     <hr></hr>
 

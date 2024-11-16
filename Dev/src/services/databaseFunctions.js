@@ -60,7 +60,6 @@ export async function addProfile(userName, classificacao) {
         Session: {
           Assistidos: [],
           Favoritos: [],
-          SessionID: ""
         }
       };
 
@@ -100,7 +99,6 @@ export async function updateProfile(profileKey, userName, classificacao) {
         Session: {
           Assistidos: [],
           Favoritos: [],
-          SessionID: ""
         }
       };
 

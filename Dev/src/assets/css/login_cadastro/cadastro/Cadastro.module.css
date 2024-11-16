@@ -88,6 +88,14 @@
     cursor: pointer;
 }
 
+.errorMessage {
+    margin-bottom: 0px !important;
+    text-align: center;
+    color: red;
+    margin-top: 4px;
+    display: none;
+}
+
 hr {
     width: 60%;               
     height: 2px;             

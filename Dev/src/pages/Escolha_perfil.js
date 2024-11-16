@@ -40,6 +40,7 @@ function Pag_escolha_perfil() {
                                 nome={profile.Nome}
                                 foto={profilePic}
                                 ID={index}
+                                key={index}
                             />
                         </Link>
                     ))}
