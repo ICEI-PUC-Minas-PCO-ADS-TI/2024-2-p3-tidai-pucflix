@@ -623,10 +623,6 @@ video {
   float: right;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -656,10 +652,6 @@ video {
 
 .me-10 {
   margin-inline-end: 2.5rem;
-}
-
-.me-4 {
-  margin-inline-end: 1rem;
 }
 
 .ml-\[10\%\] {
@@ -700,10 +692,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
 }
 
 .box-border {
@@ -824,10 +812,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-max {
-  width: max-content;
 }
 
 .min-w-64 {
@@ -1252,19 +1236,9 @@ video {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1285,6 +1259,18 @@ video {
 
 .opacity-55 {
   opacity: 0.55;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .shadow {
@@ -1535,10 +1521,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:me-6 {
-    margin-inline-end: 1.5rem;
-  }
-
   .md\:mt-16 {
     margin-top: 4rem;
   }
@@ -1579,16 +1561,6 @@ video {
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 

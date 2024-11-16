@@ -4,7 +4,7 @@ import Header from '../components/template_alternativo/Header/Header.js';
 import Footer from '../components/template_padrao/Footer/Footer.js';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProfilesByUser, addProfile } from "../services/databaseFunctions.js";
+import { getProfilesByUser, addProfile } from "../services/firebase/databaseFunctions.js";
 import profilePic from "../assets/img/pagina_gerenciamento_perfil/ProfilePic.png"
 
 function Pag_gerenciamento_perfis() {

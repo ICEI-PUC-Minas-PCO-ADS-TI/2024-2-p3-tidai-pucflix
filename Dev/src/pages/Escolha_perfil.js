@@ -4,7 +4,7 @@ import Footer from '../components/template_padrao/Footer/Footer.js';
 import styles from "../assets/css/pagina_escolha_perfil/Pag_escolha_perfil.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProfilesByUser } from "../services/databaseFunctions.js";
+import { getProfilesByUser } from "../services/firebase/databaseFunctions.js";
 import profilePic from "../assets/img/pagina_gerenciamento_perfil/ProfilePic.png"
 
 function Pag_escolha_perfil() {

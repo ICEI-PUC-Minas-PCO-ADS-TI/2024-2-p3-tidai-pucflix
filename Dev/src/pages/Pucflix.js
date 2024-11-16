@@ -15,6 +15,7 @@ function Pucflix() {
 
     return (
         <div className="min-h-screen flex flex-col">
+
             <BrowserRouter basename="/">
                 <Routes>
                     <Route path="/" element={<AuthLayout />}>

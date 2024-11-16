@@ -3,7 +3,7 @@ import logoGoogle from '../assets/img/login_cadastro/LogoGoogle.png';
 import Header from '../components/template_alternativo/Header/Header.js';
 import { Link, useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik"
-import { loginUser, loginWithGoogle } from "../services/authFunctions.js";
+import { loginUser, loginWithGoogle } from "../services/firebase/authFunctions.js";
 import { useState } from "react";
 
 function Login() {

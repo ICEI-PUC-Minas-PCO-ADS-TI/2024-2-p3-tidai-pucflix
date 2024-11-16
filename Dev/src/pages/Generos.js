@@ -1,6 +1,23 @@
 import CardGeneros from "../components/favoritos_generos/CardGeneros";
+import { getGenres } from "../services/TMDB/TMDBFunctions";
+import { useEffect, useState } from "react"
 
 function Generos() {
+
+    const [generos, setGeneros] = useState([]);
+
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const genresData = await getGenres(); // Aguarda a resolução da Promise
+                setGeneros(genresData); // Atualiza o estado com os dados recebidos
+            } catch (error) {
+                console.error("Erro ao buscar gêneros:", error);
+            }
+        };
+
+        fetchGenres();
+    }, []);
 
     const imgUrl = "https://via.placeholder.com/300x300"; {/* API de imagens temporaria ate a implmentação das API de filmes */ }
 
@@ -16,10 +33,11 @@ function Generos() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-items-center">
 
                         {
-                            Generos.map( i => (
+                            generos.map(genero => (
                                 <CardGeneros 
-                                genero={i}
-                                img={imgUrl} />
+                                genero={genero.name}
+                                key={genero.id}
+                                />
                             ))
 
                         }

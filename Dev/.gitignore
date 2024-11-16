@@ -23,4 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #firebase_credentials
-src/services/firebaseConfig.js
+src/services/firebase/firebaseConfig.js
+
+src/services/TMDB/TMDBConfig.js

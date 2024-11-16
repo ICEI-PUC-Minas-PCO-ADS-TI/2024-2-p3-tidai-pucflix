@@ -1,7 +1,7 @@
 import "../../../output.css"
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import { logoutUser } from "../../../services/authFunctions";
+import { logoutUser } from "../../../services/firebase/authFunctions";
 
 
 function DropdownBtn(props) {

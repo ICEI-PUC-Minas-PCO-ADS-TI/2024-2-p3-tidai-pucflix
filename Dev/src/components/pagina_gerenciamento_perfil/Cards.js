@@ -1,7 +1,7 @@
 import styles from '../../assets/css/pagina_gerenciamento_perfil/Cards.module.css'
 import iconeEditar from '../../assets/img/pagina_gerenciamento_perfil/iconeEditar.png'
 import { useState } from 'react';
-import { updateProfile, deleteProfile } from "../../services/databaseFunctions"
+import { updateProfile, deleteProfile } from "../../services/firebase/databaseFunctions"
 
 function Cards(props) {
 
