@@ -3,39 +3,43 @@ import Header from '../components/template_alternativo/Header/Header.js';
 import Footer from '../components/template_padrao/Footer/Footer.js';
 import styles from "../assets/css/pagina_escolha_perfil/Pag_escolha_perfil.module.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getProfilesByUser } from "../services/databaseFunctions.js";
+import profilePic from "../assets/img/pagina_gerenciamento_perfil/ProfilePic.png"
 
 function Pag_escolha_perfil() {
-    const cards = [{
-        nome: 'Usuario1',
-        foto: 'https://via.placeholder.com/250'
-    },
-    {
-        nome: 'Usuario2',
-        foto: 'https://via.placeholder.com/250'
-    },
-    {
-        nome: 'Usuario3',
-        foto: 'https://via.placeholder.com/250'
-    },
-    {
-        nome: 'Usuario4',
-        foto: 'https://via.placeholder.com/250'
-    }]
+
+    const [profiles, setProfiles] = useState([])
+
+    const UserProfiles = () => { 
+        getProfilesByUser((userProfile) => {
+            if (userProfile) {
+              setProfiles(Object.values(userProfile.Perfil));
+            } else {
+              console.log("Perfil não encontrado.");
+            }
+          });
+    }
+
+    useEffect(()=>{
+        UserProfiles()
+    },[])
 
     return (
 
         <div className="flex flex-col h-dvh">
             <Header />
-            < div className={styles.conteudo}>
+            <div className={styles.conteudo}>
 
                 <h1 className={styles.titulo}>Escolha o Perfil</h1>
 
                 <div className={styles.cards}>
-                    {cards.map(card => (
+                    {profiles.map((profile, index) => (
                         <Link to="/pucflix/principal">
                             <Cards
-                                nome={card.nome}
-                                foto={card.foto}
+                                nome={profile.Nome}
+                                foto={profilePic}
+                                ID={index}
                             />
                         </Link>
                     ))}

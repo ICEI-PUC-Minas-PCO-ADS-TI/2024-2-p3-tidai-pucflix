@@ -45,6 +45,7 @@ export async function registerUser(email, password, name) {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log("Login bem-sucedido:", user);
+      localStorage.setItem("UID",user.uid)
       return user;
     } catch (error) {
       console.error("Erro ao fazer login:", error.message);
@@ -56,6 +57,7 @@ export async function registerUser(email, password, name) {
     try {
       await signOut(auth);
       console.log("Logout bem-sucedido.");
+      localStorage.clear()
     } catch (error) {
       console.error("Erro ao fazer logout:", error.message);
       throw error;
@@ -67,6 +69,7 @@ export async function registerUser(email, password, name) {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log("Usuário logado com Google:", result.user);
+      localStorage.setItem("UID",result.user.uid)
       if (onSuccess) {
         onSuccess();
       }
