@@ -62,3 +62,26 @@ export async function getMovieById(movieId){
     })
 }
 
+export async function getTrendingMovies() {
+
+    let posters = [];
+    try {
+        const res = await axios({
+            method: "get",
+            url: `${BASE_URL}/trending/movie/day`,
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR"
+            }
+        });
+        posters = res.data.results.map(movie => movie.poster_path);
+
+    } catch (err) {
+        
+        //Pasta de Backup se requisiçao falhar
+        const importAll = r => r.keys().map(r);
+        posters = importAll(require.context('../../assets/img/home_page/Carrossel', false, /\.(png|jpe?g|svg)$/));
+    }
+
+    return posters;
+}
