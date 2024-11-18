@@ -21,19 +21,25 @@ export async function getGenres() {
 }
 
 export async function getMovieByGenre(genreId) {
-    axios({
-        method: "get",
-        url: `${BASE_URL}/discover/movie`,
-        params: {
-            api_key: API_KEY,
-            language: "pt-BR",
-            with_genres: genreId,
-            include_video: true
-        }
-    }).then(res =>{
-        console.log(res.data) //Retorna filmes de um genero Especifico
-    })
+    try {
+        const response = await axios({
+            method: "get",
+            url: `${BASE_URL}/discover/movie`,
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR",
+                with_genres: genreId,
+                include_video: true
+            }
+        });
+        console.log(response.data); 
+        return response.data.results; 
+    } catch (error) {
+        console.error("Erro ao buscar filmes:", error);
+        return []; 
+    }
 }
+
 
 export async function getVideoByMovie(movieId){
     axios({
@@ -60,5 +66,30 @@ export async function getMovieById(movieId){
     }).then(res =>{
         console.log(res.data) // Aqui retorna todos os dados importantes de filmes
     })
+}
+
+export async function getTrendingMovies() {
+    let posters = [];
+    try {
+        const res = await axios({
+            method: "get",
+            url: `${BASE_URL}/trending/movie/day`,
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR"
+            }
+        });
+
+        posters = res.data.results.map(movie => `https://image.tmdb.org/t/p/w500${movie.poster_path}`);
+  
+    } catch (err) {
+        console.error("Erro ao buscar dados da API:", err);
+
+        const importAll = r => r.keys().map(r);
+        posters = importAll(require.context('../../assets/img/home_page/Carrossel', false, /\.(png|jpe?g|svg)$/));
+
+    }
+
+    return posters;
 }
 
