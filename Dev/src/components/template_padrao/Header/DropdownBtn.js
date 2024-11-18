@@ -67,6 +67,11 @@ function DropdownBtn(props) {
                                     Gerenciar Perfis
                                 </Link>
                             </li>
+                            <li>
+                                <Link to="./assistidos" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                    Histórico
+                                </Link>
+                            </li>
                             <li className="border-b ">
                                 <a href="mailto:pedro@phflima.com" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Suporte

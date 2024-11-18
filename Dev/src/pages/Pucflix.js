@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../output.css"
 import AuthLayout from "../components/layout/auth/AuthLayout.js"
 import PainelLayout from "../components/layout/painel/PainelLayout.js"
+import Assistidos from "./Assistidos.js";
 
 function Pucflix() {
 
@@ -29,6 +30,7 @@ function Pucflix() {
                     <Route path="pucflix/" element={<PainelLayout />} >
                         <Route path="principal" element={<Principal />} />
                         <Route path="favoritos" element={<Favoritos />} />
+                        <Route path="assistidos" element={<Assistidos />} />
                         <Route path="generos" element={<Generos />} />
                     </Route>
                 </Routes>
