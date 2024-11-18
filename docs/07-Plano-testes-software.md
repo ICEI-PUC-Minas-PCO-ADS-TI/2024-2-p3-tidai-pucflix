@@ -146,10 +146,10 @@ Pedro Henrique Ferraz Lima
 
 ---
 
-### CT-007 – Realizar Busca de Filmes por meio de nome e/ou diretor
+### CT-007 – Realizar Busca de Filmes por meio de nome
 
 **Requisito associado:**  
-RF-007 -  O Sistema deve permitir a busca de filmes por meio de nome e dieretor.
+RF-007 -  O Sistema deve permitir a busca de filmes por meio de nome.
 
 **Objetivo do teste:**  
 Verificar se o usuário consegue realizar a busca do filme que deseja
@@ -170,10 +170,10 @@ Pedro Henrique Ferraz Lima
 
 ---
 
-### CT-008 – Separar os conteúdos listados por genêros
+### CT-008 – Separar os conteúdos listados por gêneros
 
 **Requisito associado:**  
-RF-008 -  O Sistema deve possuir uma separação de conteúdos por genêros.
+RF-008 -  O Sistema deve possuir uma separação de conteúdos por gêneros.
 
 **Objetivo do teste:**  
 Verificar se o sistema está separando corretamente seu conteúdo
@@ -183,10 +183,10 @@ Verificar se o sistema está separando corretamente seu conteúdo
 2. Informar o endereço do site.  
 3. Realizar login.  
 4. Navegar até a biblioteca de filmes.  
-5. Direcione-se até o slider no qual possui o título do genêro buscado.
+5. Direcione-se até o slider no qual possui o título do gênero buscado.
 
 **Critério de êxito:**  
-- O sistema deve possuir seus filmes em catálogos separados por genêros de forma correta.
+- O sistema deve possuir seus filmes em catálogos separados por gêneros de forma correta.
 
 **Responsável pela elaboração do caso de teste:**  
 Pedro Henrique Ferraz Lima
