@@ -2,23 +2,62 @@ import React, { useState, useEffect } from "react";
 import ScrollControl from "./HorizontalScroll-Control/HorizontalScroll-Control";
 import ScrollItem from "./HorizontalScroll-Items/HorizontalScroll-Items";
 import "../../assets/css/pagina_principal/HorizontalScroll.scss"
+import { getMovieByGenre } from "../../services/TMDB/TMDBFunctions"
 
 function HorizontalScroll(props) {
 
+    const [showVideo, setShowVideo] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [modalMovieName, setModalmovieName] = useState("")
     const [modalMovieIMG, setModalmovieIMG] = useState("")
     const [modalMovieDesc, setModalmovieDesc] = useState("")
+    const [modalMovieBio, setmodalMovieBio] = useState("")
+    const [modalVideo, setmodalVideo] = useState("")
+    const [movies, setMovies] = useState([]);
 
-    const handleModal = (movieImg, movieName, movieDesc) => {
+    const handleModal = (movieImg, movieName, movieDesc, movieBio,movieVideo) => {
         setShowModal(true)
         setModalmovieDesc(movieDesc)
         setModalmovieIMG(movieImg)
         setModalmovieName(movieName)
-
+        setmodalMovieBio(movieBio)
+        setmodalVideo(movieVideo)
     }
 
-    var movies = ["FROZEN", "ENROLADOS", "STITCH", "CARROS", "PINOCCIO", "ALADIN", "BRANCA DE NEVE"]
+    let ID;
+
+    switch (props.title) {
+        case "Ação":
+            ID = 28;
+            break;
+        case "Comédia":
+            ID = 35;
+            break;
+        case "Drama":
+            ID = 18;
+            break;
+        case "Fantasia":
+            ID = 14;
+            break;
+        case "Romance":
+            ID = 10749;
+            break;
+        case "Documentário":
+            ID = 99;
+            break;
+        default:
+            ID = "";
+    }
+
+    // Chamada à função que pega os filmes por gênero
+    useEffect(() => {
+        const fetchMovies = async () => {
+            const fetchedMovies = await getMovieByGenre(ID);
+            setMovies(fetchedMovies);  // Atualiza o estado com os filmes
+        };
+
+        fetchMovies();
+    }, [ID]);
 
     const [sliderHasMoved, setSliderHasMoved] = useState(false);
     const [sliderMoveDirection, setSliderMoveDirection] = useState(null);
@@ -90,14 +129,19 @@ function HorizontalScroll(props) {
             combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
         combinedIndex.unshift(leadingIndex);
 
-        const sliderContents = combinedIndex.map((index) => (
-            <ScrollItem
-                showModal={handleModal}
-                movie={movies[index]}
-                key={`${movies[index]}-${index}`}
-                width={100 / itemsInRow}
-            />
-        ));
+        const sliderContents = combinedIndex.map((index) => {
+            const movie = movies[index];
+            if (!movie) return null;
+
+            return (
+                <ScrollItem
+                    showModal={handleModal}
+                    movie={movie}
+                    key={`${movie.id}-${index}`}
+                    width={100 / itemsInRow}
+                />
+            );
+        });
 
         if (!sliderHasMoved) {
             for (let i = 0; i < itemsInRow; i++) {
@@ -215,7 +259,7 @@ function HorizontalScroll(props) {
             <div className="slider-content" style={style}>
                 {renderSliderContent()}
             </div>
-            
+
             <ScrollControl arrowDirection={"right"} onClick={handleNext} />
 
             {showModal ? (
@@ -233,10 +277,14 @@ function HorizontalScroll(props) {
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-white float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                        onClick={() => setShowModal(false)}
+                                        onClick={() => {
+                                            setShowModal(false);
+                                            setShowVideo(false);
+                                        }}
                                     >
-                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                        ×
+                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none" 
+                                        >
+                                            ×
                                         </span>
                                     </button>
                                 </div>
@@ -244,13 +292,16 @@ function HorizontalScroll(props) {
                                 <div className="relative py-1 p-6 flex-auto">
                                     <div className="my-4 text-black text-lg leading-relaxed">
                                         <div className='flex flex-col justify-center md:items-start gap-4 flex-wrap'>
-                                            <img  src={modalMovieIMG} alt={modalMovieIMG} />
+                                            
+                                        {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
+
+                                            
                                             <div className='flex flex-col gap-5 sm:items-start'>
                                                 <div className='flex flex-col items-start text-white text-sm sm:text-base'>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id turpis orci. Ut tempus quis nibh sit amet ornare. Curabitur dolor sapien, luctus in blandit quis, volutpat in magna. Nulla ultrices libero ut metus rhoncus, id lobortis massa venenatis. Nulla ac varius erat, non dictum augue. Donec et cong</p>
+                                                    {modalMovieDesc}
                                                 </div>
                                                 <div className="text-white text-sm sm:text-base">
-                                                    2024 | Pessoa 1, Pessoa 2 | 150minutos
+                                                    {modalMovieBio}
                                                 </div>
                                             </div>
                                         </div>
@@ -258,20 +309,20 @@ function HorizontalScroll(props) {
                                 </div>
                                 {/*Footer*/}
                                 <div className="flex flex-col items-start justify-start sm:justify-between p-6 rounded-b flex-wrap gap-2">
-                                        <button
-                                            className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                            type="button"
-                                            onClick={() => setShowModal(false)}
-                                        >
-                                            Assistir
-                                        </button>
-                                        <button
-                                            className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                            type="button"
-                                            onClick={() => setShowModal(false)}
-                                        >
-                                            Adicionar aos favoritos
-                                        </button>
+                                    <button
+                                        className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowVideo(true)}
+                                    >
+                                        Assistir
+                                    </button>
+                                    <button
+                                        className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        Adicionar aos favoritos
+                                    </button>
                                 </div>
                             </div>
                         </div>

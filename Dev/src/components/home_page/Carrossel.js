@@ -1,21 +1,25 @@
 import '../../assets/css/home_page/Carrossel.css';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react'
-
-//Realiza a importaçao de todas imagens que estiverem na pasta de imagens do carrossel
-const importAll = r => r.keys().map(r);
-const filmes = importAll(require.context('../../assets/img/home_page/Carrossel', false, /\.(png|jpe?g|svg)$/));
+import { getTrendingMovies } from "../../services/TMDB/TMDBFunctions";
 
 function Carrossel() {
-
+    
+    const [filmes, setFilmes] = useState([]);
     const carrossel = useRef();
     const [width,setWidth] = useState(0)
 
     useEffect(() => {
+        const fetchFilmes = async () => {
+            const movies = await getTrendingMovies(); 
+            setFilmes(movies); 
+        };
+        fetchFilmes();
         if (carrossel.current) {
             setWidth(carrossel.current.scrollWidth - carrossel.current.offsetWidth);
         }
-    }, []);
+    }, [filmes]); 
+
     return (
 
        <div className='conteudo-carrossel'>
