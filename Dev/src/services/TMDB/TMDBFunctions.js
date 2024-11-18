@@ -75,14 +75,13 @@ export async function getTrendingMovies() {
         });
 
         posters = res.data.results.map(movie => `https://image.tmdb.org/t/p/w500${movie.poster_path}`);
-        console.log("Filmes da API:", posters); 
-        
+  
     } catch (err) {
         console.error("Erro ao buscar dados da API:", err);
 
         const importAll = r => r.keys().map(r);
         posters = importAll(require.context('../../assets/img/home_page/Carrossel', false, /\.(png|jpe?g|svg)$/));
-        console.log("Filmes de backup local:", posters); 
+
     }
 
     return posters;
