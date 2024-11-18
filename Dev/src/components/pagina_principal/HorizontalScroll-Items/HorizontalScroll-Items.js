@@ -5,6 +5,8 @@ require("./HorizontalScroll-Items.scss")
 
 const ScrollItem = ({ movie, width, showModal}) => {
 
+    console.log(movie)
+    
     const imgUrl = "https://via.placeholder.com/250x250"
     const imgUrl715 = "https://via.placeholder.com/715x250"
     return (

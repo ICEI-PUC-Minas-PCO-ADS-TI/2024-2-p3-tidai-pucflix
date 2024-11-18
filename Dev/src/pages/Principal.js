@@ -9,8 +9,11 @@ function Principal() {
             <Carousel slidesQty={3}/>
             <HorizontalScroll title="Filmes em Alta"/>
             <HorizontalScroll title="Ação"/>
+            <HorizontalScroll title="Comédia"/>
+            <HorizontalScroll title="Drama"/>
+            <HorizontalScroll title="Fantasia"/>
             <HorizontalScroll title="Romance"/>
-            <HorizontalScroll title="Terror"/>
+            <HorizontalScroll title="Documentário"/>
         </div>
 
     )
