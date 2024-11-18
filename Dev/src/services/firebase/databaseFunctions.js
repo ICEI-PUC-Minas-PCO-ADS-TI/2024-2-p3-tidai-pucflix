@@ -178,7 +178,7 @@ export async function addMovieToFavorites(movieId) {
 
 export async function addMovieToWatched(movieId) {
   try {
-    const profileID = localStorage.getItem("profileID")
+      const profileID = localStorage.getItem("profileID")
       const userUID = localStorage.getItem("UID");
       const userDocRef = doc(db, "Usuarios", userUID);
       const userDoc = await getDoc(userDocRef);

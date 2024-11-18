@@ -16,7 +16,7 @@ export async function getGenres() {
         return res.data.genres; // Retorna os gêneros
     } catch (err) {
         console.error("Erro ao buscar gêneros:", err);
-        throw err; // Propaga o erro para ser tratado pelo chamador
+        throw err; 
     }
 }
 
@@ -41,18 +41,22 @@ export async function getMovieByGenre(genreId) {
 }
 
 
-export async function getVideoByMovie(movieId){
-    axios({
-        method: "get",
-        url: `${BASE_URL}/movie/${movieId}/videos`,
-        params: {
-            api_key: API_KEY,
-            language: "pt-BR",
-        }
-    }).then(res =>{
-        console.log(res.data)
-        console.log(`https://www.youtube.com/watch?v=${res.data.results[0].key}`) // Aqui retorna a URL do YT com o trailer, basta colcoar num Iframe do HTML
-    })
+export async function getVideoByMovie(movieId) {
+    try {
+        const response = await axios.get(`${BASE_URL}/movie/${movieId}/videos`, {
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR",
+            },
+        });
+
+        const videoKey = response.data.results[0]?.key;
+        console.log(videoKey)
+        return videoKey ? `https://www.youtube.com/embed/${videoKey}` : null;
+    } catch (error) {
+        console.error("Erro ao buscar vídeo:", error);
+        return null;
+    }
 }
 
 export async function getMovieById(movieId){
