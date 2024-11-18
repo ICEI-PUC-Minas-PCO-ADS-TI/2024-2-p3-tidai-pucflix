@@ -32,7 +32,6 @@ export async function getMovieByGenre(genreId) {
                 include_video: true
             }
         });
-        console.log(response.data); 
         return response.data.results; 
     } catch (error) {
         console.error("Erro ao buscar filmes:", error);
@@ -51,7 +50,6 @@ export async function getVideoByMovie(movieId) {
         });
 
         const videoKey = response.data.results[0]?.key;
-        console.log(videoKey)
         return videoKey ? `https://www.youtube.com/embed/${videoKey}` : null;
     } catch (error) {
         console.error("Erro ao buscar vídeo:", error);
@@ -59,17 +57,23 @@ export async function getVideoByMovie(movieId) {
     }
 }
 
-export async function getMovieById(movieId){
-    axios({
-        method: "get",
-        url: `${BASE_URL}/movie/${movieId}`,
-        params: {
-            api_key: API_KEY,
-            language: "pt-BR",
-        }
-    }).then(res =>{
-        console.log(res.data) // Aqui retorna todos os dados importantes de filmes
-    })
+export async function getMovieById(movieId) {
+    try {
+        const res = await axios({
+            method: "get",
+            url: `${BASE_URL}/movie/${movieId}`,
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR",
+            }
+        });
+        const movie = res.data
+        return movie;
+        
+    } catch (error) {
+        console.error(error); 
+        throw error; 
+    }
 }
 
 export async function getTrendingMovies() {
