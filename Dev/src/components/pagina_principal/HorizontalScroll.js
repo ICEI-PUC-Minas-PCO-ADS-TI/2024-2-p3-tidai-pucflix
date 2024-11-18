@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ScrollControl from "./HorizontalScroll-Control/HorizontalScroll-Control";
 import ScrollItem from "./HorizontalScroll-Items/HorizontalScroll-Items";
 import "../../assets/css/pagina_principal/HorizontalScroll.scss"
-// { getMovieByGenre } from "../../services/TMDB/TMDBFunctions";
+import { getMovieByGenre } from "../../services/TMDB/TMDBFunctions"
 
 function HorizontalScroll(props) {
 
@@ -10,6 +10,7 @@ function HorizontalScroll(props) {
     const [modalMovieName, setModalmovieName] = useState("")
     const [modalMovieIMG, setModalmovieIMG] = useState("")
     const [modalMovieDesc, setModalmovieDesc] = useState("")
+    const [movies, setMovies] = useState([]);
 
     const handleModal = (movieImg, movieName, movieDesc) => {
         setShowModal(true)
@@ -44,10 +45,19 @@ function HorizontalScroll(props) {
             ID = "";
     }
 
-    //const movies =  getMovieByGenre(ID);
-    var movies = ["FROZEM","TESTE"]
 
-    console.log(movies)
+    //var movies = ["FROZEN", "ENROLADOS", "STITCH", "CARROS", "PINOCCIO", "ALADIN", "BRANCA DE NEVE"]
+
+    // Chamada à função que pega os filmes por gênero
+    useEffect(() => {
+        const fetchMovies = async () => {
+            const fetchedMovies = await getMovieByGenre(ID);
+            setMovies(fetchedMovies);  // Atualiza o estado com os filmes
+        };
+
+        fetchMovies();
+    }, [ID]); // A dependência 'ID' garante que a chamada à API seja feita quando o gênero mudar
+
     const [sliderHasMoved, setSliderHasMoved] = useState(false);
     const [sliderMoveDirection, setSliderMoveDirection] = useState(null);
     const [sliderMoving, setSliderMoving] = useState(false);
@@ -115,19 +125,25 @@ function HorizontalScroll(props) {
         }
 
         const leadingIndex =
-            combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
+        combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
         combinedIndex.unshift(leadingIndex);
 
 
-        
-        const sliderContents = combinedIndex.map((index) => (
-            <ScrollItem
-                showModal={handleModal}
-                movie={movies.movieData[index]}
-                key={`${movies[index]}-${index}`}
-                width={100 / itemsInRow}
-            />
-        ));
+            const sliderContents = combinedIndex.map((index) => {
+            const movie = movies[index];
+            if (!movie) {
+                // Se o filme não estiver presente, podemos retornar um componente de fallback
+                return <div key={index}>Filme não encontrado</div>;
+            }
+            return (
+                <ScrollItem
+                    showModal={handleModal}
+                    movie={movie}
+                    key={`${movie.id}-${index}`}  // Use 'id' para garantir uma chave única
+                    width={100 / itemsInRow}
+                />
+            );
+        });
 
         if (!sliderHasMoved) {
             for (let i = 0; i < itemsInRow; i++) {
