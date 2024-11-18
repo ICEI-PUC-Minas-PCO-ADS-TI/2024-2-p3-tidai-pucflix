@@ -10,14 +10,15 @@ function HorizontalScroll(props) {
     const [modalMovieName, setModalmovieName] = useState("")
     const [modalMovieIMG, setModalmovieIMG] = useState("")
     const [modalMovieDesc, setModalmovieDesc] = useState("")
+    const [modalMovieBio, setmodalMovieBio] = useState("")
     const [movies, setMovies] = useState([]);
 
-    const handleModal = (movieImg, movieName, movieDesc) => {
+    const handleModal = (movieImg, movieName, movieDesc, movieBio) => {
         setShowModal(true)
         setModalmovieDesc(movieDesc)
         setModalmovieIMG(movieImg)
         setModalmovieName(movieName)
-
+        setmodalMovieBio(movieBio)
     }
 
     let ID;
@@ -45,9 +46,6 @@ function HorizontalScroll(props) {
             ID = "";
     }
 
-
-    //var movies = ["FROZEN", "ENROLADOS", "STITCH", "CARROS", "PINOCCIO", "ALADIN", "BRANCA DE NEVE"]
-
     // Chamada à função que pega os filmes por gênero
     useEffect(() => {
         const fetchMovies = async () => {
@@ -56,7 +54,7 @@ function HorizontalScroll(props) {
         };
 
         fetchMovies();
-    }, [ID]); // A dependência 'ID' garante que a chamada à API seja feita quando o gênero mudar
+    }, [ID]);
 
     const [sliderHasMoved, setSliderHasMoved] = useState(false);
     const [sliderMoveDirection, setSliderMoveDirection] = useState(null);
@@ -125,21 +123,18 @@ function HorizontalScroll(props) {
         }
 
         const leadingIndex =
-        combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
+            combinedIndex[0] === 0 ? totalItems - 1 : combinedIndex[0] - 1;
         combinedIndex.unshift(leadingIndex);
 
-
-            const sliderContents = combinedIndex.map((index) => {
+        const sliderContents = combinedIndex.map((index) => {
             const movie = movies[index];
-            if (!movie) {
-                // Se o filme não estiver presente, podemos retornar um componente de fallback
-                return <div key={index}>Filme não encontrado</div>;
-            }
+            if (!movie) return null;
+
             return (
                 <ScrollItem
                     showModal={handleModal}
                     movie={movie}
-                    key={`${movie.id}-${index}`}  // Use 'id' para garantir uma chave única
+                    key={`${movie.id}-${index}`}
                     width={100 / itemsInRow}
                 />
             );
@@ -293,10 +288,10 @@ function HorizontalScroll(props) {
                                             <img src={modalMovieIMG} alt={modalMovieIMG} />
                                             <div className='flex flex-col gap-5 sm:items-start'>
                                                 <div className='flex flex-col items-start text-white text-sm sm:text-base'>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id turpis orci. Ut tempus quis nibh sit amet ornare. Curabitur dolor sapien, luctus in blandit quis, volutpat in magna. Nulla ultrices libero ut metus rhoncus, id lobortis massa venenatis. Nulla ac varius erat, non dictum augue. Donec et cong</p>
+                                                    {modalMovieDesc}
                                                 </div>
                                                 <div className="text-white text-sm sm:text-base">
-                                                    2024 | Pessoa 1, Pessoa 2 | 150minutos
+                                                    {modalMovieBio}
                                                 </div>
                                             </div>
                                         </div>
