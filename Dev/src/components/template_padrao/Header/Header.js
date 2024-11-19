@@ -55,17 +55,18 @@ function Header() {
                 </nav>
 
                 <div className="hidden lg:flex items-center h-full">
-                    <div className="flex me-10">
-                        <input
-                            type="text"
-                            className="form-control flex-grow p-1 px-2 rounded-l-md focus:outline-none text-gray-900"
-                            placeholder="Pesquisar"
-                            aria-label="Barra de Pesquisa"
-                        />
-                        <span className="inline-flex items-center px-3 text-black bg-white rounded-r-md">
-                            <IoSearchSharp />
-                        </span>
-                    </div>
+                    {//<div className="flex me-10">
+                      //  <input
+                       //     type="text"
+                       //     className="form-control flex-grow p-1 px-2 rounded-l-md focus:outline-none text-gray-900"
+   //Barra de Pesquisa //     placeholder="Pesquisar"
+                       //     aria-label="Barra de Pesquisa"
+                      //  />
+                      //  <span className="inline-flex items-center px-3 text-black bg-white rounded-r-md">
+                      //      <IoSearchSharp />
+                      //  </span>
+                   //</div>
+                    }
 
                     <DropdownBtn btn={ProfilePicture}/>
 
