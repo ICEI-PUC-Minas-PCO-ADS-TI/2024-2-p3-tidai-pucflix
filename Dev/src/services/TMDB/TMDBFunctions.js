@@ -20,20 +20,28 @@ export async function getGenres() {
     }
 }
 
-export async function getMovieByGenre(genreId) {
+export async function getMovieByGenre(genreId, pages = 6) {
     try {
-        const response = await axios({
-            method: "get",
-            url: `${BASE_URL}/discover/movie`,
-            params: {
-                api_key: API_KEY,
-                language: "pt-BR",
-                with_genres: genreId,
-                include_video: true
-            }
-        });
-        console.log(response.data); 
-        return response.data.results; 
+        let allMovies = [];
+        
+
+        for (let page = 1; page <= pages; page++) {
+            const response = await axios({
+                method: "get",
+                url: `${BASE_URL}/discover/movie`,
+                params: {
+                    api_key: API_KEY,
+                    language: "pt-BR",
+                    with_genres: genreId,
+                    page: page 
+                }
+            });
+
+            allMovies = [...allMovies, ...response.data.results]; 
+        }
+
+        return allMovies;  
+
     } catch (error) {
         console.error("Erro ao buscar filmes:", error);
         return []; 
