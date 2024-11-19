@@ -111,23 +111,24 @@ export async function getTrendingMovies() {
 }
 
 
-export async function getSearchMovies(keyword) {
-
-    let movies = [];
-    try {
-        const res = await axios({
-            method: "get",
-            url: `${BASE_URL}/search/movie`,
-            params: {
-                api_key: API_KEY,
-                language: "pt-BR",
-                query: keyword
-            }
-        });
-        movies = res.data.results
-        return movies
-    } catch (err) {
-        console.error("Erro ao buscar dados da API:", err);
-
-    }
-}
+//VALIDAR ERRO AO BUSCAR FILMES
+//export async function getSearchMovies(keyword) {
+//
+//    let movies = [];
+//    try {
+//        const res = await axios({
+//            method: "get",
+//            url: `${BASE_URL}/search/movie`,
+//            params: {
+//                api_key: API_KEY,
+//                language: "pt-BR",
+//                query: keyword
+//            }
+//        });
+//        movies = res.data.results
+//        return movies
+//    } catch (err) {
+//        console.error("Erro ao buscar dados da API:", err);
+//
+//    }
+//}
