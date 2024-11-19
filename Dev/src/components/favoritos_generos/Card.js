@@ -5,6 +5,7 @@ import { getVideoByMovie } from "../../services/TMDB/TMDBFunctions";
 function Card({movie, showModal}) {
 
     const imgUrl715 = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+    const imgUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
     const [video, setVideoUrl] = useState([]);
 
@@ -22,7 +23,7 @@ function Card({movie, showModal}) {
         onClick={()=>{showModal(imgUrl715, movie.title, movie.overview, movie.release_date.substring(0, 4) + " | Nota - " + movie.vote_average,video, movie.id)}}
         className="cursor-pointer transform rounded-xl h-fit w-fit sm:h-full sm:w-full shadow-xl transition duration-300 hover:scale-105">
             <div className="flex h-full justify-center items-center">
-                <img className="h-auto max-w-full rounded-lg" src={imgUrl715} alt=""></img>
+                <img className="h-auto max-w-full rounded-lg" src={imgUrl} alt=""></img>
             </div>
         </div>
     )

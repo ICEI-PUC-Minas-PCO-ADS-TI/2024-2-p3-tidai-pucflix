@@ -16,14 +16,14 @@ export async function getGenres() {
         return res.data.genres; // Retorna os gêneros
     } catch (err) {
         console.error("Erro ao buscar gêneros:", err);
-        throw err; 
+        throw err;
     }
 }
 
 export async function getMovieByGenre(genreId, pages = 6) {
     try {
         let allMovies = [];
-        
+
 
         for (let page = 1; page <= pages; page++) {
             const response = await axios({
@@ -33,18 +33,18 @@ export async function getMovieByGenre(genreId, pages = 6) {
                     api_key: API_KEY,
                     language: "pt-BR",
                     with_genres: genreId,
-                    page: page 
+                    page: page
                 }
             });
 
-            allMovies = [...allMovies, ...response.data.results]; 
+            allMovies = [...allMovies, ...response.data.results];
         }
 
-        return allMovies;  
+        return allMovies;
 
     } catch (error) {
         console.error("Erro ao buscar filmes:", error);
-        return []; 
+        return [];
     }
 }
 
@@ -78,10 +78,10 @@ export async function getMovieById(movieId) {
         });
         const movie = res.data
         return movie;
-        
+
     } catch (error) {
-        console.error(error); 
-        throw error; 
+        console.error(error);
+        throw error;
     }
 }
 
@@ -98,7 +98,7 @@ export async function getTrendingMovies() {
         });
 
         posters = res.data.results.map(movie => `https://image.tmdb.org/t/p/w500${movie.poster_path}`);
-  
+
     } catch (err) {
         console.error("Erro ao buscar dados da API:", err);
 
@@ -110,3 +110,24 @@ export async function getTrendingMovies() {
     return posters;
 }
 
+
+export async function getSearchMovies(keyword) {
+
+    let movies = [];
+    try {
+        const res = await axios({
+            method: "get",
+            url: `${BASE_URL}/search/movie`,
+            params: {
+                api_key: API_KEY,
+                language: "pt-BR",
+                query: keyword
+            }
+        });
+        movies = res.data.results
+        return movies
+    } catch (err) {
+        console.error("Erro ao buscar dados da API:", err);
+
+    }
+}
