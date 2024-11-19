@@ -1,45 +1,30 @@
-import "../../output.css"
-import img1 from "../../assets/img/pagina_principal/moana-bg-test.png"
-import img2 from "../../assets/img/pagina_principal/tangled-bg-test.jpg"
-import img3 from "../../assets/img/pagina_principal/frozen-bg-test.jpg"
-import CarouselContent from "./CarouselContent/CarouselContent";
-import { useEffect, useState } from "react";
-import { addMovieToWatched, addMovieToFavorites } from "../../services/firebase/databaseFunctions";
-import Notification from "./Notificacao";
-import { getMovieById } from "../../services/TMDB/TMDBFunctions";
+import Card from "../components/favoritos_generos/Card";
+import React, { useEffect, useState } from "react";
+import { getMovieById} from "../services/TMDB/TMDBFunctions";
+import { getWatchedMovies, addMovieToFavorites } from "../services/firebase/databaseFunctions";
+import Notification from "../components/pagina_principal/Notificacao";
 
-function Carousel(props) {
-
+function Assistidos() {
     
     const [notification, setNotification] = useState(null);
-    const [showModal, setShowModal] = useState(false)
     const [showVideo, setShowVideo] = useState(false)
-    const [movieId, setMovieId] = useState()
     const [modalMovieName, setModalmovieName] = useState("")
     const [modalMovieIMG, setModalmovieIMG] = useState("")
     const [modalMovieDesc, setModalmovieDesc] = useState("")
     const [modalMovieBio, setmodalMovieBio] = useState("")
     const [modalVideo, setmodalVideo] = useState("")
     const [movies, setMovies] = useState([]);
+    const [movieId, setMovieId] = useState()
     
-    
-    useEffect(() => {
+    const handleShowNotification = () => {
+        setNotification('Filme Adcionado aos Favoritos com Sucesso!');
 
-        const fetchMovies = async () => {
-            try {
-                const movieToAdd = [277834,109445,38757]
-                
-                const carroselMovies = await Promise.all(movieToAdd.map(movie => getMovieById(movie)));
-                setMovies(carroselMovies);
+        setTimeout(() => {
+            setNotification(null);
+        }, 2500);
+    };
 
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        fetchMovies();
-    }, []);
-
-    const handleModal = (movieImg, movieName, movieDesc, movieBio, movieVideo, movieId) => {
+    const handleModal = (movieImg, movieName, movieDesc, movieBio,movieVideo,movieId) => {
         setShowModal(true)
         setModalmovieDesc(movieDesc)
         setModalmovieIMG(movieImg)
@@ -49,58 +34,49 @@ function Carousel(props) {
         setMovieId(movieId)
     }
 
-    const handleShowNotification = () => {
-        setNotification('Filme Adcionado aos Favoritos com Sucesso!');
-
-        setTimeout(() => {
-            setNotification(null);
-        }, 2500);
-    };
-
+    useEffect(() => {
+        const fetchWatched = async () => {
+            try {
+                const watchedIds = await getWatchedMovies();
+                console.log(watchedIds)
+                
+                const watchedMovies = await Promise.all(watchedIds.map(movie => getMovieById(movie)));
+                setMovies(watchedMovies); 
     
 
-    return (
-        <div className="relative w-full h-[70vh] bg-slate-800 overflow-hidden">
-
-            {
-                Array.from({ length: props.slidesQty }).map((_, i) => (
-                    <input
-                        key={i}
-                        className={`hidden peer/slider${i + 1} checkbox`}
-                        type="radio"
-                        id={`slider${i + 1}`}
-                        name="slider"
-                        defaultChecked={i === 0}
-                    />
-                ))
+            } catch (err) {
+                console.log(err);
             }
-            <div
-                className="relative w-[300vw] h-[100%] flex transition-all duration-500 ease-in-out peer-checked/slider1:-left-0 peer-checked/slider2:-left-[100vw] peer-checked/slider3:-left-[200vw]"
-            >
-                <CarouselContent movie={movies[0]} showModal={handleModal} movieTitle="Moana" movieSubtitle="Um Mar de Aventuras" movieDescription="2016 | Diretores: John Musker, Ron Clements | 107 minutos" movieImageBg={img1} />
-                <CarouselContent movie={movies[1]} showModal={handleModal} movieTitle="Frozen 2" movieDescription="2020 | Diretores: Jennifer Lee, Chris Buck | 104 minutos" movieImageBg={img3} />
-                <CarouselContent movie={movies[2]} showModal={handleModal} movieTitle="Enrolados" movieDescription="2011 | Diretores: Nathan Greno, Byron Howard | 100 minutos" movieImageBg={img2} />
+        };
+    
+        fetchWatched();
+    }, []);
+
+    const [showModal, setShowModal] = useState(false)
+
+    return (
+        <div className="h-full w-full flex-1">
+            <div className="container flex flex-wrap justify-between pt-6 p-2 md:p-6 mx-auto h-full flex-col">
+                <h1
+                    className="text-white text-2xl sm:text-4xl font-semibold my-6"
+                >Histórico de Filmes</h1>
+                <div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-items-center">
+
+                        {
+                            movies.map(movie => (
+                                <Card 
+                                showModal = {handleModal}
+                                movie = {movie}
+                                key={movie.id} 
+                               />
+                            ))
+
+                        }
+
+                    </div>
+                </div>
             </div>
-
-            <div
-                className="absolute w-full flex justify-center gap-2 bottom-12 peer-[&_label:nth-of-type(1)]/slider1:peer-checked/slider1:opacity-100 peer-[&_label:nth-of-type(1)]/slider1:peer-checked/slider1:w-10 peer-[&_label:nth-of-type(2)]/slider2:peer-checked/slider2:opacity-100 peer-[&_label:nth-of-type(2)]/slider2:peer-checked/slider2:w-10 peer-[&_label:nth-of-type(3)]/slider3:peer-checked/slider3:opacity-100 peer-[&_label:nth-of-type(3)]/slider3:peer-checked/slider3:w-10"
-            >
-
-                {
-                    Array.from({ length: props.slidesQty }).map((_, i) => (
-
-                        <label
-                            className="block w-8 h-3 bg-white cursor-pointer opacity-50 transition-all duration-300 ease-in-out hover:scale-125 hover:opacity-100"
-                            htmlFor={`slider${i + 1}`}
-                            key={i}
-                        >
-                        </label>
-
-                    ))
-                }
-
-            </div>
-
             {showModal ? (
                 <>
                     <div
@@ -121,7 +97,7 @@ function Carousel(props) {
                                             setShowVideo(false);
                                         }}
                                     >
-                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none"
+                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none" 
                                         >
                                             ×
                                         </span>
@@ -131,10 +107,10 @@ function Carousel(props) {
                                 <div className="relative py-1 p-6 flex-auto">
                                     <div className="my-4 text-black text-lg leading-relaxed">
                                         <div className='flex flex-col justify-center md:items-start gap-4 flex-wrap'>
+                                            
+                                        {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
 
-                                            {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
-
-
+                                            
                                             <div className='flex flex-col gap-5 sm:items-start'>
                                                 <div className='flex flex-col items-start text-white text-sm sm:text-base'>
                                                     {modalMovieDesc}
@@ -151,18 +127,14 @@ function Carousel(props) {
                                     <button
                                         className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
-                                        onClick={() => {
-                                            addMovieToWatched(movieId)
-                                            setShowVideo(true)
-                                        }
-                                        }
+                                        onClick={() => setShowVideo(true)}
                                     >
                                         Assistir
                                     </button>
                                     <button
                                         className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
-                                        onClick={() => {
+                                        onClick={() =>{
                                             addMovieToFavorites(movieId)
                                             handleShowNotification()
                                         }}
@@ -184,7 +156,6 @@ function Carousel(props) {
             ) : null}
         </div>
     )
-
 }
 
-export default Carousel;
+export default Assistidos;

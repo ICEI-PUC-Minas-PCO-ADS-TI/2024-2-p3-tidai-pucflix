@@ -3,11 +3,16 @@ import ScrollControl from "./HorizontalScroll-Control/HorizontalScroll-Control";
 import ScrollItem from "./HorizontalScroll-Items/HorizontalScroll-Items";
 import "../../assets/css/pagina_principal/HorizontalScroll.scss"
 import { getMovieByGenre } from "../../services/TMDB/TMDBFunctions"
+import { addMovieToFavorites, addMovieToWatched } from "../../services/firebase/databaseFunctions";
+import Notification from "./Notificacao";
+
 
 function HorizontalScroll(props) {
 
+    const [notification, setNotification] = useState(null);
     const [showVideo, setShowVideo] = useState(false)
     const [showModal, setShowModal] = useState(false)
+    const [movieId, setMovieId] = useState()
     const [modalMovieName, setModalmovieName] = useState("")
     const [modalMovieIMG, setModalmovieIMG] = useState("")
     const [modalMovieDesc, setModalmovieDesc] = useState("")
@@ -15,14 +20,24 @@ function HorizontalScroll(props) {
     const [modalVideo, setmodalVideo] = useState("")
     const [movies, setMovies] = useState([]);
 
-    const handleModal = (movieImg, movieName, movieDesc, movieBio,movieVideo) => {
+    const handleShowNotification = () => {
+        setNotification('Filme Adcionado aos Favoritos com Sucesso!');
+
+        setTimeout(() => {
+            setNotification(null);
+        }, 2500);
+    };
+
+    const handleModal = (movieImg, movieName, movieDesc, movieBio, movieVideo, movieId) => {
         setShowModal(true)
         setModalmovieDesc(movieDesc)
         setModalmovieIMG(movieImg)
         setModalmovieName(movieName)
         setmodalMovieBio(movieBio)
         setmodalVideo(movieVideo)
+        setMovieId(movieId)
     }
+
 
     let ID;
 
@@ -282,7 +297,7 @@ function HorizontalScroll(props) {
                                             setShowVideo(false);
                                         }}
                                     >
-                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none" 
+                                        <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none"
                                         >
                                             ×
                                         </span>
@@ -292,10 +307,10 @@ function HorizontalScroll(props) {
                                 <div className="relative py-1 p-6 flex-auto">
                                     <div className="my-4 text-black text-lg leading-relaxed">
                                         <div className='flex flex-col justify-center md:items-start gap-4 flex-wrap'>
-                                            
-                                        {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
 
-                                            
+                                            {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
+
+
                                             <div className='flex flex-col gap-5 sm:items-start'>
                                                 <div className='flex flex-col items-start text-white text-sm sm:text-base'>
                                                     {modalMovieDesc}
@@ -312,17 +327,30 @@ function HorizontalScroll(props) {
                                     <button
                                         className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
-                                        onClick={() => setShowVideo(true)}
+                                        onClick={() => {
+                                            addMovieToWatched(movieId)
+                                            setShowVideo(true)
+                                        }
+                                        }
                                     >
                                         Assistir
                                     </button>
                                     <button
                                         className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="button"
-                                        onClick={() => setShowModal(false)}
+                                        onClick={() => {
+                                            addMovieToFavorites(movieId)
+                                            handleShowNotification()
+                                        }}
                                     >
                                         Adicionar aos favoritos
                                     </button>
+                                    {notification && (
+                                        <Notification
+                                            message={notification}
+                                            onClose={() => setNotification(null)}
+                                        />
+                                    )}
                                 </div>
                             </div>
                         </div>

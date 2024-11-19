@@ -152,7 +152,7 @@ export async function addMovieToFavorites(movieId) {
 
       if (userDoc.exists()) {
           const profiles = userDoc.data().Perfil || {};
-          const profileKey = profileID + 1; 
+          const profileKey = parseInt(profileID) + 1; 
 
           if (profiles[profileKey]) {
               const favorites = profiles[profileKey].Session.Favoritos || [];
@@ -185,13 +185,13 @@ export async function addMovieToWatched(movieId) {
 
       if (userDoc.exists()) {
           const profiles = userDoc.data().Perfil || {};
-          const profileKey = profileID + 1;
+          const profileKey = parseInt(profileID) + 1;
 
           if (profiles[profileKey]) {
               const watched = profiles[profileKey].Session.Assistidos || [];
               if (!watched.includes(movieId)) {
-                  watched.push(movieId); // Adiciona o ID do filme à lista de assistidos
-                  profiles[profileKey].Session.Assistidos = watched; // Atualiza a lista de assistidos
+                  watched.push(movieId); 
+                  profiles[profileKey].Session.Assistidos = watched;
                   await updateDoc(userDocRef, { Perfil: profiles });
                   console.log(`Filme ${movieId} adicionado à lista de assistidos!`);
               } else {
@@ -206,5 +206,94 @@ export async function addMovieToWatched(movieId) {
   } catch (error) {
       console.error("Erro ao adicionar filme à lista de assistidos:", error);
       throw error;
+  }
+}
+
+export async function getFavoriteMovies() {
+  try {
+    const profileID = localStorage.getItem("profileID");
+    const userUID = localStorage.getItem("UID");
+    const userDocRef = doc(db, "Usuarios", userUID);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      const profiles = userDoc.data().Perfil || {};
+      const profileKey = parseInt(profileID) + 1;
+
+      if (profiles[profileKey]) {
+        const favorites = profiles[profileKey].Session.Favoritos || [];
+        return favorites; 
+      } else {
+        console.log(`Perfil ${profileKey} não encontrado!`);
+        return [];
+      }
+    } else {
+      console.log("Usuário não encontrado!");
+      return [];
+    }
+  } catch (error) {
+    console.error("Erro ao buscar filmes favoritos:", error);
+    throw error;
+  }
+}
+
+export async function removeMovieFromFavorites(movieId) {
+  try {
+      const profileID = localStorage.getItem("profileID");
+      const userUID = localStorage.getItem("UID");
+      const userDocRef = doc(db, "Usuarios", userUID);
+      const userDoc = await getDoc(userDocRef);
+
+      if (userDoc.exists()) {
+          const profiles = userDoc.data().Perfil || {};
+          const profileKey = parseInt(profileID) + 1; 
+
+          if (profiles[profileKey]) {
+              let favorites = profiles[profileKey].Session.Favoritos || [];
+              if (favorites.includes(movieId)) {
+                  favorites = favorites.filter(favorite => favorite !== movieId);
+                  profiles[profileKey].Session.Favoritos = favorites;
+                  await updateDoc(userDocRef, { Perfil: profiles });
+                  console.log(`Filme ${movieId} removido dos favoritos!`);
+              } else {
+                  console.log(`Filme ${movieId} não está nos favoritos!`);
+              }
+          } else {
+              console.log(`Perfil ${profileKey} não encontrado!`);
+          }
+      } else {
+          console.log("Usuário não encontrado!");
+      }
+  } catch (error) {
+      console.error("Erro ao remover filme dos favoritos:", error);
+      throw error;
+  }
+}
+
+export async function getWatchedMovies() {
+  try {
+    const profileID = localStorage.getItem("profileID");
+    const userUID = localStorage.getItem("UID");
+    const userDocRef = doc(db, "Usuarios", userUID);
+    const userDoc = await getDoc(userDocRef);
+
+    if (userDoc.exists()) {
+      const profiles = userDoc.data().Perfil || {};
+      const profileKey = parseInt(profileID) + 1;
+
+      if (profiles[profileKey]) {
+        const assistidos = profiles[profileKey].Session.Assistidos || [];
+        return assistidos; 
+      } else {
+        console.log(`Perfil ${profileKey} não encontrado!`);
+        return [];
+      }
+    } else {
+      console.log("Usuário não encontrado!");
+      return [];
+    }
+  } catch (error) {
+    console.error("Erro ao buscar filmes assistidos:", error);
+    throw error;
   }
 }

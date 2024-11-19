@@ -5,7 +5,6 @@ require("./HorizontalScroll-Items.scss")
 
 const ScrollItem = ({ movie, width, showModal }) => {
     const [video, setVideoUrl] = useState([]);
-    console.log(movie)
 
     const imgUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     const imgUrl715 = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
