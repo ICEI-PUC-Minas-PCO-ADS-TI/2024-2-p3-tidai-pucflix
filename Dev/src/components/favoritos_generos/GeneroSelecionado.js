@@ -1,9 +1,12 @@
 import Card from "./Card";
 import React, { useState, useEffect } from "react";
 import { getMovieByGenre } from "../../services/TMDB/TMDBFunctions"
+import { addMovieToFavorites, addMovieToWatched } from "../../services/firebase/databaseFunctions";
+import Notification from "../pagina_principal/Notificacao";
 
 function GeneroSelecionado({ genero }) {
 
+    const [notification, setNotification] = useState(null);
     const [showVideo, setShowVideo] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [modalMovieName, setModalmovieName] = useState("")
@@ -12,14 +15,24 @@ function GeneroSelecionado({ genero }) {
     const [modalMovieBio, setmodalMovieBio] = useState("")
     const [modalVideo, setmodalVideo] = useState("")
     const [movies, setMovies] = useState([]);
+    const [movieId, setMovieId] = useState()
     
-    const handleModal = (movieImg, movieName, movieDesc, movieBio, movieVideo) => {
+    const handleShowNotification = () => {
+        setNotification('Filme Adcionado aos Favoritos com Sucesso!');
+
+        setTimeout(() => {
+            setNotification(null);
+        }, 2500);
+    };
+
+    const handleModal = (movieImg, movieName, movieDesc, movieBio, movieVideo, movieId) => {
         setShowModal(true)
         setModalmovieDesc(movieDesc)
         setModalmovieIMG(movieImg)
         setModalmovieName(movieName)
         setmodalMovieBio(movieBio)
         setmodalVideo(movieVideo)
+        setMovieId(movieId)
     }
 
 
@@ -111,17 +124,29 @@ function GeneroSelecionado({ genero }) {
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowVideo(true)}
+                                            onClick={() => {
+                                                setShowVideo(true)
+                                                addMovieToWatched(movieId)
+                                            }}
                                         >
                                             Assistir
                                         </button>
                                         <button
                                             className="bg-defaultPurple text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button"
-                                            onClick={() => setShowModal(false)}
+                                            onClick={() => {
+                                                addMovieToFavorites(movieId)
+                                                handleShowNotification()
+                                            }}
                                         >
                                             Adicionar aos favoritos
                                         </button>
+                                        {notification && (
+                                        <Notification
+                                            message={notification}
+                                            onClose={() => setNotification(null)}
+                                        />
+                                    )}
                                     </div>
                                 </div>
                             </div>

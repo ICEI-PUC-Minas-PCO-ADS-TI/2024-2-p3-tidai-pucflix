@@ -42,7 +42,7 @@ function Assistidos() {
                 
                 const watchedMovies = await Promise.all(watchedIds.map(movie => getMovieById(movie)));
                 setMovies(watchedMovies); 
-    
+                console.log(movies)
 
             } catch (err) {
                 console.log(err);

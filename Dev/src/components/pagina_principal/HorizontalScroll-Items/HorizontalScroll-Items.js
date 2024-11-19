@@ -23,7 +23,8 @@ const ScrollItem = ({ movie, width, showModal }) => {
     return (
         <div
             className="slider-item" style={{ width: `${width}%` }}
-            onClick={() => { showModal(imgUrl715, movie.title, movie.overview, movie.release_date.substring(0, 4) + " | Nota - " + movie.vote_average,video)}}>
+            onClick={() => { showModal(imgUrl715, movie.title, movie.overview, movie.release_date.substring(0, 4) + " | Nota - " + movie.vote_average,video, movie.id)}}
+        >
             <img
                 className="slider-image rounded-lg"
                 src={imgUrl}

@@ -1,26 +1,28 @@
-import React, { useState,useEffect } from "react";
-import {getVideoByMovie} from "../../services/TMDB/TMDBFunctions"
+import { useEffect, useState } from "react";
+import { getVideoByMovie } from "../../services/TMDB/TMDBFunctions";
 
-function Card(props) {
+
+function Card({movie, showModal}) {
+
+    const imgUrl715 = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
 
     const [video, setVideoUrl] = useState([]);
+
     useEffect(() => {
         const fetchVideo = async () => {
-            const video = await getVideoByMovie(props.movie.id);
+            const video = await getVideoByMovie(movie.id);
             setVideoUrl(video); 
         };
 
         fetchVideo();
-    },[props.movie.id]);
-
+    },[movie.id]);
 
     return (
-        
         <div 
-        onClick={() => { props.showModal(`https://image.tmdb.org/t/p/w500${props.movie.backdrop_path}`, props.movie.title, props.movie.overview, props.movie.release_date.substring(0, 4) + " | Nota - " + props.movie.vote_average,video)}}
-        className="cursor-pointer transform rounded-xl h-fit w-fit sm:h-full sm:w-full bg-white shadow-xl transition duration-300 hover:scale-105">
+        onClick={()=>{showModal(imgUrl715, movie.title, movie.overview, movie.release_date.substring(0, 4) + " | Nota - " + movie.vote_average,video, movie.id)}}
+        className="cursor-pointer transform rounded-xl h-fit w-fit sm:h-full sm:w-full shadow-xl transition duration-300 hover:scale-105">
             <div className="flex h-full justify-center items-center">
-                <img className="h-auto max-w-full rounded-lg" src={`https://image.tmdb.org/t/p/w500${props.img}`} alt=""></img>
+                <img className="h-auto max-w-full rounded-lg" src={imgUrl715} alt=""></img>
             </div>
         </div>
     )
