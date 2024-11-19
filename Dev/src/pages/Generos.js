@@ -2,6 +2,9 @@ import CardGeneros from "../components/favoritos_generos/CardGeneros";
 import { getGenres } from "../services/TMDB/TMDBFunctions";
 import { useEffect, useState } from "react"
 import GeneroSelecionado from "../components/favoritos_generos/GeneroSelecionado";
+import { IoChevronBackOutline } from "react-icons/io5";
+
+
 
 function Generos() {
 
@@ -35,9 +38,9 @@ function Generos() {
                     <div className="container flex mx-auto pt-5 p-2 md:p-3 md:px-6">
                         <button
                             onClick={handleVoltar}
-                            //TERMINAR CUSTOMIZAÇAO DO
-                            className="text-white sm:text-2xl hover:border-b box-border ">
-                            Voltar
+                            className="text-white sm:text-2xl box-border ">
+                        <IoChevronBackOutline size={40} />
+
                         </button>
                     </div>
                 </div>
