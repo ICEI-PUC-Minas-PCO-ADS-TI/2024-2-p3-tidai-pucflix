@@ -11,11 +11,15 @@ function Generos() {
         setGeneroSelecionado(genero);
     };
 
+    const handleVoltar = () => {
+        setGeneroSelecionado(null); // Reseta o estado de gênero selecionado para null
+    };
+    
     useEffect(() => {
         const fetchGenres = async () => {
             try {
-                const genresData = await getGenres(); // Aguarda a resolução da Promise
-                setGeneros(genresData); // Atualiza o estado com os dados recebidos
+                const genresData = await getGenres();
+                setGeneros(genresData); 
             } catch (error) {
                 console.error("Erro ao buscar gêneros:", error);
             }
@@ -25,7 +29,17 @@ function Generos() {
     }, []);
 
     if (generoSelecionado) {
-        return <GeneroSelecionado genero={generoSelecionado} />;
+        return (
+            <div>
+                <button 
+                    onClick={handleVoltar} 
+                    //TERMINAR CUSTOMIZAÇAO DO
+                    className="text-white sm:text-4xl "> 
+                    Voltar
+                </button>
+                <GeneroSelecionado genero={generoSelecionado} />
+            </div>
+        );
     }
 
     return (
