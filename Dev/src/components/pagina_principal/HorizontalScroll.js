@@ -308,7 +308,7 @@ function HorizontalScroll(props) {
                                     <div className="my-4 text-black text-lg leading-relaxed">
                                         <div className='flex flex-col justify-center md:items-start gap-4 flex-wrap'>
 
-                                            {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
+                                            {showVideo ? <iframe width="100%" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
 
 
                                             <div className='flex flex-col gap-5 sm:items-start'>

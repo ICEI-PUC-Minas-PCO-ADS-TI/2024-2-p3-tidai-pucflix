@@ -18,26 +18,26 @@ function Header() {
 
     useEffect(() => {
         const handleResize = () => {
-          if (window.innerWidth > 1023) {
-            setMenuOpen(false); 
-          }
+            if (window.innerWidth > 1023) {
+                setMenuOpen(false);
+            }
         };
 
         window.addEventListener('resize', handleResize);
-    
+
         return () => {
-          window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
-      }, []);
+    }, []);
 
     return (
 
         <header className="w-full text-white bg-defaultPurple shadow-sm body-font border-b">
             <div className="container flex flex-wrap items-center justify-between pt-6 p-2 md:p-6 mx-auto">
 
-                <Link to="/pucflix/principal" 
+                <Link to="/pucflix/principal"
                     className="flex items-center mb-4 font-medium text-gray-900 title-font lg:mb-0">
-                        <img src={Logo} alt="logo" className="h-12" />
+                    <img src={Logo} alt="logo" className="h-12" />
                 </Link>
 
                 <div className="lg:hidden">
@@ -56,19 +56,19 @@ function Header() {
 
                 <div className="hidden lg:flex items-center h-full">
                     {//<div className="flex me-10">
-                      //  <input
-                       //     type="text"
-                       //     className="form-control flex-grow p-1 px-2 rounded-l-md focus:outline-none text-gray-900"
-   //Barra de Pesquisa //     placeholder="Pesquisar"
-                       //     aria-label="Barra de Pesquisa"
-                      //  />
-                      //  <span className="inline-flex items-center px-3 text-black bg-white rounded-r-md">
-                      //      <IoSearchSharp />
-                      //  </span>
-                   //</div>
+                        //  <input
+                        //     type="text"
+                        //     className="form-control flex-grow p-1 px-2 rounded-l-md focus:outline-none text-gray-900"
+                        //Barra de Pesquisa //     placeholder="Pesquisar"
+                        //     aria-label="Barra de Pesquisa"
+                        //  />
+                        //  <span className="inline-flex items-center px-3 text-black bg-white rounded-r-md">
+                        //      <IoSearchSharp />
+                        //  </span>
+                        //</div>
                     }
 
-                    <DropdownBtn btn={ProfilePicture}/>
+                    <DropdownBtn btn={ProfilePicture} />
 
                 </div>
             </div>
@@ -86,7 +86,9 @@ function Header() {
                         <nav className="flex flex-col mt-8 space-y-4">
                             <Link to="./principal" className="font-medium hover:text-gray-500">Inicio</Link>
                             <Link to="./favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
-                            <Link to="#_" className="font-medium hover:text-gray-500">Generos</Link>
+                            <Link to="./generos" className="font-medium hover:text-gray-500">Generos</Link>
+                            <Link to="./assistidos" className="font-medium hover:text-gray-500">Histórico</Link>
+                            <a href="mailto:pedro@phflima.com" className="font-medium hover:text-gray-500">Suporte</a>
 
                             {/* Search Bar for Mobile */}
                             <div className="flex mt-4">

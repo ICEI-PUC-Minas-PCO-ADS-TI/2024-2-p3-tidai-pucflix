@@ -14,15 +14,15 @@ function Login() {
 
     const handleGoogleLogin = async () => {
         try {
-          await loginWithGoogle(); 
-          navigate("../pucflix/perfil");
+            await loginWithGoogle();
+            navigate("../pucflix/perfil");
         } catch (error) {
-          console.error("Erro durante o login com Google:", error);
+            console.error("Erro durante o login com Google:", error);
 
         }
-      };
+    };
 
-    const handleError = () =>{
+    const handleError = () => {
         setError(true);
     }
 
@@ -37,28 +37,28 @@ function Login() {
                         <h1>Entrar</h1>
                         <Formik
                             initialValues={{ email: "", password: "", termos: false }}
-                            onSubmit={async (values, {setSubmitting, resetForm}) => {
+                            onSubmit={async (values, { setSubmitting, resetForm }) => {
 
-                                try{
+                                try {
                                     const user = await loginUser(values.email, values.password)
                                     console.log("Usuario Logado: ", user) //Apagar os Log dps que terminar
                                     //esse user que é o cara que temos que colocar no sessioNStorage para buscar os dados no bd
-    
+
                                     resetForm();
-    
+
                                     navigate("../pucflix/perfil")
-    
-                                }catch(err){
+
+                                } catch (err) {
                                     console.error(err.ErrorMessage)
                                     handleError()
 
-                                }finally{
+                                } finally {
                                     setSubmitting(false)
                                 }
-    
-    
-                                }}
-                                >
+
+
+                            }}
+                        >
 
                             {({ handleSubmit }) => (
                                 <Form onSubmit={handleSubmit}>
@@ -75,34 +75,36 @@ function Login() {
                                     </div>
 
                                     <button type="submit">Entrar</button>
-                                    <div className={styles.errorMessage} style={{display: error ? "flex" : "none"}}>
+                                    <div className={styles.errorMessage} style={{ display: error ? "flex" : "none" }}>
                                         <p>Login e/ou Senha Incorreta</p>
                                     </div>
 
                                     <hr></hr>
 
-                                    <div className={styles.buttonWith}>
-
-                                            <button onClick={handleGoogleLogin} style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
-                                                <img className='w-100' src={logoGoogle} alt="Google" />
-                                                Logar com Google
-                                            </button>
-
-
-                                    </div>
-                                    <div>
-                                        <p >
-                                            <strong> Ainda nao possui uma conta?</strong>
-                                            <Link to="../pucflix/cadastro" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
-                                                Cadastre aqui
-                                            </Link>
-                                        </p>
-                                    </div>
 
                                 </Form>
                             )}
 
                         </Formik>
+                        <div className={styles.subForm}>
+                            <div className={styles.buttonWith}>
+
+                                <button onClick={handleGoogleLogin} style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
+                                    <img className='w-100' src={logoGoogle} alt="Google" />
+                                    Logar com Google
+                                </button>
+
+
+                            </div>
+                            <div>
+                                <p >
+                                    <strong> Ainda nao possui uma conta?</strong>
+                                    <Link to="../pucflix/cadastro" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
+                                        Cadastre aqui
+                                    </Link>
+                                </p>
+                            </div>
+                        </div>
 
                     </div>
                     <div className={styles.imagem}></div>

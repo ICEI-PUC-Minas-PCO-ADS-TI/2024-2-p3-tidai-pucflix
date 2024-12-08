@@ -119,6 +119,13 @@ hr {
     height: 20px; 
     vertical-align: middle; 
 }
+.subForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+}
 
 
 @media (max-width: 1000px) {

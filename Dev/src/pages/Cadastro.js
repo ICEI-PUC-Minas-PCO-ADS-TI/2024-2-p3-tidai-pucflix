@@ -61,19 +61,19 @@ function Cadastro() {
 
     const handleGoogleLogin = async () => {
         try {
-          await registerWithGoogle(); 
-          navigate("../pucflix/perfil");
+            await registerWithGoogle();
+            navigate("../pucflix/perfil");
         } catch (error) {
-          console.error("Erro durante o login com Google:", error);
+            console.error("Erro durante o login com Google:", error);
 
         }
-      };
+    };
 
-      const handleError = () =>{
+    const handleError = () => {
         setError(true);
     }
 
-    
+
     return (
         <div>
             <Header />
@@ -85,21 +85,21 @@ function Cadastro() {
 
                         <Formik
                             initialValues={{ name: "", email: "", password: "", confirmPassword: "" }}
-                            onSubmit={async (values, {setSubmitting, resetForm}) => {
+                            onSubmit={async (values, { setSubmitting, resetForm }) => {
 
-                            try{
-                                await registerUser(values.email, values.password, values.name)
+                                try {
+                                    await registerUser(values.email, values.password, values.name)
 
-                                resetForm();
+                                    resetForm();
 
-                                navigate("../pucflix/perfil")
+                                    navigate("../pucflix/perfil")
 
-                            }catch(err){
-                                console.log(err)
-                                handleError()
-                            }finally{
-                                setSubmitting(false)
-                            }
+                                } catch (err) {
+                                    console.log(err)
+                                    handleError()
+                                } finally {
+                                    setSubmitting(false)
+                                }
 
 
                             }}
@@ -152,30 +152,31 @@ function Cadastro() {
 
                                     <button type='submit'>Junte-se</button>
 
-                                    <div className={styles.errorMessage} style={{display: error ? "flex" : "none"}}>
+                                    <div className={styles.errorMessage} style={{ display: error ? "flex" : "none" }}>
                                         <p>Email Informado já está em uso</p>
                                     </div>
 
                                     <hr></hr>
-
-                                    <div className={styles.buttonWith}>
-                                            <button onClick={handleGoogleLogin} style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
-                                                <img className='w-100' src={logoGoogle} alt="Google" />
-                                                Cadastrar com Google
-                                            </button>
-
-                                    </div>
-
-                                    <p>
-                                        <strong className='text-white text-sm sm:text-base xl:text-base'> Já possui uma conta?</strong>
-                                        <Link to="../pucflix/login" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
-                                            Entre aqui
-                                        </Link>
-                                    </p>
                                 </Form>
                             )}
 
                         </Formik>
+                        <div className={styles.subForm}>
+                        <div className={styles.buttonWith}>
+                            <button onClick={handleGoogleLogin} style={{ backgroundColor: 'white', color: 'black', alignItems: 'center' }} type="submit">
+                                <img className='w-100' src={logoGoogle} alt="Google" />
+                                Cadastrar com Google
+                            </button>
+
+                        </div>
+
+                        <p>
+                            <strong className='text-white text-sm sm:text-base xl:text-base'> Já possui uma conta?</strong>
+                            <Link to="../pucflix/login" style={{ paddingLeft: '6px', color: 'blue', textDecoration: 'underline', fontWeight: 'bold' }}>
+                                Entre aqui
+                            </Link>
+                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
