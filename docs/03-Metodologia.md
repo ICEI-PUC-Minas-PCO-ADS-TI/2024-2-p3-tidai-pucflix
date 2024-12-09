@@ -71,6 +71,10 @@ Atualizado em: 29/10/2024
 
 ![Kanban](./images/Sprint4.png)
 
+#### Sprint 5
+
+![Kanban](./images/Sprint5.png)
+
 ### Processo
 
 O grupo adotou a metodologia ágil Scrum para organizar e gerenciar o desenvolvimento do projeto, utilizando o GitHub Projects como ferramenta de gerenciamento de tarefas. Esse recurso nos permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução de maneira eficiente e colaborativa.
