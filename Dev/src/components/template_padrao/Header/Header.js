@@ -146,7 +146,7 @@ function Header() {
                         movie.title,
                         movie.overview,
                         movie.release_date.substring(0, 4) + " | Nota - " + movie.vote_average,
-                        video,  
+                        video,
                         movie.id
                       );
                     };
@@ -177,7 +177,11 @@ function Header() {
             <nav className="flex flex-col mt-8 space-y-4">
               <Link to="./principal" className="font-medium hover:text-gray-500">Inicio</Link>
               <Link to="./favoritos" className="font-medium hover:text-gray-500">Favoritos</Link>
-              <Link to="#_" className="font-medium hover:text-gray-500">Generos</Link>
+              <Link to="./generos" className="font-medium hover:text-gray-500">Generos</Link>
+              <Link to="./assistidos" className="font-medium hover:text-gray-500">Histórico</Link>
+              <a href="mailto:pedro@phflima.com" className="font-medium hover:text-gray-500">
+                Suporte
+              </a>
 
               {/* Barra de pesquisa mobile */}
               <div className="flex mt-4">
@@ -240,7 +244,7 @@ function Header() {
                   <div className="my-4 text-black text-lg leading-relaxed">
                     <div className='flex flex-col justify-center md:items-start gap-4 flex-wrap'>
 
-                      {showVideo ? <iframe width="560" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
+                      {showVideo ? <iframe width="100%" height="315" src={modalVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> : <img src={modalMovieIMG} alt={modalMovieIMG} />}
 
 
                       <div className='flex flex-col gap-5 sm:items-start'>

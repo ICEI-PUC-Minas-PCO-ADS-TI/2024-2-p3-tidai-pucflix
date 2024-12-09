@@ -22,8 +22,42 @@ Desenvolver uma aplicação web de streaming de filmes, que permita aos usuário
 
 ## Instruções de utilização
 
-> [!NOTE]
-> Irá ser implementado ao final do projeto!
+## 📥 **1. Cadastro e Login**
+- Acesse a página inicial.  
+- Clique em **"Cadastrar"**, preencha **Nome, E-mail e Senha** e clique em **"Criar Conta"**.  
+- Após o cadastro, faça login informando o **E-mail e Senha**.  
+
+## 👥 **2. Seleção de Perfil**
+- Escolha um perfil já existente ou clique em **“+ Novo Perfil”** para criar um.  
+- Informe o nome do perfil e salve.  
+
+## 🔍 **3. Pesquisa de Filmes**
+- Use a **barra de busca** para encontrar filmes pelo nome.  
+- Os resultados serão exibidos rapidamente a partir do banco de dados **Firebase**.  
+
+## 🎥 **4. Visualização de Filmes**
+- Clique no filme para ver os **detalhes**:  
+  - **Imagem, Título, Descrição, Duração, Diretor** e o **Link do trailer no YouTube**.  
+
+## ⭐ **5. Favoritar Filmes**
+- Na página de detalhes, clique em **"Adicionar aos Favoritos"**.  
+- O filme será salvo na lista de favoritos do perfil.  
+
+## ✅ **6. Marcar Filme como Assistido**
+- Na página de detalhes, clique em **"Marcar como Assistido"**.  
+- O filme será adicionado ao **histórico de filmes assistidos** do perfil.  
+
+## ⚙️ **7. Gerenciamento de Perfis**
+- Clique no ícone de **perfil** no canto superior direito.  
+- Selecione o perfil desejado ou edite/exclua perfis existentes.  
+
+## 🔐 **8. Logout**
+- Clique no ícone de **perfil** no canto superior direito.  
+- Selecione **"Sair"** para voltar à tela de login.  
+
+---
+
+💡 **Dica:** As informações de usuários, perfis e filmes são armazenadas no **Firebase**, e a busca de filmes é otimizada para maior velocidade.  
 
 # Documentação
 
